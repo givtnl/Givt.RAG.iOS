@@ -1,0 +1,6 @@
+module Pods_RAG_iOS {
+  umbrella header "Pods-RAG.iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

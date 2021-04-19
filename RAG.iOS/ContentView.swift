@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import OpenAPIClient
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -60,6 +61,9 @@ struct ContentView: View {
             maxHeight: .infinity,
             alignment: .topLeading
         ).ignoresSafeArea(edges: .all)
+        .onAppear(perform: {
+            viewAppeared()
+        })
 
 //        VStack(alignment: .leading) {
 //            Text("OM")
@@ -87,6 +91,9 @@ struct ContentView: View {
         //                Label("Add Item", systemImage: "plus")
         //            }
         //        }
+    }
+    
+    private func viewAppeared() {
     }
     
     private func addItem() {

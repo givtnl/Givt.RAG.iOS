@@ -15,6 +15,8 @@
 		3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1A1262D8B9A0081766C /* RAG_iOS.xcdatamodeld */; };
 		3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AA262DAB840081766C /* ViewExtensions.swift */; };
 		3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AE262DAD640081766C /* InfoViewRow.swift */; };
+		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
+		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		3245E1A4262D8B9A0081766C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3245E1AA262DAB840081766C /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		3245E1AE262DAD640081766C /* InfoViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewRow.swift; sourceTree = "<group>"; };
+		506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.debug.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RAG.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
+		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9BFC2FC9B296CC731A298A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */,
+				C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3245E18A262D8B970081766C = {
 			isa = PBXGroup;
 			children = (
+				A4BF46C1262DADDD00DCC327 /* open-api-client */,
 				3245E195262D8B970081766C /* RAG.iOS */,
 				3245E194262D8B970081766C /* Products */,
+				2E9BFC2FC9B296CC731A298A /* Pods */,
+				9A1C9F4528EF2F53CA86EE74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +106,12 @@
 				3245E1AE262DAD640081766C /* InfoViewRow.swift */,
 			);
 			path = Views;
+		9A1C9F4528EF2F53CA86EE74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +121,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3245E1A7262D8B9A0081766C /* Build configuration list for PBXNativeTarget "RAG.iOS" */;
 			buildPhases = (
+				B85EF867B6E6BE72073C038C /* [CP] Check Pods Manifest.lock */,
 				3245E18F262D8B970081766C /* Sources */,
 				3245E190262D8B970081766C /* Frameworks */,
 				3245E191262D8B970081766C /* Resources */,
@@ -146,12 +172,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */,
 				3245E19E262D8B9A0081766C /* Preview Assets.xcassets in Resources */,
 				3245E19B262D8B9A0081766C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B85EF867B6E6BE72073C038C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RAG.iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3245E18F262D8B970081766C /* Sources */ = {
@@ -288,6 +340,7 @@
 		};
 		3245E1A8262D8B9A0081766C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -304,12 +357,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.givt.iosnativedev.RAG-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3245E1A9262D8B9A0081766C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.givt.iosnativedev.RAG-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
