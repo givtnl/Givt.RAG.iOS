@@ -26,11 +26,25 @@ struct ContentView: View {
                 Text("SPONSORLOOP")
                     .font(.title)
                     .fontWeight(.bold)
-                    .offset(x: 30, y: 20)
                 Group {
                     InfoViewRow(logoString: "OM_Logo", titleString: "Zaterdag 6 Juni, 2021", subTitleString: "9.00u - 12.00u")
-                    InfoViewRow(logoString: "OM_Logo", titleString: "Zaterdag 6 Juni, 2021", subTitleString: "9.00u - 12.00u")
-                }.offset(x: 30, y: 20)
+                    InfoViewRow(logoString: "OM_Logo", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
+                }
+                VStack(alignment: .leading) {
+                    Text("Over het evenement")
+                        .font(.title2)
+                        .fontWeight(.none)
+                    Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo")
+                        .font(.caption)
+                        .fontWeight(.light)
+                        .padding(.top, 1)
+                    Text("Lees meer")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                        .padding(.top, 1)
+                }.offset(y: 15)
+                
                 
             }.frame(
                 minWidth: 0,
@@ -38,7 +52,7 @@ struct ContentView: View {
                 minHeight: 0,
                 maxHeight: .infinity,
                 alignment: .topLeading
-            ).background(Color.white).cornerRadius(36, corners: .topRight).ignoresSafeArea(edges: .all).offset(y: -40)
+            ).padding(30).background(Color.white).cornerRadius(36, corners: .topRight).ignoresSafeArea(edges: .all).offset(y: -40)
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,

@@ -20,6 +20,7 @@ struct InfoViewRow: View {
                     .font(/*@START_MENU_TOKEN@*/.caption/*@END_MENU_TOKEN@*/)
                 Text(subTitleString)
                     .font(.caption2)
+                    .foregroundColor(.gray)
             }.offset(x: 10, y: 0)
         }
         
