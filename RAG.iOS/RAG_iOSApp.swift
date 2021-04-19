@@ -13,7 +13,7 @@ struct RAG_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EventView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
