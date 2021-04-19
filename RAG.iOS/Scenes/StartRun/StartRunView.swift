@@ -10,10 +10,10 @@ import CoreLocation
 
 struct StartRunView: View {
     let locationManager = CLLocationManager()
-    let delegate = LocationDelegate()
-    
+    @ObservedObject var delegate = LocationDelegate()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(self.delegate.textToUpdate)
             .onAppear(perform: {
                 self.locationManager.requestAlwaysAuthorization()
                 print(CLLocationManager.locationServicesEnabled())
@@ -27,10 +27,33 @@ struct StartRunView: View {
     }
 }
 
-class LocationDelegate: NSObject, CLLocationManagerDelegate {
+
+class LocationDelegate: NSObject, CLLocationManagerDelegate, ObservableObject {
+    @Published var textToUpdate: String = "Update me!"
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        calculateDistanceBetweenTwoLocations(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+    }
+    
+    var lastSavedLocation: CLLocation? = nil
+    var totalDistance: Double = 0.0
+    var doubleFormat = ".2"
+    
+    func calculateDistanceBetweenTwoLocations(location: CLLocation) {
+        guard let lastSaved = lastSavedLocation else {
+            lastSavedLocation = location
+            return
+        }
+            
+        let resultInMeters = lastSaved.distance(from: location)
+        lastSavedLocation = location
+        totalDistance += resultInMeters
+        print("difference between now and then:")
+        print(resultInMeters)
+        print("totalDistance in meters: ")
+        print(totalDistance)
+        textToUpdate = String(format: "Total distance so far: %.2f", totalDistance)
     }
 }
 
