@@ -26,16 +26,19 @@ struct ContentView: View {
                 Text("SPONSORLOOP")
                     .font(.title)
                     .fontWeight(.bold)
+                    .offset(x: 30, y: 20)
+                Group {
+                    InfoViewRow(logoString: "OM_Logo", titleString: "Zaterdag 6 Juni, 2021", subTitleString: "9.00u - 12.00u")
+                    InfoViewRow(logoString: "OM_Logo", titleString: "Zaterdag 6 Juni, 2021", subTitleString: "9.00u - 12.00u")
+                }.offset(x: 30, y: 20)
+                
             }.frame(
                 minWidth: 0,
                 maxWidth: .infinity,
                 minHeight: 0,
                 maxHeight: .infinity,
                 alignment: .topLeading
-            ).background(
-                    // insert rounded corners
-                Color.red
-            ).ignoresSafeArea(edges: .all).offset(y: -40)
+            ).background(Color.white).cornerRadius(36, corners: .topRight).ignoresSafeArea(edges: .all).offset(y: -40)
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
