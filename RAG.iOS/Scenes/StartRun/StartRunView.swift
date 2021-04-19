@@ -6,54 +6,22 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct StartRunView: View {
-    let locationManager = CLLocationManager()
-    @ObservedObject var delegate = LocationDelegate()
+    @ObservedObject var runningManager = RunningManager();
 
     var body: some View {
-        Text(self.delegate.textToUpdate)
-            .onAppear(perform: {
-                self.locationManager.requestAlwaysAuthorization()
-                print(CLLocationManager.locationServicesEnabled())
-                if CLLocationManager.locationServicesEnabled() {
-                    print("YES")
-                    locationManager.delegate = delegate
-                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                    locationManager.startUpdatingLocation()
-                }
-            })
-    }
-}
-
-
-class LocationDelegate: NSObject, CLLocationManagerDelegate, ObservableObject {
-    @Published var textToUpdate: String = "Update me!"
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        calculateDistanceBetweenTwoLocations(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
-    }
-    
-    var lastSavedLocation: CLLocation? = nil
-    var totalDistance: Double = 0.0
-    var doubleFormat = ".2"
-    
-    func calculateDistanceBetweenTwoLocations(location: CLLocation) {
-        guard let lastSaved = lastSavedLocation else {
-            lastSavedLocation = location
-            return
+        VStack {
+            Text(String(format: "%.1f s", runningManager.currentTime))
+            Text(String(format: "Je hebt al %.2f km gelopen!", runningManager.currentDistance/1000))
         }
-            
-        let resultInMeters = lastSaved.distance(from: location)
-        lastSavedLocation = location
-        totalDistance += resultInMeters
-        print("difference between now and then:")
-        print(resultInMeters)
-        print("totalDistance in meters: ")
-        print(totalDistance)
-        textToUpdate = String(format: "Total distance so far: %.2f", totalDistance)
+            .onAppear(perform: {
+                runningManager.startRunning()
+            })
+            .onDisappear(perform: {
+                runningManager.stopRunning()
+            })
+        
     }
 }
 

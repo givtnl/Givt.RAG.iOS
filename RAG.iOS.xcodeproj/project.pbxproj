@@ -15,6 +15,7 @@
 		3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1A1262D8B9A0081766C /* RAG_iOS.xcdatamodeld */; };
 		3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AA262DAB840081766C /* ViewExtensions.swift */; };
 		3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AE262DAD640081766C /* InfoViewRow.swift */; };
+		A44564D8262E1B730017152E /* RunningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564D7262E1B730017152E /* RunningManager.swift */; };
 		A48BB5B1262DD2660096E62F /* StartRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48BB5B0262DD2660096E62F /* StartRunView.swift */; };
 		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
@@ -33,6 +34,7 @@
 		3245E1AE262DAD640081766C /* InfoViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewRow.swift; sourceTree = "<group>"; };
 		506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.debug.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RAG.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44564D7262E1B730017152E /* RunningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningManager.swift; sourceTree = "<group>"; };
 		A48BB5B0262DD2660096E62F /* StartRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunView.swift; sourceTree = "<group>"; };
 		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A48BB5B0262DD2660096E62F /* StartRunView.swift */,
+				A44564D7262E1B730017152E /* RunningManager.swift */,
 			);
 			path = StartRun;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */,
 				3245E1A0262D8B9A0081766C /* Persistence.swift in Sources */,
 				3245E199262D8B970081766C /* EventView.swift in Sources */,
+				A44564D8262E1B730017152E /* RunningManager.swift in Sources */,
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
