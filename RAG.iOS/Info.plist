@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need this</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Sorry though we need this</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Sorry though we need this</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location is needed</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
