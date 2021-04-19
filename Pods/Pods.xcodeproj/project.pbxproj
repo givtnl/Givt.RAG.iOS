@@ -405,16 +405,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		37ECCA450745D402C969508238588504 /* Release */ = {
+		6C910B358628222878BBD4E3EDBD97B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DB45EE4AB0203B78A8829C76862910A /* OpenAPIClient.release.xcconfig */;
+			baseConfigurationReference = 2B7B9520FE7C0B954E46582C7C895888 /* OpenAPIClient.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/OpenAPIClient/OpenAPIClient-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULEMAP_FILE = Headers/Public/OpenAPIClient/OpenAPIClient.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -427,9 +426,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -516,16 +514,15 @@
 			};
 			name = Release;
 		};
-		CD6EF19E2917E3B789A51B6B7D69636C /* Debug */ = {
+		C30F925C56FD49C69960E299347EA68A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B7B9520FE7C0B954E46582C7C895888 /* OpenAPIClient.debug.xcconfig */;
+			baseConfigurationReference = 1DB45EE4AB0203B78A8829C76862910A /* OpenAPIClient.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/OpenAPIClient/OpenAPIClient-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULEMAP_FILE = Headers/Public/OpenAPIClient/OpenAPIClient.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -538,8 +535,9 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -635,8 +633,8 @@
 		28917B19E487BFABADA871BDE4C3D601 /* Build configuration list for PBXNativeTarget "OpenAPIClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD6EF19E2917E3B789A51B6B7D69636C /* Debug */,
-				37ECCA450745D402C969508238588504 /* Release */,
+				6C910B358628222878BBD4E3EDBD97B9 /* Debug */,
+				C30F925C56FD49C69960E299347EA68A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
