@@ -94,8 +94,6 @@ struct ContentView: View {
     }
     
     private func viewAppeared() {
-        let item = OpenAPIClientAPI()
-        item.
     }
     
     private func addItem() {
