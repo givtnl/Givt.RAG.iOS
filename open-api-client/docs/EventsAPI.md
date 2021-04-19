@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **eventsGet**
 ```swift
-    open class func eventsGet(id: Int64, completion: @escaping (_ data: EventDetailModel?, _ error: Error?) -> Void)
+    open class func eventsGet(id: String, completion: @escaping (_ data: EventDetailModel?, _ error: Error?) -> Void)
 ```
 
 GetEventDetail
@@ -22,7 +22,7 @@ Returns the details for a specific event
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let id = 987 // Int64 | 
+let id = "id_example" // String | 
 
 // GetEventDetail
 EventsAPI.eventsGet(id: id) { (response, error) in
@@ -41,7 +41,7 @@ EventsAPI.eventsGet(id: id) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Int64** |  | 
+ **id** | **String** |  | 
 
 ### Return type
 

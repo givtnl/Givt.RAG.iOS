@@ -1,10 +1,11 @@
-# EventListModel
+# ExceptionModel
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**errorCode** | **String** |  | [optional] 
+**errorMessage** | **String** |  | [optional] 
+**additionalInformation** | **Any** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

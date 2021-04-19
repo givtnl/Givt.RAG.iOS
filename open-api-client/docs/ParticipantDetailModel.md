@@ -1,4 +1,4 @@
-# EventListModel
+# ParticipantDetailModel
 
 ## Properties
 Name | Type | Description | Notes

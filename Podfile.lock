@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "./open-api-client"
 
 SPEC CHECKSUMS:
-  OpenAPIClient: 51c4d17bf8705543e080d1de8ccfe977ddbf1e39
+  OpenAPIClient: 9463e074f7c19fecf6c3f9c0e565dd58aab45aa5
 
 PODFILE CHECKSUM: 668aa7ca0977956be19d400f8f8c05b0afc3f27e
 

@@ -7,28 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032CFA3D627D8130746329F4F3E0022E /* OpenISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4DE35ABC4676E0AEA13572511EB89 /* OpenISO8601DateFormatter.swift */; };
-		07C06DBDD82C2C49E1297AF7F26A2021 /* URLSessionImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883598096DD5447012A435A69BD6004B /* URLSessionImplementations.swift */; };
+		174EDE0CEA8E1FA1E33669BDD2A595C1 /* JSONDataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52E170EAE27AC9F3F05943C0BC4A32 /* JSONDataEncoding.swift */; };
+		1EFB1DA44704AEEC0071F58985AB3693 /* OpenAPIClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A103F77E675DD714872390C3AFDA212 /* OpenAPIClient-dummy.m */; };
+		26E3A41D8E2B7C544BA3494FED973382 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB60666C3F6CD7BDFAAEBCAD3C7CC706 /* APIHelper.swift */; };
+		2DDF1E3D54AEA5F75101DC65B9A9DD89 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45EA7E9406EF13A30F3BAEDD6D5EF8 /* CodableHelper.swift */; };
 		2E82A22AD34F4B53F73F53648F5B0821 /* Pods-RAG.iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 971D2E0EE69D7349D805513B2ACAA06E /* Pods-RAG.iOS-dummy.m */; };
-		309B859B9287B9620A4794D4CFBC4C58 /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C6145BB0B80055F0DA0B17D396498D /* EventDetailModel.swift */; };
-		3DCD06C3253277EB15C0B9E237E0416E /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22F5F6E4FDB6B0B3B7AE743C1D04D2 /* EventsAPI.swift */; };
-		3E0D0E2FBA7FAB301B4A58088E9C0231 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF76638D0C4A68D497BCF1CC2AD4A /* SynchronizedDictionary.swift */; };
-		539421EB0DA263EE95CD1984E0E729A1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEDAF6720956C2868F8DDB7B331AFB9 /* Models.swift */; };
+		3349ABD0167CB0CFC0E5F443A85DC989 /* ParticipantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD93FAFB0AB86E78DD629427D62D29C /* ParticipantsAPI.swift */; };
+		3B09B6311CF5454FF35E22C06C4DE424 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989902863C000A827D5288AFC12B863F /* SynchronizedDictionary.swift */; };
+		40BE4AF105CBA03C9749098466C9A5A4 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416F12C4AFE9101B066EFD287701229B /* JSONEncodingHelper.swift */; };
+		40D037E6488C71C9E157DED28DEBA493 /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D17C9800C4C7A50B296B4CFA13BF6 /* EventsAPI.swift */; };
+		463B394C2889381EC49C2697161CE373 /* ParticipantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3F0D399BD41F3E1297664EE9D46E6 /* ParticipantDetailModel.swift */; };
+		49869BC9AE7ED7665778C6A74B4D535F /* URLSessionImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992330FFE4FE91B37C0E02090368E58F /* URLSessionImplementations.swift */; };
+		4D1E518654AB034AB67BBFEA11FF5FAC /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86858B7F5545D6617DA83A9D8B3223 /* EventDetailModel.swift */; };
 		5789E5B483EDD44D6DC0785996993727 /* Pods-RAG.iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC04739B8509CF97A38FCDB5D7FB3CF9 /* Pods-RAG.iOS-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		67F96FB8DD13939F555E2D4E6CC94853 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CA6E192AF4C6A3B3487D7301720A7 /* Extensions.swift */; };
-		8A955EB7BA87186C07EEF9343F19B190 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B1933ADD426EFD568F11ED9C516E81 /* CodableHelper.swift */; };
-		A0F124E6AF4F2C9FC1FC5AE98D5674B7 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B1C56ABD171B5BD9317DDBC4AFB4F /* APIHelper.swift */; };
-		A4618B13E2DD1546F342D09814DCD4C9 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBE63B67D0C52EEB57F72F52B403BF /* JSONEncodingHelper.swift */; };
-		BC5CCFC6E19B9E4ABFF163EDF279AD9E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011EDFD036FFBCD00A89042732F862 /* Configuration.swift */; };
-		CAD25D73D82B770E4E2EF59A57666517 /* JSONDataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84F38ED63AA2EC23700EA38A6562FE /* JSONDataEncoding.swift */; };
-		CE6FBBB689825EB9F3355B4D69AD22C3 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6765E9B7FE5039C467C4BE84C86525D /* APIs.swift */; };
-		CF8E86EFDC0D9394F3156D88BDFBC677 /* OpenAPIClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 127BE7143D00DF9F277AA501A139F3AA /* OpenAPIClient-dummy.m */; };
-		F69CBEB78449662B2EC95CADB3EEA04A /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480952C9FE94B2FFCCA4D559A40A66B4 /* EventListModel.swift */; };
-		FFF4394A7562171408BC78116762B01A /* OpenAPIClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9A3375A4C22345C62137DEEEB026C3 /* OpenAPIClient-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		712B9D98A13111B3CE9EA535DFE2FACE /* OpenISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35764C68AAFCD9DF1E9957E7BBBB7D7 /* OpenISO8601DateFormatter.swift */; };
+		97117F88EDDAB6F41C7FD7E4DB10E0A4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6462CCD97CB84BD67E7F34A360967B /* Models.swift */; };
+		A1947D6D37A116B6F47917D2289A7470 /* ParticipantListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FBD878057CF6EC8248A62F8171C00 /* ParticipantListModel.swift */; };
+		B4B9763DB8BCA39DD02BAAA20934F078 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E0C24949384A6914F0DFC85EEC80F /* Configuration.swift */; };
+		B8E8AB856018A86D5A397A963C10B62C /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F129DB09965C4B6295718BDE23ECDCF0 /* APIs.swift */; };
+		B97E0B8C15020242681EBEFF6B1A736D /* RegisterParticipantCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E3DF5691D45CAAE2CFF437EC5A541E /* RegisterParticipantCommand.swift */; };
+		BB7C3A3CEE139AEB55FB16121311E6BC /* ExceptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4B280227F4FAAD62602EC08DE0055 /* ExceptionModel.swift */; };
+		D2C8581FA615AAFE1F183D690FA1B99C /* OpenAPIClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E662DDA8FD8A326988EEC106637E57 /* OpenAPIClient-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E9D601B5FDF82FAB789E995AC81597BA /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B785E634288CFC1E2B27870AE0326F53 /* EventListModel.swift */; };
+		FF9CA69286514010B567F63B9F8C8BD5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AC9F86180B0AF7BA51B676F9042B6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BB292C57C357DB6AC024106913D30495 /* PBXContainerItemProxy */ = {
+		4BD9221721C0DFAAD68544504ABC78E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -38,41 +43,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12548B94980911E599D9EF03C9FCF902 /* OpenAPIClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenAPIClient.modulemap; sourceTree = "<group>"; };
-		127BE7143D00DF9F277AA501A139F3AA /* OpenAPIClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpenAPIClient-dummy.m"; sourceTree = "<group>"; };
-		19D61F067A34008BF62614CAB8AE4402 /* EventListModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventListModel.md; path = docs/EventListModel.md; sourceTree = "<group>"; };
+		0F6462CCD97CB84BD67E7F34A360967B /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Models.swift; path = OpenAPIClient/Classes/OpenAPIs/Models.swift; sourceTree = "<group>"; };
+		127FD96A6C864C1ADB321F25EF6448F7 /* EventDetailModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventDetailModel.md; path = docs/EventDetailModel.md; sourceTree = "<group>"; };
+		12DBEF2982A1E2046B47A314B5ADCFDE /* OpenAPIClient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OpenAPIClient.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		13E662DDA8FD8A326988EEC106637E57 /* OpenAPIClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAPIClient-umbrella.h"; sourceTree = "<group>"; };
 		19DB5B60CD64F5F1320AB4A7E33FC355 /* Pods-RAG.iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RAG.iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2D2BF76638D0C4A68D497BCF1CC2AD4A /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedDictionary.swift; path = OpenAPIClient/Classes/OpenAPIs/SynchronizedDictionary.swift; sourceTree = "<group>"; };
-		36FE7C47E95C759309DE03388C0CABF5 /* OpenAPIClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenAPIClient.release.xcconfig; sourceTree = "<group>"; };
-		39011EDFD036FFBCD00A89042732F862 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = OpenAPIClient/Classes/OpenAPIs/Configuration.swift; sourceTree = "<group>"; };
-		3A9A3375A4C22345C62137DEEEB026C3 /* OpenAPIClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAPIClient-umbrella.h"; sourceTree = "<group>"; };
-		45EBE63B67D0C52EEB57F72F52B403BF /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/JSONEncodingHelper.swift; sourceTree = "<group>"; };
-		480952C9FE94B2FFCCA4D559A40A66B4 /* EventListModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
+		1DB45EE4AB0203B78A8829C76862910A /* OpenAPIClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenAPIClient.release.xcconfig; sourceTree = "<group>"; };
+		2B7B9520FE7C0B954E46582C7C895888 /* OpenAPIClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenAPIClient.debug.xcconfig; sourceTree = "<group>"; };
+		2B86858B7F5545D6617DA83A9D8B3223 /* EventDetailModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
+		2C0AC9F86180B0AF7BA51B676F9042B6 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = OpenAPIClient/Classes/OpenAPIs/Extensions.swift; sourceTree = "<group>"; };
+		3CE3FE47A372776FE1FA966B5EE9F0D4 /* OpenAPIClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAPIClient-prefix.pch"; sourceTree = "<group>"; };
+		416F12C4AFE9101B066EFD287701229B /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/JSONEncodingHelper.swift; sourceTree = "<group>"; };
 		481876CD4DC1029D121DCD588FA66554 /* libOpenAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libOpenAPIClient.a; path = libOpenAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A22F5F6E4FDB6B0B3B7AE743C1D04D2 /* EventsAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventsAPI.swift; sourceTree = "<group>"; };
-		4AEDAF6720956C2868F8DDB7B331AFB9 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Models.swift; path = OpenAPIClient/Classes/OpenAPIs/Models.swift; sourceTree = "<group>"; };
-		60F1A74D3BDDD8A6E1EBA1317E773B72 /* OpenAPIClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenAPIClient.debug.xcconfig; sourceTree = "<group>"; };
+		4AF7FB70809C9A945F2B48005C5D0DE2 /* RegisterParticipantCommand.md */ = {isa = PBXFileReference; includeInIndex = 1; name = RegisterParticipantCommand.md; path = docs/RegisterParticipantCommand.md; sourceTree = "<group>"; };
+		517E0C24949384A6914F0DFC85EEC80F /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = OpenAPIClient/Classes/OpenAPIs/Configuration.swift; sourceTree = "<group>"; };
+		534E027144EEE4484F27221C3F3AA5A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		62B3DE7F50A8BE5EB068FDCCFEEDDBA3 /* libPods-RAG.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RAG.iOS.a"; path = "libPods-RAG.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E4DE35ABC4676E0AEA13572511EB89 /* OpenISO8601DateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenISO8601DateFormatter.swift; path = OpenAPIClient/Classes/OpenAPIs/OpenISO8601DateFormatter.swift; sourceTree = "<group>"; };
-		67B1933ADD426EFD568F11ED9C516E81 /* CodableHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/CodableHelper.swift; sourceTree = "<group>"; };
-		766B1C56ABD171B5BD9317DDBC4AFB4F /* APIHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/APIHelper.swift; sourceTree = "<group>"; };
-		7B84F38ED63AA2EC23700EA38A6562FE /* JSONDataEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDataEncoding.swift; path = OpenAPIClient/Classes/OpenAPIs/JSONDataEncoding.swift; sourceTree = "<group>"; };
+		64F53BA6A48882BDE0A55188CEA8265E /* EventsAPI.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventsAPI.md; path = docs/EventsAPI.md; sourceTree = "<group>"; };
+		6A103F77E675DD714872390C3AFDA212 /* OpenAPIClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpenAPIClient-dummy.m"; sourceTree = "<group>"; };
+		72586F1DEFB1C24D5971D64489A6DD9C /* ExceptionModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = ExceptionModel.md; path = docs/ExceptionModel.md; sourceTree = "<group>"; };
 		7D2264AA8266DDA2CB5B8EFEBCC8B0E6 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
-		883598096DD5447012A435A69BD6004B /* URLSessionImplementations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLSessionImplementations.swift; path = OpenAPIClient/Classes/OpenAPIs/URLSessionImplementations.swift; sourceTree = "<group>"; };
-		8B65189BF1ABF17D9497DF272E03F1C6 /* EventDetailModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventDetailModel.md; path = docs/EventDetailModel.md; sourceTree = "<group>"; };
-		8BB18A9C35B76A37238800561F99F508 /* OpenAPIClient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OpenAPIClient.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		933CFBC317950A05C5154F4CAFC8051F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		962BAB44128A90068274C7109E362018 /* OpenAPIClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAPIClient-prefix.pch"; sourceTree = "<group>"; };
 		971D2E0EE69D7349D805513B2ACAA06E /* Pods-RAG.iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RAG.iOS-dummy.m"; sourceTree = "<group>"; };
+		989902863C000A827D5288AFC12B863F /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedDictionary.swift; path = OpenAPIClient/Classes/OpenAPIs/SynchronizedDictionary.swift; sourceTree = "<group>"; };
+		992330FFE4FE91B37C0E02090368E58F /* URLSessionImplementations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLSessionImplementations.swift; path = OpenAPIClient/Classes/OpenAPIs/URLSessionImplementations.swift; sourceTree = "<group>"; };
 		99C1DEA85AA9DC57A565247F9B36F5D5 /* Pods-RAG.iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RAG.iOS.modulemap"; sourceTree = "<group>"; };
+		9CCC38D456F528DBA37464632B70317C /* ParticipantDetailModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = ParticipantDetailModel.md; path = docs/ParticipantDetailModel.md; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A11F7520D6F942BD0E7694155547D2C3 /* Pods-RAG.iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RAG.iOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		A39536D85321348AA1D547ED9782FAA2 /* EventsAPI.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventsAPI.md; path = docs/EventsAPI.md; sourceTree = "<group>"; };
+		B785E634288CFC1E2B27870AE0326F53 /* EventListModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
+		B92FBD878057CF6EC8248A62F8171C00 /* ParticipantListModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParticipantListModel.swift; sourceTree = "<group>"; };
+		C00FB03AE1888A4F86051BFCB8BCC149 /* EventListModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = EventListModel.md; path = docs/EventListModel.md; sourceTree = "<group>"; };
 		CC04739B8509CF97A38FCDB5D7FB3CF9 /* Pods-RAG.iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RAG.iOS-umbrella.h"; sourceTree = "<group>"; };
-		D22CA6E192AF4C6A3B3487D7301720A7 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = OpenAPIClient/Classes/OpenAPIs/Extensions.swift; sourceTree = "<group>"; };
-		D2C6145BB0B80055F0DA0B17D396498D /* EventDetailModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
+		DCD93FAFB0AB86E78DD629427D62D29C /* ParticipantsAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParticipantsAPI.swift; sourceTree = "<group>"; };
+		E1C3F0D399BD41F3E1297664EE9D46E6 /* ParticipantDetailModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParticipantDetailModel.swift; sourceTree = "<group>"; };
 		EA31553096D34BA24ED5F36B5DB95A55 /* Pods-RAG.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RAG.iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F6765E9B7FE5039C467C4BE84C86525D /* APIs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIs.swift; path = OpenAPIClient/Classes/OpenAPIs/APIs.swift; sourceTree = "<group>"; };
+		EAF4B280227F4FAAD62602EC08DE0055 /* ExceptionModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExceptionModel.swift; sourceTree = "<group>"; };
+		EB45EA7E9406EF13A30F3BAEDD6D5EF8 /* CodableHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/CodableHelper.swift; sourceTree = "<group>"; };
+		ED610127F4ABC350017BA7FC27E1D0D7 /* OpenAPIClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenAPIClient.modulemap; sourceTree = "<group>"; };
+		F06D17C9800C4C7A50B296B4CFA13BF6 /* EventsAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventsAPI.swift; sourceTree = "<group>"; };
+		F0E3DF5691D45CAAE2CFF437EC5A541E /* RegisterParticipantCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegisterParticipantCommand.swift; sourceTree = "<group>"; };
+		F129DB09965C4B6295718BDE23ECDCF0 /* APIs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIs.swift; path = OpenAPIClient/Classes/OpenAPIs/APIs.swift; sourceTree = "<group>"; };
+		F35764C68AAFCD9DF1E9957E7BBBB7D7 /* OpenISO8601DateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenISO8601DateFormatter.swift; path = OpenAPIClient/Classes/OpenAPIs/OpenISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		F745F895D5EE0851ED0D040371DF2171 /* ParticipantsAPI.md */ = {isa = PBXFileReference; includeInIndex = 1; name = ParticipantsAPI.md; path = docs/ParticipantsAPI.md; sourceTree = "<group>"; };
+		FA52E170EAE27AC9F3F05943C0BC4A32 /* JSONDataEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDataEncoding.swift; path = OpenAPIClient/Classes/OpenAPIs/JSONDataEncoding.swift; sourceTree = "<group>"; };
+		FAC8EC05BB11E03AA2065ADE19F51133 /* ParticipantListModel.md */ = {isa = PBXFileReference; includeInIndex = 1; name = ParticipantListModel.md; path = docs/ParticipantListModel.md; sourceTree = "<group>"; };
+		FB60666C3F6CD7BDFAAEBCAD3C7CC706 /* APIHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIHelper.swift; path = OpenAPIClient/Classes/OpenAPIs/APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +98,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F74C7B6CA6870E57180698F74A5BACD /* Frameworks */ = {
+		5897121BE42B2590A85532D0EECC1EF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,18 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25FD63B48EF4610DB03DC6CC8AC5B345 /* Support Files */ = {
+		1AD7BE8A29FF4E4C263141A437F85860 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				12548B94980911E599D9EF03C9FCF902 /* OpenAPIClient.modulemap */,
-				127BE7143D00DF9F277AA501A139F3AA /* OpenAPIClient-dummy.m */,
-				962BAB44128A90068274C7109E362018 /* OpenAPIClient-prefix.pch */,
-				3A9A3375A4C22345C62137DEEEB026C3 /* OpenAPIClient-umbrella.h */,
-				60F1A74D3BDDD8A6E1EBA1317E773B72 /* OpenAPIClient.debug.xcconfig */,
-				36FE7C47E95C759309DE03388C0CABF5 /* OpenAPIClient.release.xcconfig */,
+				F06D17C9800C4C7A50B296B4CFA13BF6 /* EventsAPI.swift */,
+				DCD93FAFB0AB86E78DD629427D62D29C /* ParticipantsAPI.swift */,
 			);
-			name = "Support Files";
-			path = "../Pods/Target Support Files/OpenAPIClient";
+			name = APIs;
+			path = OpenAPIClient/Classes/OpenAPIs/APIs;
 			sourceTree = "<group>";
 		};
 		2A225F1ECC6DA393E1FDD55079D707B1 /* Targets Support Files */ = {
@@ -115,58 +126,72 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		44C2CD102D3A96C61CD526BBADCD903F /* Pod */ = {
+		5E79D7C040DD453C4FB7BCED82AE5095 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8B65189BF1ABF17D9497DF272E03F1C6 /* EventDetailModel.md */,
-				19D61F067A34008BF62614CAB8AE4402 /* EventListModel.md */,
-				A39536D85321348AA1D547ED9782FAA2 /* EventsAPI.md */,
-				8BB18A9C35B76A37238800561F99F508 /* OpenAPIClient.podspec */,
-				933CFBC317950A05C5154F4CAFC8051F /* README.md */,
+				ED610127F4ABC350017BA7FC27E1D0D7 /* OpenAPIClient.modulemap */,
+				6A103F77E675DD714872390C3AFDA212 /* OpenAPIClient-dummy.m */,
+				3CE3FE47A372776FE1FA966B5EE9F0D4 /* OpenAPIClient-prefix.pch */,
+				13E662DDA8FD8A326988EEC106637E57 /* OpenAPIClient-umbrella.h */,
+				2B7B9520FE7C0B954E46582C7C895888 /* OpenAPIClient.debug.xcconfig */,
+				1DB45EE4AB0203B78A8829C76862910A /* OpenAPIClient.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Pods/Target Support Files/OpenAPIClient";
+			sourceTree = "<group>";
+		};
+		A876F8893AB0D084F9E84BB8F0A5651E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				127FD96A6C864C1ADB321F25EF6448F7 /* EventDetailModel.md */,
+				C00FB03AE1888A4F86051BFCB8BCC149 /* EventListModel.md */,
+				64F53BA6A48882BDE0A55188CEA8265E /* EventsAPI.md */,
+				72586F1DEFB1C24D5971D64489A6DD9C /* ExceptionModel.md */,
+				12DBEF2982A1E2046B47A314B5ADCFDE /* OpenAPIClient.podspec */,
+				9CCC38D456F528DBA37464632B70317C /* ParticipantDetailModel.md */,
+				FAC8EC05BB11E03AA2065ADE19F51133 /* ParticipantListModel.md */,
+				F745F895D5EE0851ED0D040371DF2171 /* ParticipantsAPI.md */,
+				534E027144EEE4484F27221C3F3AA5A9 /* README.md */,
+				4AF7FB70809C9A945F2B48005C5D0DE2 /* RegisterParticipantCommand.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		6FF82A64470FDF9996E8A6A62A168213 /* APIs */ = {
+		B91B8CADCB6514373B5EA9677BDB9E8B /* OpenAPIClient */ = {
 			isa = PBXGroup;
 			children = (
-				4A22F5F6E4FDB6B0B3B7AE743C1D04D2 /* EventsAPI.swift */,
-			);
-			name = APIs;
-			path = OpenAPIClient/Classes/OpenAPIs/APIs;
-			sourceTree = "<group>";
-		};
-		7B72965A253B1F8C8CB1712D6625CFA0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D2C6145BB0B80055F0DA0B17D396498D /* EventDetailModel.swift */,
-				480952C9FE94B2FFCCA4D559A40A66B4 /* EventListModel.swift */,
-			);
-			name = Models;
-			path = OpenAPIClient/Classes/OpenAPIs/Models;
-			sourceTree = "<group>";
-		};
-		8C3B8BE26D36EF2084551E52BA998469 /* OpenAPIClient */ = {
-			isa = PBXGroup;
-			children = (
-				766B1C56ABD171B5BD9317DDBC4AFB4F /* APIHelper.swift */,
-				F6765E9B7FE5039C467C4BE84C86525D /* APIs.swift */,
-				67B1933ADD426EFD568F11ED9C516E81 /* CodableHelper.swift */,
-				39011EDFD036FFBCD00A89042732F862 /* Configuration.swift */,
-				D22CA6E192AF4C6A3B3487D7301720A7 /* Extensions.swift */,
-				7B84F38ED63AA2EC23700EA38A6562FE /* JSONDataEncoding.swift */,
-				45EBE63B67D0C52EEB57F72F52B403BF /* JSONEncodingHelper.swift */,
-				4AEDAF6720956C2868F8DDB7B331AFB9 /* Models.swift */,
-				65E4DE35ABC4676E0AEA13572511EB89 /* OpenISO8601DateFormatter.swift */,
-				2D2BF76638D0C4A68D497BCF1CC2AD4A /* SynchronizedDictionary.swift */,
-				883598096DD5447012A435A69BD6004B /* URLSessionImplementations.swift */,
-				6FF82A64470FDF9996E8A6A62A168213 /* APIs */,
-				7B72965A253B1F8C8CB1712D6625CFA0 /* Models */,
-				44C2CD102D3A96C61CD526BBADCD903F /* Pod */,
-				25FD63B48EF4610DB03DC6CC8AC5B345 /* Support Files */,
+				FB60666C3F6CD7BDFAAEBCAD3C7CC706 /* APIHelper.swift */,
+				F129DB09965C4B6295718BDE23ECDCF0 /* APIs.swift */,
+				EB45EA7E9406EF13A30F3BAEDD6D5EF8 /* CodableHelper.swift */,
+				517E0C24949384A6914F0DFC85EEC80F /* Configuration.swift */,
+				2C0AC9F86180B0AF7BA51B676F9042B6 /* Extensions.swift */,
+				FA52E170EAE27AC9F3F05943C0BC4A32 /* JSONDataEncoding.swift */,
+				416F12C4AFE9101B066EFD287701229B /* JSONEncodingHelper.swift */,
+				0F6462CCD97CB84BD67E7F34A360967B /* Models.swift */,
+				F35764C68AAFCD9DF1E9957E7BBBB7D7 /* OpenISO8601DateFormatter.swift */,
+				989902863C000A827D5288AFC12B863F /* SynchronizedDictionary.swift */,
+				992330FFE4FE91B37C0E02090368E58F /* URLSessionImplementations.swift */,
+				1AD7BE8A29FF4E4C263141A437F85860 /* APIs */,
+				C0D29E78166B9EB7E4EA48F5F81152B4 /* Models */,
+				A876F8893AB0D084F9E84BB8F0A5651E /* Pod */,
+				5E79D7C040DD453C4FB7BCED82AE5095 /* Support Files */,
 			);
 			name = OpenAPIClient;
 			path = "../open-api-client";
+			sourceTree = "<group>";
+		};
+		C0D29E78166B9EB7E4EA48F5F81152B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B86858B7F5545D6617DA83A9D8B3223 /* EventDetailModel.swift */,
+				B785E634288CFC1E2B27870AE0326F53 /* EventListModel.swift */,
+				EAF4B280227F4FAAD62602EC08DE0055 /* ExceptionModel.swift */,
+				E1C3F0D399BD41F3E1297664EE9D46E6 /* ParticipantDetailModel.swift */,
+				B92FBD878057CF6EC8248A62F8171C00 /* ParticipantListModel.swift */,
+				F0E3DF5691D45CAAE2CFF437EC5A541E /* RegisterParticipantCommand.swift */,
+			);
+			name = Models;
+			path = OpenAPIClient/Classes/OpenAPIs/Models;
 			sourceTree = "<group>";
 		};
 		C1B0CE7B5A843639355C9817FCE804C9 /* Products */ = {
@@ -181,7 +206,7 @@
 		C97C2EFE34EE19803E8B715F0C786608 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8C3B8BE26D36EF2084551E52BA998469 /* OpenAPIClient */,
+				B91B8CADCB6514373B5EA9677BDB9E8B /* OpenAPIClient */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -222,11 +247,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AA7334E4301C97B03028BB7E6737D366 /* Headers */ = {
+		465FACB4B34FB1A16EE4E4EE1E386C89 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF4394A7562171408BC78116762B01A /* OpenAPIClient-umbrella.h in Headers */,
+				D2C8581FA615AAFE1F183D690FA1B99C /* OpenAPIClient-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,12 +268,12 @@
 /* Begin PBXNativeTarget section */
 		06AF4D61311C0D417CDD3249769BBCB6 /* OpenAPIClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B379DCC26200B656646802C75312DD81 /* Build configuration list for PBXNativeTarget "OpenAPIClient" */;
+			buildConfigurationList = 28917B19E487BFABADA871BDE4C3D601 /* Build configuration list for PBXNativeTarget "OpenAPIClient" */;
 			buildPhases = (
-				AA7334E4301C97B03028BB7E6737D366 /* Headers */,
-				7602CD333E31D49EE408B1EDC0F78891 /* Sources */,
-				5F74C7B6CA6870E57180698F74A5BACD /* Frameworks */,
-				F6AE66A66F7A4ACBC834F45ADFD20F71 /* Copy generated compatibility header */,
+				465FACB4B34FB1A16EE4E4EE1E386C89 /* Headers */,
+				DD3F7E54793EC49F4E260004B9F125FE /* Sources */,
+				5897121BE42B2590A85532D0EECC1EF8 /* Frameworks */,
+				07013F802C15369539C51288922B565F /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
@@ -270,7 +295,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF662DF6D140F8353E396D71E11927BB /* PBXTargetDependency */,
+				CECA6C92FB15AD882D9176C1C201C16F /* PBXTargetDependency */,
 			);
 			name = "Pods-RAG.iOS";
 			productName = "Pods-RAG.iOS";
@@ -306,7 +331,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F6AE66A66F7A4ACBC834F45ADFD20F71 /* Copy generated compatibility header */ = {
+		07013F802C15369539C51288922B565F /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,28 +358,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7602CD333E31D49EE408B1EDC0F78891 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0F124E6AF4F2C9FC1FC5AE98D5674B7 /* APIHelper.swift in Sources */,
-				CE6FBBB689825EB9F3355B4D69AD22C3 /* APIs.swift in Sources */,
-				8A955EB7BA87186C07EEF9343F19B190 /* CodableHelper.swift in Sources */,
-				BC5CCFC6E19B9E4ABFF163EDF279AD9E /* Configuration.swift in Sources */,
-				309B859B9287B9620A4794D4CFBC4C58 /* EventDetailModel.swift in Sources */,
-				F69CBEB78449662B2EC95CADB3EEA04A /* EventListModel.swift in Sources */,
-				3DCD06C3253277EB15C0B9E237E0416E /* EventsAPI.swift in Sources */,
-				67F96FB8DD13939F555E2D4E6CC94853 /* Extensions.swift in Sources */,
-				CAD25D73D82B770E4E2EF59A57666517 /* JSONDataEncoding.swift in Sources */,
-				A4618B13E2DD1546F342D09814DCD4C9 /* JSONEncodingHelper.swift in Sources */,
-				539421EB0DA263EE95CD1984E0E729A1 /* Models.swift in Sources */,
-				CF8E86EFDC0D9394F3156D88BDFBC677 /* OpenAPIClient-dummy.m in Sources */,
-				032CFA3D627D8130746329F4F3E0022E /* OpenISO8601DateFormatter.swift in Sources */,
-				3E0D0E2FBA7FAB301B4A58088E9C0231 /* SynchronizedDictionary.swift in Sources */,
-				07C06DBDD82C2C49E1297AF7F26A2021 /* URLSessionImplementations.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D55B0DDDE84325312A229F7E8C34E627 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,28 +366,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD3F7E54793EC49F4E260004B9F125FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E3A41D8E2B7C544BA3494FED973382 /* APIHelper.swift in Sources */,
+				B8E8AB856018A86D5A397A963C10B62C /* APIs.swift in Sources */,
+				2DDF1E3D54AEA5F75101DC65B9A9DD89 /* CodableHelper.swift in Sources */,
+				B4B9763DB8BCA39DD02BAAA20934F078 /* Configuration.swift in Sources */,
+				4D1E518654AB034AB67BBFEA11FF5FAC /* EventDetailModel.swift in Sources */,
+				E9D601B5FDF82FAB789E995AC81597BA /* EventListModel.swift in Sources */,
+				40D037E6488C71C9E157DED28DEBA493 /* EventsAPI.swift in Sources */,
+				BB7C3A3CEE139AEB55FB16121311E6BC /* ExceptionModel.swift in Sources */,
+				FF9CA69286514010B567F63B9F8C8BD5 /* Extensions.swift in Sources */,
+				174EDE0CEA8E1FA1E33669BDD2A595C1 /* JSONDataEncoding.swift in Sources */,
+				40BE4AF105CBA03C9749098466C9A5A4 /* JSONEncodingHelper.swift in Sources */,
+				97117F88EDDAB6F41C7FD7E4DB10E0A4 /* Models.swift in Sources */,
+				1EFB1DA44704AEEC0071F58985AB3693 /* OpenAPIClient-dummy.m in Sources */,
+				712B9D98A13111B3CE9EA535DFE2FACE /* OpenISO8601DateFormatter.swift in Sources */,
+				463B394C2889381EC49C2697161CE373 /* ParticipantDetailModel.swift in Sources */,
+				A1947D6D37A116B6F47917D2289A7470 /* ParticipantListModel.swift in Sources */,
+				3349ABD0167CB0CFC0E5F443A85DC989 /* ParticipantsAPI.swift in Sources */,
+				B97E0B8C15020242681EBEFF6B1A736D /* RegisterParticipantCommand.swift in Sources */,
+				3B09B6311CF5454FF35E22C06C4DE424 /* SynchronizedDictionary.swift in Sources */,
+				49869BC9AE7ED7665778C6A74B4D535F /* URLSessionImplementations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF662DF6D140F8353E396D71E11927BB /* PBXTargetDependency */ = {
+		CECA6C92FB15AD882D9176C1C201C16F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OpenAPIClient;
 			target = 06AF4D61311C0D417CDD3249769BBCB6 /* OpenAPIClient */;
-			targetProxy = BB292C57C357DB6AC024106913D30495 /* PBXContainerItemProxy */;
+			targetProxy = 4BD9221721C0DFAAD68544504ABC78E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5B690CDAE58E9EA6FA6B11B7F204830E /* Debug */ = {
+		6C910B358628222878BBD4E3EDBD97B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F1A74D3BDDD8A6E1EBA1317E773B72 /* OpenAPIClient.debug.xcconfig */;
+			baseConfigurationReference = 2B7B9520FE7C0B954E46582C7C895888 /* OpenAPIClient.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/OpenAPIClient/OpenAPIClient-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULEMAP_FILE = Headers/Public/OpenAPIClient/OpenAPIClient.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -485,16 +514,15 @@
 			};
 			name = Release;
 		};
-		989AE95DE070A439C4F10F292926EF0E /* Release */ = {
+		C30F925C56FD49C69960E299347EA68A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36FE7C47E95C759309DE03388C0CABF5 /* OpenAPIClient.release.xcconfig */;
+			baseConfigurationReference = 1DB45EE4AB0203B78A8829C76862910A /* OpenAPIClient.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/OpenAPIClient/OpenAPIClient-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULEMAP_FILE = Headers/Public/OpenAPIClient/OpenAPIClient.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -602,6 +630,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28917B19E487BFABADA871BDE4C3D601 /* Build configuration list for PBXNativeTarget "OpenAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C910B358628222878BBD4E3EDBD97B9 /* Debug */,
+				C30F925C56FD49C69960E299347EA68A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4324BB69FBE3C6405FE477AF422361B9 /* Build configuration list for PBXNativeTarget "Pods-RAG.iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -616,15 +653,6 @@
 			buildConfigurations = (
 				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
 				7EE7A78859F657F6BEFC651185B43192 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B379DCC26200B656646802C75312DD81 /* Build configuration list for PBXNativeTarget "OpenAPIClient" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B690CDAE58E9EA6FA6B11B7F204830E /* Debug */,
-				989AE95DE070A439C4F10F292926EF0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

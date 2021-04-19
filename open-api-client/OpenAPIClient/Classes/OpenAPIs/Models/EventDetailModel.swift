@@ -9,7 +9,7 @@ import Foundation
 
 public struct EventDetailModel: Codable {
 
-    public var id: Int64?
+    public var id: String?
     public var name: String?
     public var startDate: Date?
     public var endDate: Date?
@@ -17,7 +17,7 @@ public struct EventDetailModel: Codable {
     public var address: String?
     public var comment: String?
 
-    public init(id: Int64? = nil, name: String? = nil, startDate: Date? = nil, endDate: Date? = nil, city: String? = nil, address: String? = nil, comment: String? = nil) {
+    public init(id: String? = nil, name: String? = nil, startDate: Date? = nil, endDate: Date? = nil, city: String? = nil, address: String? = nil, comment: String? = nil) {
         self.id = id
         self.name = name
         self.startDate = startDate

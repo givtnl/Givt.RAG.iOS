@@ -15,7 +15,7 @@ open class EventsAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func eventsGet(id: Int64, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: EventDetailModel?, _ error: Error?) -> Void)) {
+    open class func eventsGet(id: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: EventDetailModel?, _ error: Error?) -> Void)) {
         eventsGetWithRequestBuilder(id: id).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -33,7 +33,7 @@ open class EventsAPI {
      - parameter id: (path)  
      - returns: RequestBuilder<EventDetailModel> 
      */
-    open class func eventsGetWithRequestBuilder(id: Int64) -> RequestBuilder<EventDetailModel> {
+    open class func eventsGetWithRequestBuilder(id: String) -> RequestBuilder<EventDetailModel> {
         var path = "/Events/{id}"
         let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
         let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

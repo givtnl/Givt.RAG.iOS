@@ -27,12 +27,19 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EventsAPI* | [**eventsGet**](docs/EventsAPI.md#eventsget) | **GET** /Events/{id} | GetEventDetail
 *EventsAPI* | [**eventsGetAll**](docs/EventsAPI.md#eventsgetall) | **GET** /Events | GetEventsList
+*ParticipantsAPI* | [**participantsGet**](docs/ParticipantsAPI.md#participantsget) | **GET** /events/{eventId}/participants/{id} | GetParticipantDetail
+*ParticipantsAPI* | [**participantsGetAll**](docs/ParticipantsAPI.md#participantsgetall) | **GET** /events/{eventId}/participants | GetParticipantsList
+*ParticipantsAPI* | [**participantsPost**](docs/ParticipantsAPI.md#participantspost) | **POST** /events/{eventId}/participants | RegisterParticipant
 
 
 ## Documentation For Models
 
  - [EventDetailModel](docs/EventDetailModel.md)
  - [EventListModel](docs/EventListModel.md)
+ - [ExceptionModel](docs/ExceptionModel.md)
+ - [ParticipantDetailModel](docs/ParticipantDetailModel.md)
+ - [ParticipantListModel](docs/ParticipantListModel.md)
+ - [RegisterParticipantCommand](docs/RegisterParticipantCommand.md)
 
 
 ## Documentation For Authorization
