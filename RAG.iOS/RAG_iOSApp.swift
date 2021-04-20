@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AppCenter
+import AppCenterCrashes
 
 @main
 struct RAG_iOSApp: App {
@@ -20,9 +22,14 @@ struct RAG_iOSApp: App {
     
     init() {
         registerHandlers()
+        registerForAppCenter()
     }
     
     func registerHandlers() {
         Mediater.shared.registerHandler(handler: StartRunningCommandHandler())
+    }
+    
+    func registerForAppCenter() {
+        AppCenter.start(withAppSecret: "ebb07586-528a-48ca-b65c-62ea3b562995", services: [Crashes.self])
     }
 }
