@@ -33,7 +33,6 @@
 		A44564FC262EB0110017152E /* Mediater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564F4262EB0110017152E /* Mediater.swift */; };
 		A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4456501262EB16D0017152E /* StartRunningCommand.swift */; };
 		A4456506262EB1830017152E /* StartRunningCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4456505262EB1830017152E /* StartRunningCommandHandler.swift */; };
-		A48BB5B1262DD2660096E62F /* StartRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48BB5B0262DD2660096E62F /* StartRunView.swift */; };
 		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
@@ -69,7 +68,6 @@
 		A44564F4262EB0110017152E /* Mediater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mediater.swift; sourceTree = "<group>"; };
 		A4456501262EB16D0017152E /* StartRunningCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunningCommand.swift; sourceTree = "<group>"; };
 		A4456505262EB1830017152E /* StartRunningCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunningCommandHandler.swift; sourceTree = "<group>"; };
-		A48BB5B0262DD2660096E62F /* StartRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunView.swift; sourceTree = "<group>"; };
 		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +122,7 @@
 				3245E196262D8B970081766C /* RAG_iOSApp.swift */,
 				3245E19A262D8B9A0081766C /* Assets.xcassets */,
 				3245E19F262D8B9A0081766C /* Persistence.swift */,
+				A44564D7262E1B730017152E /* RunningService.swift */,
 				3245E1A4262D8B9A0081766C /* Info.plist */,
 				3245E1A1262D8B9A0081766C /* RAG_iOS.xcdatamodeld */,
 				3245E19C262D8B9A0081766C /* Preview Content */,
@@ -254,7 +253,6 @@
 				32DA4DD5262EC55A00A7AB40 /* Profile */,
 				32DA4DDB262ECEB200A7AB40 /* Tracking */,
 				32DA4DD8262ECA6F00A7AB40 /* Finish */,
-				A48BB5AF262DD2500096E62F /* StartRun */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -266,15 +264,6 @@
 				3245E198262D8B970081766C /* EventView.swift */,
 			);
 			path = Event;
-			sourceTree = "<group>";
-		};
-		A48BB5AF262DD2500096E62F /* StartRun */ = {
-			isa = PBXGroup;
-			children = (
-				A48BB5B0262DD2660096E62F /* StartRunView.swift */,
-				A44564D7262E1B730017152E /* RunningService.swift */,
-			);
-			path = StartRun;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,7 +385,6 @@
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
-				A48BB5B1262DD2660096E62F /* StartRunView.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
