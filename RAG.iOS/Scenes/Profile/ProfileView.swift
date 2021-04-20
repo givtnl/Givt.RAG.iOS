@@ -16,13 +16,13 @@ struct ProfileView: View {
             Text(profile.email)
             Text("Goal")
             
-            NavigationLink(destination: StartRunView()) {
+            NavigationLink(destination: TrackingView()) {
                 Text("Run")
             }
-            NavigationLink(destination: StartRunView()) {
+            NavigationLink(destination: TrackingView()) {
                 Text("Invite")
             }
-            NavigationLink(destination: StartRunView()) {
+            NavigationLink(destination: TrackingView()) {
                 Text("Save")
             }
         }
