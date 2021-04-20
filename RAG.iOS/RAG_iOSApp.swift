@@ -17,4 +17,12 @@ struct RAG_iOSApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+    
+    init() {
+        registerHandlers()
+    }
+    
+    func registerHandlers() {
+        Mediater.shared.registerHandler(handler: StartRunningCommandHandler())
+    }
 }

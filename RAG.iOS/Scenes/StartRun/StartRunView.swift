@@ -17,6 +17,7 @@ struct StartRunView: View {
         }
             .onAppear(perform: {
                 runningManager.startRunning()
+                try? Mediater.shared.send(request: StartRunningCommand())
             })
             .onDisappear(perform: {
                 runningManager.stopRunning()
