@@ -47,9 +47,9 @@ struct RegisterView: View {
                         Text("Register")
                             .font(Font.custom("Montserrat-SemiBold", size: 14))
                     }
-                    .frame(width: 100, height: 35).background(Color.black)
+                    .frame(width: 140, height: 35).background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                 }
             }.padding(30)
            
