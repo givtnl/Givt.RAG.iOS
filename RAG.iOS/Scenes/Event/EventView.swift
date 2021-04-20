@@ -9,14 +9,7 @@ import SwiftUI
 import CoreData
 import OpenAPIClient
 
-struct EventView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-    
+struct EventView: View {    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading) {
@@ -40,8 +33,8 @@ struct EventView: View {
                             .font(.caption)
                             .fontWeight(.light)
                             .padding(.top, 1)
-                        NavigationLink(destination: StartRunView()) {
-                            Text("Start running")
+                        NavigationLink(destination: RegisterView()) {
+                            Text("Join event")
                         }
                     }.offset(y: 15)
                 }.frame(
