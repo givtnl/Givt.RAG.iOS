@@ -107,7 +107,13 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
 
     func isRunningAvailable() -> Bool {
-        self.locationManager.requestAlwaysAuthorization()
+        if (CLLocationManager.locationServicesEnabled()) {
+            print("permission for take off is granted")
+        } else {
+            print("permission for take off is not yet granted")
+            print("asking permission")
+            self.locationManager.requestAlwaysAuthorization()
+        }
         return CLLocationManager.locationServicesEnabled();
     }
     
