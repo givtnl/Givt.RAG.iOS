@@ -41,6 +41,7 @@ struct RegisterView: View {
                     Spacer()
                     NavigationLink(destination: ProfileView(profile: modelData)) {
                         Text("Register")
+                            .font(Font.custom("Montserrat-SemiBold", size: 14))
                     }
                     .frame(width: 100, height: 35).background(Color.black)
                     .foregroundColor(.white)
