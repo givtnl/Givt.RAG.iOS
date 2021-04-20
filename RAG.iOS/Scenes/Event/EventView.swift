@@ -18,20 +18,18 @@ struct EventView: View {
                     Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
                 }
                 VStack(alignment: .leading) {
-                    Text("SPONSORLOOP")
-                        .font(.title)
-                        .fontWeight(.bold)
+                    Text("SPONSOR RUN")
+                        .font(Font.custom("Montserrat-Bold", size: 25))
+
                     Group {
-                        InfoViewRow(logoString: "OM_Logo", titleString: "Zaterdag 6 Juni, 2021", subTitleString: "9.00u - 12.00u")
-                        InfoViewRow(logoString: "OM_Logo", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
+                        InfoViewRow(logoString: "CalenderLogo", titleString: "Saturday, August 7, 2021", subTitleString: "01:00 PM - 04:00 PM")
+                        InfoViewRow(logoString: "LocationArrow", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
                     }
                     VStack(alignment: .leading) {
                         Text("Over het evenement")
-                            .font(.title2)
-                            .fontWeight(.none)
+                            .font(Font.custom("Montserrat-SemiBold", size: 18))
                         Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo")
-                            .font(.caption)
-                            .fontWeight(.light)
+                            .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         NavigationLink(destination: RegisterView()) {
                             Text("Join event")

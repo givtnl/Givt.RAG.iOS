@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-class UserProfileData: ObservableObject {
-    var userName: String = ""
-    var email: String = ""
-}
-
 struct ProfileView: View {
     var profile: UserProfileData
     

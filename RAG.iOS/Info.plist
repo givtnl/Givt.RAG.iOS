@@ -2,6 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/Montserrat/Montserrat-Black.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-BlackItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Bold.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-BoldItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-ExtraBold.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-ExtraLight.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-ExtraLightItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Italic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Light.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-LightItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Medium.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-MediumItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Regular.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-SemiBold.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-SemiBoldItalic.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-Thin.ttf</string>
+		<string>Fonts/Montserrat/Montserrat-ThinItalic.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
