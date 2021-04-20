@@ -17,9 +17,8 @@ struct InfoViewRow: View {
             Image(logoString).resizable().scaledToFit().frame(width: 36, height: 36, alignment: .topLeading)
             VStack(alignment: .leading, spacing: 1) {
                 Text(titleString)
-                    .font(/*@START_MENU_TOKEN@*/.caption/*@END_MENU_TOKEN@*/)
-                Text(subTitleString)
-                    .font(.caption2)
+                    .font(Font.custom("Montserrat-Regular", size: 12))
+                Text(subTitleString)                    .font(Font.custom("Montserrat-Regular", size: 10))
                     .foregroundColor(.gray)
             }.offset(x: 10, y: 0)
         }

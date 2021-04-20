@@ -22,21 +22,24 @@ struct RegisterView: View {
                     Text("Kortrijk, 01:00 PM - 04:00 PM")
                 }
             }.padding(10).background(Color.white).cornerRadius(5, corners: .allCorners).shadow(radius: 5)
+             
             VStack(alignment: .leading) {
                 Text("I want to run!")
-                
+                    .font(Font.custom("Montserrat-SemiBold", size: 18))
                 TextField("Username", text: $modelData.userName)
                     .padding(.leading, 10)
                     .frame(height: 40)
                     .background(Color("DarkerPink"))
                     .cornerRadius(5)
+                    .font(Font.custom("Montserrat-Medium", size: 12))
                     
                 TextField("Email", text: $modelData.email)
                     .padding(.leading, 10)
                     .frame(height: 40)
                     .background(Color("DarkerPink"))
                     .cornerRadius(5)
-                
+                    .font(Font.custom("Montserrat-Medium", size: 12))
+
                 HStack {
                     Spacer()
                     NavigationLink(destination: ProfileView(profile: modelData)) {
