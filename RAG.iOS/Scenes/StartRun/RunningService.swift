@@ -42,6 +42,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func initSystems() {
+        performChecks()
         updateState(newState: .Initializing)
         print("Initializing the running systems")
         locationManager.delegate = self
@@ -70,7 +71,12 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
+            print("coordinates are empty")
+            print("Performing checks again")
+            _ = self.performChecks()
+            return
+        }
         
         if (state == .Initializing) {
             if (locationsToReceiveBeforeReady == 0) {
@@ -107,14 +113,21 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
 
     func isRunningAvailable() -> Bool {
-        if (CLLocationManager.locationServicesEnabled()) {
+        return CLLocationManager.locationServicesEnabled();
+    }
+    
+    func performChecks() -> Bool {
+        if (locationManager.authorizationStatus == .authorizedAlways) {
             print("permission for take off is granted")
+            if (CLLocationManager.locationServicesEnabled()) {
+                print("location services are enabled")
+            }
         } else {
             print("permission for take off is not yet granted")
             print("asking permission")
             self.locationManager.requestAlwaysAuthorization()
         }
-        return CLLocationManager.locationServicesEnabled();
+        return false
     }
     
 }
