@@ -59,6 +59,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         print("Start updating the location")
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
     }
     
