@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartRunView: View {
     @ObservedObject var runningManager = RunningService();
-
+    
     var body: some View {
         VStack {
             Text(String(format: "%.1f s", runningManager.currentTime))
@@ -30,13 +30,12 @@ struct StartRunView: View {
             })
             .disabled(runningManager.state != .Running)
         }
-            .onAppear(perform: {
-                self.runningManager.initSystems()
-            })
-            .onDisappear(perform: {
-                runningManager.stopRunning()
-            })
-        
+        .onAppear(perform: {
+            self.runningManager.initSystems()
+        })
+        .onDisappear(perform: {
+            runningManager.stopRunning()
+        })
     }
 }
 

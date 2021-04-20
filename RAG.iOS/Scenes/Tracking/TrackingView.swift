@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct TrackingView: View {
+    var trackingData: TrackingViewData
+    
     var body: some View {
         VStack {
             VStack {
-                Text("00:00:00")
+                Text(trackingData.totalTime)
                     .font(Font.custom("Montserrat-Bold", size: 50))
                 HStack {
                     VStack {
-                        Text("0,00")
+                        Text(trackingData.totalDistance)
                             .font(Font.custom("Montserrat-Bold", size: 25))
                         Text("km")
                             .font(Font.custom("Montserrat-Medium", size: 12))
                     }
                     VStack {
-                        Text("00:00")
+                        Text(trackingData.totalMinutesPerUnit)
                             .font(Font.custom("Montserrat-Bold", size: 25))
                         Text("min/km")
                             .font(Font.custom("Montserrat-Medium", size: 12))
@@ -40,6 +42,6 @@ struct TrackingView: View {
 
 struct TrackingView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackingView()
+        TrackingView(trackingData: TrackingViewData())
     }
 }
