@@ -18,14 +18,19 @@ enum RunningSystemState {
 class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var currentDistance: Double = 0.0
     @Published var currentTime: Double = 0.01
+    @Published var currentPace: (Int, Int) = (0,0)
     @Published var state: RunningSystemState = .Stopped
     
     let locationManager = CLLocationManager()
     var lastSavedLocation: CLLocation? = nil
     
     var timer: Timer? = nil
-    
+    var saveDistanceAndTimeTimer: Timer? = nil
+    var calculatePaceTimer: Timer? = nil
+
     var doubleFormat = ".2"
+    
+    var timingList = FIFOList()
     
     func startRunning() {
         if (state == .Ready) {
@@ -33,9 +38,15 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
                 self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
                     self.currentTime += 0.01
                 }
+                self.saveDistanceAndTimeTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                    self.saveDistanceAndTime()
+                }
+                self.calculatePaceTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
+                    self.calculatePace()
+                }
                 updateState(newState: .Running)
                 print("Started measuring")
-         } else {
+            } else {
                 print("running is not available")
             }
         }
@@ -59,13 +70,22 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         print("Systems stopped")
         locationManager.stopUpdatingLocation()
         print(currentDistance)
+        
+        // reset all values
         currentDistance = 0.0
-        print(currentTime)
-        timer?.invalidate()
         currentTime = 0.0
+        timingList.wipe()
+        
+        print(currentTime)
+        
+        // invalidate all the timers
+        timer?.invalidate()
+        saveDistanceAndTimeTimer?.invalidate()
+        calculatePaceTimer?.invalidate()
+        
         print("Stopped measuring")
         updateState(newState: .Stopped)
- }
+    }
     
     var locationsToReceiveBeforeReady = 2
     
@@ -94,6 +114,25 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         }
     }
     
+    func saveDistanceAndTime() {
+        timingList.add(key: currentTime, value: currentDistance)
+    }
+    
+    func calculatePace() {
+        if (state == .Running && currentDistance > 0 && currentTime > 0) {
+            // from the timing list take the first item
+            guard let firstTiming = timingList.content.first else {
+                return
+            }
+            let secondsPerKilometer = (currentTime - firstTiming.key) / (currentDistance-firstTiming.value) * 1000
+            currentPace = secondsToHoursMinutesSeconds(seconds: Int(round(secondsPerKilometer)))
+        }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
+        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
     func updatePosition(location: CLLocation) {
         
         // if location is nil then just update the last saved location
@@ -111,7 +150,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         lastSavedLocation = newLocation
         currentDistance += resultInMeters
     }
-
+    
     func isRunningAvailable() -> Bool {
         return CLLocationManager.locationServicesEnabled();
     }
@@ -130,4 +169,37 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         return false
     }
     
+}
+
+class FIFOList {
+    var lenght = 10;
+    var content = Array<ListItem>()
+    
+    func add(key: Double, value:Double) {
+        if (content.count < lenght) {
+            content.append(ListItem(key: key, value: value))
+        }
+        else {
+            var newArray = Array<ListItem>()
+            for item in content.dropFirst() {
+                newArray.append(item)
+            }
+            newArray.append(ListItem(key: key, value: value))
+            content = newArray
+        }
+    }
+    
+    func wipe() {
+        content = Array<ListItem>()
+    }
+    
+    class ListItem {
+        var key: Double
+        var value: Double
+        
+        init(key: Double, value: Double) {
+            self.key = key
+            self.value = value
+        }
+    }
 }

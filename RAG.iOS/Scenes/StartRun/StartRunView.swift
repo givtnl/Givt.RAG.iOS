@@ -12,6 +12,7 @@ struct StartRunView: View {
 
     var body: some View {
         VStack {
+            Text(String(format: "snelheid %i:%i2", runningManager.currentPace.0, runningManager.currentPace.1))
             Text(String(format: "%.1f s", runningManager.currentTime))
             Text(String(format: "Je hebt al %.2f km gelopen!", runningManager.currentDistance/1000))
             Button(action: {
