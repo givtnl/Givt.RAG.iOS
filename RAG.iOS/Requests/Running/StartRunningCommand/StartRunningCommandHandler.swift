@@ -11,7 +11,6 @@ class StartRunningCommandHandler : RequestHandlerProtocol {
     
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
         print("Mediater works")
-        completion
     }
     
     func canHandle<R>(request: R) -> Bool where R : RequestProtocol {
