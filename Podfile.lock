@@ -1,16 +1,30 @@
 PODS:
+  - AppCenter (4.1.0):
+    - AppCenter/Analytics (= 4.1.0)
+    - AppCenter/Crashes (= 4.1.0)
+  - AppCenter/Analytics (4.1.0):
+    - AppCenter/Core
+  - AppCenter/Core (4.1.0)
+  - AppCenter/Crashes (4.1.0):
+    - AppCenter/Core
   - OpenAPIClient (1.0.0)
 
 DEPENDENCIES:
+  - AppCenter
   - OpenAPIClient (from `./open-api-client`)
+
+SPEC REPOS:
+  trunk:
+    - AppCenter
 
 EXTERNAL SOURCES:
   OpenAPIClient:
     :path: "./open-api-client"
 
 SPEC CHECKSUMS:
+  AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
   OpenAPIClient: 9463e074f7c19fecf6c3f9c0e565dd58aab45aa5
 
-PODFILE CHECKSUM: 668aa7ca0977956be19d400f8f8c05b0afc3f27e
+PODFILE CHECKSUM: 917f50c60ab7a8cc24b26604a8c81cab2959ead7
 
 COCOAPODS: 1.10.1
