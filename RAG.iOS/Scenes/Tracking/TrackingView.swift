@@ -28,7 +28,15 @@ struct TrackingView: View {
                             .font(Font.custom("Montserrat-Medium", size: 12))
                     }
                 }.padding(.top, 15)
-            }.padding(40).background(Color("DarkerPink")).cornerRadius(10)
+            }.frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                alignment: .center
+            )
+            .padding(40)
+            .background(Color("DarkerPink"))
+            .cornerRadius(10)
+            
             Button(runningManager.state == RunningSystemState.Running ? "Stop" : "Start") {
                 if (runningManager.state == RunningSystemState.Running) {
                     runningManager.stopRunning()
@@ -37,13 +45,15 @@ struct TrackingView: View {
                     runningManager.startRunning()
                 }
             }
-                .font(Font.custom("Montserrat-SemiBold", size: 14))
-                .frame(width: 100, height: 35).background(Color.black)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .offset(y: 30)
+            .font(Font.custom("Montserrat-SemiBold", size: 14))
+            .frame(width: 100, height: 35).background(Color.black)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .offset(y: 30)
             .disabled(runningManager.state == .Initializing || runningManager.state == .Stopped)
-        }.onAppear(perform: {
+        }
+        .padding(30)
+        .onAppear(perform: {
             runningManager.initSystems()
         })
     }
