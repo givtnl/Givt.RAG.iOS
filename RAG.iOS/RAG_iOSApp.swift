@@ -30,6 +30,6 @@ struct RAG_iOSApp: App {
     }
     
     func registerForAppCenter() {
-        AppCenter.start(withAppSecret: "ebb07586-528a-48ca-b65c-62ea3b562995", services: [Crashes.self])
+        AppCenter.start(withAppSecret: "c5a5af62-d182-48a4-9096-a7423d96da28", services: [Crashes.self])
     }
 }
