@@ -8,9 +8,17 @@
 import Foundation
 import CoreLocation
 
+enum RunningSystemState {
+    case Initializing
+    case Ready
+    case Running
+    case Stopped
+}
+
 class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var currentDistance: Double = 0.0
     @Published var currentTime: Double = 0.01
+    @Published var state: RunningSystemState = .Stopped
     
     let locationManager = CLLocationManager()
     var lastSavedLocation: CLLocation? = nil
@@ -20,35 +28,64 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     var doubleFormat = ".2"
     
     func startRunning() {
-        if (isRunningAvailable()) {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-            self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-                self.currentTime += 0.01
+        if (state == .Ready) {
+            if (isRunningAvailable()) {
+                self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+                    self.currentTime += 0.01
+                }
+                updateState(newState: .Running)
+                print("Started measuring")
+         } else {
+                print("running is not available")
             }
-        } else {
-            print("running is not available")
         }
     }
     
-    private func update() {
-        
+    func initSystems() {
+        updateState(newState: .Initializing)
+        print("Initializing the running systems")
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        print("Start updating the location")
+        locationManager.startUpdatingLocation()
+    }
+    
+    private func updateState(newState: RunningSystemState) {
+        state = newState
     }
     
     func stopRunning() {
+        print("Systems stopped")
         locationManager.stopUpdatingLocation()
         print(currentDistance)
         currentDistance = 0.0
         print(currentTime)
         timer?.invalidate()
-    }
+        currentTime = 0.0
+        print("Stopped measuring")
+        updateState(newState: .Stopped)
+ }
+    
+    var locationsToReceiveBeforeReady = 2
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         
-        updatePosition(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+        if (state == .Initializing) {
+            if (locationsToReceiveBeforeReady == 0) {
+                print("Systems armed and ready for use")
+                updateState(newState: .Ready)
+                locationsToReceiveBeforeReady = 2
+                return
+            }
+            locationsToReceiveBeforeReady -= 1
+            return
+        }
+        
+        if (state == .Running) {
+            updatePosition(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+        }
     }
     
     func updatePosition(location: CLLocation) {

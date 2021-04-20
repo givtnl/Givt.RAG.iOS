@@ -14,13 +14,24 @@ struct StartRunView: View {
         VStack {
             Text(String(format: "%.1f s", runningManager.currentTime))
             Text(String(format: "Je hebt al %.2f km gelopen!", runningManager.currentDistance/1000))
+            Button(action: {
+                runningManager.startRunning()
+            }
+            , label: {
+                Text("Start running")
+            })
+            .disabled(runningManager.state != .Ready)
+            Button(action: {
+                runningManager.stopRunning()
+                runningManager.initSystems()
+            }
+            , label: {
+                Text("Stop running")
+            })
+            .disabled(runningManager.state != .Running)
         }
             .onAppear(perform: {
-                do {
-                    runningManager.startRunning()
-                    _ = try Mediater.shared.send(request: StartRunningCommand())
-                } catch {}
-                
+                self.runningManager.initSystems()
             })
             .onDisappear(perform: {
                 runningManager.stopRunning()
