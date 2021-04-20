@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartRunView: View {
-    @ObservedObject var runningManager = RunningManager();
+    @ObservedObject var runningManager = RunningService();
 
     var body: some View {
         VStack {
@@ -16,8 +16,11 @@ struct StartRunView: View {
             Text(String(format: "Je hebt al %.2f km gelopen!", runningManager.currentDistance/1000))
         }
             .onAppear(perform: {
-                runningManager.startRunning()
-                try? Mediater.shared.send(request: StartRunningCommand())
+                do {
+                    runningManager.startRunning()
+                    _ = try Mediater.shared.send(request: StartRunningCommand())
+                } catch {}
+                
             })
             .onDisappear(perform: {
                 runningManager.stopRunning()

@@ -15,7 +15,7 @@
 		3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1A1262D8B9A0081766C /* RAG_iOS.xcdatamodeld */; };
 		3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AA262DAB840081766C /* ViewExtensions.swift */; };
 		3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E1AE262DAD640081766C /* InfoViewRow.swift */; };
-		A44564D8262E1B730017152E /* RunningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564D7262E1B730017152E /* RunningManager.swift */; };
+		A44564D8262E1B730017152E /* RunningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564D7262E1B730017152E /* RunningService.swift */; };
 		A44564F5262EB0110017152E /* RequestHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564ED262EB0110017152E /* RequestHandlerProtocol.swift */; };
 		A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564EE262EB0110017152E /* RequestProcessorProtocol.swift */; };
 		A44564F7262EB0110017152E /* MediaterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564EF262EB0110017152E /* MediaterProtocol.swift */; };
@@ -44,7 +44,7 @@
 		3245E1AE262DAD640081766C /* InfoViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewRow.swift; sourceTree = "<group>"; };
 		506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.debug.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RAG.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A44564D7262E1B730017152E /* RunningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningManager.swift; sourceTree = "<group>"; };
+		A44564D7262E1B730017152E /* RunningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningService.swift; sourceTree = "<group>"; };
 		A44564ED262EB0110017152E /* RequestHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandlerProtocol.swift; sourceTree = "<group>"; };
 		A44564EE262EB0110017152E /* RequestProcessorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProcessorProtocol.swift; sourceTree = "<group>"; };
 		A44564EF262EB0110017152E /* MediaterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaterProtocol.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				A48BB5B0262DD2660096E62F /* StartRunView.swift */,
-				A44564D7262E1B730017152E /* RunningManager.swift */,
+				A44564D7262E1B730017152E /* RunningService.swift */,
 			);
 			path = StartRun;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 				A44564FA262EB0110017152E /* MediaterError.swift in Sources */,
 				A44564F8262EB0110017152E /* RequestPreProcessorProtocol.swift in Sources */,
 				A44564FB262EB0110017152E /* RequestProtocol.swift in Sources */,
-				A44564D8262E1B730017152E /* RunningManager.swift in Sources */,
+				A44564D8262E1B730017152E /* RunningService.swift in Sources */,
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,

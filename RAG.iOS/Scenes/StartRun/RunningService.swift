@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class RunningManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var currentDistance: Double = 0.0
     @Published var currentTime: Double = 0.01
     
