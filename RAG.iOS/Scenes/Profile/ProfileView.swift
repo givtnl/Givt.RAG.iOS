@@ -22,10 +22,10 @@ struct ProfileView: View {
             Text("Goal")
             
             NavigationLink(destination: StartRunView()) {
-                Text("Save")
+                Text("Run")
             }
             NavigationLink(destination: StartRunView()) {
-                Text("Save")
+                Text("Invite")
             }
             NavigationLink(destination: StartRunView()) {
                 Text("Save")
