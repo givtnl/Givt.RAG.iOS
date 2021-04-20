@@ -18,6 +18,7 @@
 		32DA4DD4262EC4CC00A7AB40 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */; };
 		32DA4DD7262EC56500A7AB40 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD6262EC56500A7AB40 /* ProfileView.swift */; };
 		32DA4DDA262ECA7900A7AB40 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD9262ECA7900A7AB40 /* FinishView.swift */; };
+		32DA4DDD262ECEC300A7AB40 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DDC262ECEC300A7AB40 /* TrackingView.swift */; };
 		A44564D8262E1B730017152E /* RunningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564D7262E1B730017152E /* RunningService.swift */; };
 		A44564F5262EB0110017152E /* RequestHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564ED262EB0110017152E /* RequestHandlerProtocol.swift */; };
 		A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564EE262EB0110017152E /* RequestProcessorProtocol.swift */; };
@@ -48,6 +49,7 @@
 		32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		32DA4DD6262EC56500A7AB40 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32DA4DD9262ECA7900A7AB40 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		32DA4DDC262ECEC300A7AB40 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		506858EEF76F873CFF66294C /* Pods-RAG.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.debug.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RAG.iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44564D7262E1B730017152E /* RunningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningService.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = Finish;
 			sourceTree = "<group>";
 		};
+		32DA4DDB262ECEB200A7AB40 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				32DA4DDC262ECEC300A7AB40 /* TrackingView.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
 		9A1C9F4528EF2F53CA86EE74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,11 +224,12 @@
 		A48BB5AB262DD1720096E62F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				32DA4DD8262ECA6F00A7AB40 /* Finish */,
-				32DA4DD5262EC55A00A7AB40 /* Profile */,
-				32DA4DD2262EC4BD00A7AB40 /* Register */,
-				A48BB5AF262DD2500096E62F /* StartRun */,
 				A48BB5AE262DD2450096E62F /* Event */,
+				32DA4DD2262EC4BD00A7AB40 /* Register */,
+				32DA4DD5262EC55A00A7AB40 /* Profile */,
+				32DA4DDB262ECEB200A7AB40 /* Tracking */,
+				32DA4DD8262ECA6F00A7AB40 /* Finish */,
+				A48BB5AF262DD2500096E62F /* StartRun */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 				A44564F7262EB0110017152E /* MediaterProtocol.swift in Sources */,
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
 				A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */,
+				32DA4DDD262ECEC300A7AB40 /* TrackingView.swift in Sources */,
 				3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */,
 				A4456506262EB1830017152E /* StartRunningCommandHandler.swift in Sources */,
 				A44564FC262EB0110017152E /* Mediater.swift in Sources */,
