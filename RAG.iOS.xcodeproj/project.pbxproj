@@ -115,18 +115,18 @@
 		3245E195262D8B970081766C /* RAG.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3245E19A262D8B9A0081766C /* Assets.xcassets */,
 				32DA4DDF262ED6BE00A7AB40 /* Fonts */,
 				A44564FE262EB1470017152E /* Requests */,
 				A44564EC262EB0110017152E /* Mediater.Swift */,
+				32F134E8262F07D50004ED0C /* Extensions */,
+				32F134E9262F07DB0004ED0C /* Services */,
 				A48BB5AB262DD1720096E62F /* Scenes */,
 				3245E196262D8B970081766C /* RAG_iOSApp.swift */,
-				3245E19A262D8B9A0081766C /* Assets.xcassets */,
 				3245E19F262D8B9A0081766C /* Persistence.swift */,
-				A44564D7262E1B730017152E /* RunningService.swift */,
 				3245E1A4262D8B9A0081766C /* Info.plist */,
 				3245E1A1262D8B9A0081766C /* RAG_iOS.xcdatamodeld */,
 				3245E19C262D8B9A0081766C /* Preview Content */,
-				3245E1AA262DAB840081766C /* ViewExtensions.swift */,
 			);
 			path = RAG.iOS;
 			sourceTree = "<group>";
@@ -195,6 +195,22 @@
 				32DA4DE5262EF6CF00A7AB40 /* UserProfileData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32F134E8262F07D50004ED0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3245E1AA262DAB840081766C /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32F134E9262F07DB0004ED0C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A44564D7262E1B730017152E /* RunningService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		9A1C9F4528EF2F53CA86EE74 /* Frameworks */ = {
