@@ -22,7 +22,7 @@ struct TrackingView: View {
                             .font(Font.custom("Montserrat-Medium", size: 12))
                     }
                     VStack {
-                        Text(String(format: "%i:%2i", runningManager.currentPace.0, runningManager.currentPace.1))
+                        Text(String(format: "%i:%02d", runningManager.currentPace.0, runningManager.currentPace.1))
                             .font(Font.custom("Montserrat-Bold", size: 25))
                         Text("min/km")
                             .font(Font.custom("Montserrat-Medium", size: 12))

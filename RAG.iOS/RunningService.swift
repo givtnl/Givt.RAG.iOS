@@ -110,6 +110,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         }
         
         if (state == .Running) {
+            print("updated location")
             updatePosition(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
         }
     }
