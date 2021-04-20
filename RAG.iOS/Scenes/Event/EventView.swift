@@ -22,8 +22,8 @@ struct EventView: View {
                         .font(Font.custom("Montserrat-Bold", size: 25))
 
                     Group {
-                        InfoViewRow(logoString: "OM_Logo", titleString: "Saturday, August 7, 2021", subTitleString: "01:00 PM - 04:00 PM")
-                        InfoViewRow(logoString: "OM_Logo", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
+                        InfoViewRow(logoString: "CalenderLogo", titleString: "Saturday, August 7, 2021", subTitleString: "01:00 PM - 04:00 PM")
+                        InfoViewRow(logoString: "LocationArrow", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
                     }
                     VStack(alignment: .leading) {
                         Text("Over het evenement")
