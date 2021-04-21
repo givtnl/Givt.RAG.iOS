@@ -82,6 +82,7 @@ class RunningService: NSObject, ObservableObject {
         // reset all values
         currentDistance = 0.0
         currentTime = 0.0
+        currentPace = (0,0)
         timingList.wipe()
         
         print(currentTime)
