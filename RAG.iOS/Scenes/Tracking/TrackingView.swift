@@ -18,9 +18,14 @@ struct TrackingView: View {
                     coordinate: annotation.coordinates.center,
                                 anchorPoint: CGPoint(x: 0.5, y: 0.5)
                             ) {
-                                Circle()
-                                    .fill(Color.red)
-                                    .frame(width: 10, height: 10)
+                            Image("BjornFace")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 50)
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle().stroke(Color.white, lineWidth: 25/10))
+                                .shadow(radius: 10)
                             }
             }.padding(.bottom, 240)
             VStack {
@@ -68,7 +73,9 @@ struct TrackingView: View {
                     }
                     .disabled(runningService.state == .Initializing || runningService.state == .Stopped)
                     
-                }.background(Color.white).cornerRadius(25, corners: .topRight)
+                }
+                .background(Color.white)
+                .cornerRadius(25, corners: .topRight)
             }
             .onAppear(perform: {
                 runningService.initSystems()
