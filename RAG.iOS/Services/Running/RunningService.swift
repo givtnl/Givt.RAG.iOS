@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 import MapKit
 
 enum RunningSystemState {
@@ -16,12 +15,18 @@ enum RunningSystemState {
     case Stopped
 }
 
-class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
+struct CurrentUserLocation: Identifiable {
+    var id: UUID = UUID()
+    var coordinates: MKCoordinateRegion
+}
+
+class RunningService: NSObject, ObservableObject {
     @Published var currentDistance: Double = 0.0
     @Published var currentTime: Double = 0.01
     @Published var currentPace: (Int, Int) = (0,0)
     @Published var state: RunningSystemState = .Stopped
-    @Published var currentLocation: MKCoordinateRegion = MKCoordinateRegion()
+    @Published var currentLocation: CurrentUserLocation = CurrentUserLocation(coordinates: MKCoordinateRegion())
+    @Published var currentLocationArray: [CurrentUserLocation] = [CurrentUserLocation(coordinates: MKCoordinateRegion())]
     
     let locationManager = CLLocationManager()
     var lastSavedLocation: CLLocation? = nil
@@ -55,7 +60,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func initSystems() {
-        performChecks()
+        _ = performChecks()
         updateState(newState: .Initializing)
         print("Initializing the running systems")
         locationManager.delegate = self
@@ -65,7 +70,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.startUpdatingLocation()
     }
     
-    private func updateState(newState: RunningSystemState) {
+    func updateState(newState: RunningSystemState) {
         state = newState
     }
     
@@ -92,31 +97,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationsToReceiveBeforeReady = 2
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
-            print("coordinates are empty")
-            print("Performing checks again")
-            _ = self.performChecks()
-            return
-        }
-        
-        if (state == .Initializing) {
-            if (locationsToReceiveBeforeReady == 0) {
-                print("Systems armed and ready for use")
-                updateState(newState: .Ready)
-                locationsToReceiveBeforeReady = 2
-                return
-            }
-            locationsToReceiveBeforeReady -= 1
-            return
-        }
-        
-        if (state == .Running) {
-            print("updated location")
-            updatePosition(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
-        }
-    }
+    
 
     func saveDistanceAndTime() {
         timingList.add(key: currentTime, value: currentDistance)
@@ -150,17 +131,16 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
             lastSavedLocation = location
             return
         }
-        
-        updateLocation(location: location)
-        
+                
         updateDistance(oldLocation: lastSaved, newLocation: location)
         
     }
     func updateLocation(location: CLLocation) {
-        currentLocation = MKCoordinateRegion(
+        currentLocation = CurrentUserLocation(coordinates: MKCoordinateRegion(
             center: location.coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.0055)
-        )
+            span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.01)
+        ))
+        currentLocationArray[0] = currentLocation
     }
     func updateDistance(oldLocation: CLLocation, newLocation: CLLocation) {
         let resultInMeters = oldLocation.distance(from: newLocation)

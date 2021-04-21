@@ -13,7 +13,16 @@ struct TrackingView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $runningService.currentLocation)
+            Map(coordinateRegion: $runningService.currentLocation.coordinates, annotationItems: runningService.currentLocationArray){ annotation in
+                MapAnnotation(
+                    coordinate: annotation.coordinates.center,
+                                anchorPoint: CGPoint(x: 0.5, y: 0.5)
+                            ) {
+                                Circle()
+                                    .fill(Color.red)
+                                    .frame(width: 10, height: 10)
+                            }
+            }.padding(.bottom, 240)
             VStack {
                 Spacer()
                 VStack {
@@ -43,20 +52,21 @@ struct TrackingView: View {
                     )
                     .padding(40)
                     
-                    Button(runningService.state == RunningSystemState.Running ? "Stop" : "Start") {
+                    Button(action: {
                         if (runningService.state == RunningSystemState.Running) {
                             runningService.stopRunning()
                             runningService.initSystems()
                         } else {
                             runningService.startRunning()
                         }
+                    }) {
+                        Text(runningService.state == RunningSystemState.Running ? "Stop" : "Start")
+                            .font(Font.custom("Montserrat-SemiBold", size: 14))
+                            .frame(width: 240, height: 50).background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(25)
                     }
-                    .font(Font.custom("Montserrat-SemiBold", size: 14))
-                    .frame(width: 240, height: 50).background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(25)
                     .disabled(runningService.state == .Initializing || runningService.state == .Stopped)
-                    .padding(.bottom, 20)
                     
                 }.background(Color.white).cornerRadius(25, corners: .topRight)
             }
