@@ -27,10 +27,12 @@ struct TrackingView: View {
                                     Circle().stroke(Color.white, lineWidth: 25/10))
                                 .shadow(radius: 10)
                             }
-            }.padding(.bottom, 240)
+            }
+            .padding(.bottom, 240)
             VStack {
                 Spacer()
                 VStack {
+                    Spacer()
                     VStack {
                         Text(String(format: "%.1f", runningService.currentTime))
                             .font(Font.custom("Montserrat-Bold", size: 50))
@@ -72,8 +74,9 @@ struct TrackingView: View {
                             .cornerRadius(25)
                     }
                     .disabled(runningService.state == .Initializing || runningService.state == .Stopped)
-                    
+                    Spacer()
                 }
+                .frame(height:320)
                 .background(Color.white)
                 .cornerRadius(25, corners: .topRight)
             }
