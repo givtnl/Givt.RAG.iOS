@@ -117,7 +117,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
             updatePosition(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
         }
     }
-    
+
     func saveDistanceAndTime() {
         timingList.add(key: currentTime, value: currentDistance)
     }
@@ -128,7 +128,20 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
             guard let firstTiming = timingList.content.first else {
                 return
             }
-            let secondsPerKilometer = (currentTime - firstTiming.key) / (currentDistance-firstTiming.value) * 1000
+            
+            let newTime = currentTime - firstTiming.key
+            let newDistance = currentDistance - firstTiming.value
+            
+            guard newTime.isFinite && newDistance.isFinite else {
+                return
+            }
+            
+            let secondsPerKilometer = newTime / newDistance * 1000
+            
+            guard secondsPerKilometer.isFinite else {
+                return
+            }
+            
             currentPace = secondsToHoursMinutesSeconds(seconds: Int(round(secondsPerKilometer)))
         }
     }
