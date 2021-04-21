@@ -10,20 +10,10 @@ import MapKit
 
 struct TrackingView: View {
     @ObservedObject var runningManager = RunningService();
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 25.7617,
-            longitude: 80.1918
-        ),
-        span: MKCoordinateSpan(
-            latitudeDelta: 10,
-            longitudeDelta: 10
-        )
-    )
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $region)
+            Map(coordinateRegion: $runningManager.currentLocation)
             VStack {
                 Spacer()
                 VStack {
