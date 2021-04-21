@@ -12,17 +12,7 @@ struct RegisterView: View {
 
     var body: some View {
         VStack {
-//            HStack {
-//                VStack {
-//                    Text("07")
-//                    Text("Aug")
-//                }.padding(10).background(Color("LightPink"))
-//                VStack {
-//                    Text("Sponsor run")
-//                    Text("Kortrijk, 01:00 PM - 04:00 PM")
-//                }
-//            }.padding(10).background(Color.white).cornerRadius(5, corners: .allCorners).shadow(radius: 5)
-//
+
             VStack(alignment: .leading, spacing: 15) {
                 Text("I want to run!")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
