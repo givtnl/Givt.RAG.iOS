@@ -10,9 +10,11 @@ import MapKit
 
 struct TrackingView: View {
     @ObservedObject var runningService = RunningService();
+    @State private var isDoneWithRunning = false
     
     var body: some View {
         ZStack {
+            NavigationLink(destination: FinishView( results: RunResult() ), isActive: $isDoneWithRunning) { EmptyView() }
             Map(coordinateRegion: $runningService.currentLocation.coordinates, annotationItems: runningService.currentLocationArray){ annotation in
                 MapAnnotation(
                     coordinate: annotation.coordinates.center,
@@ -63,6 +65,7 @@ struct TrackingView: View {
                         if (runningService.state == RunningSystemState.Running) {
                             runningService.stopRunning()
                             runningService.initSystems()
+                            isDoneWithRunning = true
                         } else {
                             runningService.startRunning()
                         }
