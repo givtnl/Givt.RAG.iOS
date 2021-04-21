@@ -129,14 +129,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
                 return
             }
             
-            let newTime = currentTime - firstTiming.key
-            let newDistance = currentDistance - firstTiming.value
-            
-            guard newTime.isFinite && newDistance.isFinite else {
-                return
-            }
-            
-            let secondsPerKilometer = newTime / newDistance * 1000
+            let secondsPerKilometer = (currentTime - firstTiming.key) / (currentDistance - firstTiming.value) * 1000
             
             guard secondsPerKilometer.isFinite else {
                 return
