@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 enum RunningSystemState {
     case Initializing
@@ -20,6 +21,7 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var currentTime: Double = 0.01
     @Published var currentPace: (Int, Int) = (0,0)
     @Published var state: RunningSystemState = .Stopped
+    @Published var currentLocation: MKCoordinateRegion = MKCoordinateRegion()
     
     let locationManager = CLLocationManager()
     var lastSavedLocation: CLLocation? = nil
@@ -143,10 +145,17 @@ class RunningService: NSObject, CLLocationManagerDelegate, ObservableObject {
             return
         }
         
+        updateLocation(location: location)
+        
         updateDistance(oldLocation: lastSaved, newLocation: location)
         
     }
-    
+    func updateLocation(location: CLLocation) {
+        currentLocation = MKCoordinateRegion(
+            center: location.coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.0055)
+        )
+    }
     func updateDistance(oldLocation: CLLocation, newLocation: CLLocation) {
         let resultInMeters = oldLocation.distance(from: newLocation)
         lastSavedLocation = newLocation
