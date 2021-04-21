@@ -32,8 +32,18 @@ struct EventView: View {
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         NavigationLink(destination: RegisterView()) {
-                            Text("Join event")
-                        }
+                            HStack {
+                                Image("TinyRunningWoman")
+                                    .renderingMode(.original)
+                                Text("Join our run")
+                                    .font(Font.custom("Montserrat-SemiBold", size: 14))
+                                    .foregroundColor(Color.white)
+                                    .frame(width: 160, height: 25)
+                                    .padding(10)
+                                    .background(Color("OMRed"))
+                                    .cornerRadius(25)
+                            }
+                        }.buttonStyle(PlainButtonStyle())
                     }.offset(y: 15)
                 }.frame(
                     minWidth: 0,
