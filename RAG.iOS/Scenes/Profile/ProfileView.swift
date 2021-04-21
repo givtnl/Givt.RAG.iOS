@@ -21,30 +21,42 @@ struct ProfileView: View {
                     .overlay(
                         Circle().stroke(Color.white, lineWidth: 3))
                     .shadow(radius: 2)
-                
-                Text("John Doe")
+                Text(profile.userName)
                     .font(Font.custom("Montserrat-Medium", size: 16))
-                Text("johndoe@givtapp.net")
+                Text(profile.email)
                     .font(Font.custom("Montserrat", size: 12))
                 
             }
-            
-            Text("Events")
-            
-            EventRowView().padding([.top, .bottom], 20)
-
-            Text(profile.userName)
-            Text(profile.email)
-            Text("Goal")
-            
-            NavigationLink(destination: TrackingView()) {
-                Text("Run")
-            }
-            NavigationLink(destination: TrackingView()) {
-                Text("Invite")
-            }
-            NavigationLink(destination: TrackingView()) {
-                Text("Save")
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Events").padding(.leading, 30)
+                EventRowView().padding([.top, .bottom], 10)
+            }.padding(.top, 40)
+            Spacer()
+            HStack {
+                NavigationLink(destination: TrackingView()) {
+                    Button(action: {
+                        
+                    }) {
+                        Text("Run")
+                            .font(Font.custom("Montserrat-SemiBold", size: 14))
+                            .frame(width: 125, height: 35)
+                            .background(Color("PrimaryColor"))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                NavigationLink(destination: TrackingView()) {
+                    Button(action: {
+                        
+                    }) {
+                        Text("Invite")
+                            .font(Font.custom("Montserrat-SemiBold", size: 14))
+                            .frame(width: 125, height: 35)
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
             }
         }
     }
