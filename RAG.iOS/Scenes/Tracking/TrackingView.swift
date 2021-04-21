@@ -14,7 +14,7 @@ struct TrackingView: View {
     
     var body: some View {
         ZStack {
-            NavigationLink(destination: FinishView( results: RunResult() ), isActive: $isDoneWithRunning) { EmptyView() }
+            NavigationLink(destination: FinishView( results: RunResult(time: $runningService.currentTime, distance: $runningService.currentDistance, amount: 0.0)), isActive: $isDoneWithRunning) { EmptyView() }
             Map(coordinateRegion: $runningService.currentLocation.coordinates, annotationItems: runningService.currentLocationArray){ annotation in
                 MapAnnotation(
                     coordinate: annotation.coordinates.center,
