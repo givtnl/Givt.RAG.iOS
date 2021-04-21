@@ -9,26 +9,26 @@ import SwiftUI
 import MapKit
 
 struct TrackingView: View {
-    @ObservedObject var runningManager = RunningService();
+    @ObservedObject var runningService = RunningService();
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $runningManager.currentLocation)
+            Map(coordinateRegion: $runningService.currentLocation)
             VStack {
                 Spacer()
                 VStack {
                     VStack {
-                        Text(String(format: "%.1f", runningManager.currentTime))
+                        Text(String(format: "%.1f", runningService.currentTime))
                             .font(Font.custom("Montserrat-Bold", size: 50))
                         HStack {
                             VStack {
-                                Text(String(format: "%.2f", runningManager.currentDistance/1000))
+                                Text(String(format: "%.2f", runningService.currentDistance/1000))
                                     .font(Font.custom("Montserrat-Bold", size: 25))
                                 Text("km")
                                     .font(Font.custom("Montserrat-Medium", size: 12))
                             }
                             VStack {
-                                Text(String(format: "%i:%02d", runningManager.currentPace.0, runningManager.currentPace.1))
+                                Text(String(format: "%i:%02d", runningService.currentPace.0, runningService.currentPace.1))
                                     .font(Font.custom("Montserrat-Bold", size: 25))
                                 Text("min/km")
                                     .font(Font.custom("Montserrat-Medium", size: 12))
@@ -43,25 +43,25 @@ struct TrackingView: View {
                     )
                     .padding(40)
                     
-                    Button(runningManager.state == RunningSystemState.Running ? "Stop" : "Start") {
-                        if (runningManager.state == RunningSystemState.Running) {
-                            runningManager.stopRunning()
-                            runningManager.initSystems()
+                    Button(runningService.state == RunningSystemState.Running ? "Stop" : "Start") {
+                        if (runningService.state == RunningSystemState.Running) {
+                            runningService.stopRunning()
+                            runningService.initSystems()
                         } else {
-                            runningManager.startRunning()
+                            runningService.startRunning()
                         }
                     }
                     .font(Font.custom("Montserrat-SemiBold", size: 14))
                     .frame(width: 240, height: 50).background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(25)
-                    .disabled(runningManager.state == .Initializing || runningManager.state == .Stopped)
+                    .disabled(runningService.state == .Initializing || runningService.state == .Stopped)
                     .padding(.bottom, 20)
                     
                 }.background(Color.white).cornerRadius(25, corners: .topRight)
             }
             .onAppear(perform: {
-                runningManager.initSystems()
+                runningService.initSystems()
             })
             .frame(
                 minWidth: 0,
