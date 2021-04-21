@@ -81,10 +81,16 @@ struct TrackingView: View {
                         }
                     }) {
                         Text(runningService.state == RunningSystemState.Running ? "Stop" : "Start")
-                            .font(Font.custom("Montserrat-SemiBold", size: 14))
-                            .frame(width: 240, height: 50).background(Color.black)
-                            .foregroundColor(.white)
+                            .font(Font.custom("Montserrat-SemiBold", size: 20))
+                            .frame(width: 240, height: 50)
+                            .background(runningService.state == RunningSystemState.Running ? Color("PrimaryColor") : Color.white)
+                            .foregroundColor(runningService.state == RunningSystemState.Running ? Color.white : Color("PrimaryColor"))
                             .cornerRadius(25)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(runningService.state == RunningSystemState.Running ? Color.white : Color("PrimaryColor"), lineWidth: 2)
+                            )
+
                     }
                     .disabled(runningService.state == .Initializing || runningService.state == .Stopped)
                     Spacer()
