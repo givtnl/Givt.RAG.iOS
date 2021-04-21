@@ -29,7 +29,7 @@ struct FinishView: View {
                     .font(Font.custom("Montserrat-Bold", size: 25))
                 HStack(){
                     VStack {
-                        Text(String(results.time))
+                        Text(String(format: "%.1fs", results.time))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Time")
                             .font(Font.custom("Montserrat", size: 10))
@@ -39,7 +39,7 @@ struct FinishView: View {
                     .shadow(radius: 5)
                     Spacer()
                     VStack {
-                        Text(String(results.distance))
+                        Text(String(format: "%.2f km", results.distance/1000))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Distance")
                             .font(Font.custom("Montserrat", size: 10))
@@ -49,7 +49,7 @@ struct FinishView: View {
                         .shadow(radius: 5)
                     Spacer()
                     VStack {
-                        Text(String(results.amount))
+                        Text(String(format: "€ %.2f", results.amount))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Amount raised")
                             .font(Font.custom("Montserrat", size: 10))
@@ -57,7 +57,7 @@ struct FinishView: View {
                         .background(Color.white)
                         .cornerRadius(35)
                         .shadow(radius: 5)
-                }
+                }.padding(.top, 30)
                 Spacer()
                 HStack {
                     NavigationLink(destination: RegisterView()){
@@ -89,7 +89,7 @@ struct FinishView: View {
 
 struct FinishView_Previews: PreviewProvider {
     static var previews: some View {
-        FinishView(results: RunResult(time: 5000, distance: 10000, amount: 01023123))
+        FinishView(results: RunResult(time: 43.8, distance: 10000, amount: 250))
         
     }
 }
