@@ -39,7 +39,7 @@ struct EventRowView: View {
         )
         .background(Color.white)
         .cornerRadius(10, corners: .allCorners)
-        .shadow(radius: 5)
+        .shadow(color: Color(hue: 1.0, saturation: 1.0, brightness: 0.001, opacity: 0.15), radius: 10, x: 2, y: 2)
         .padding(.leading, 30)
         .padding(.trailing, 30)
     }

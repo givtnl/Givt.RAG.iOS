@@ -34,28 +34,20 @@ struct ProfileView: View {
             Spacer()
             HStack {
                 NavigationLink(destination: TrackingView()) {
-                    Button(action: {
-                        
-                    }) {
-                        Text("Run")
-                            .font(Font.custom("Montserrat-SemiBold", size: 14))
-                            .frame(width: 125, height: 35)
-                            .background(Color("PrimaryColor"))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
+                    Text("Invite")
+                        .font(Font.custom("Montserrat-SemiBold", size: 14))
+                        .frame(width: 125, height: 35)
+                        .background(Color("PrimaryColor"))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
                 NavigationLink(destination: TrackingView()) {
-                    Button(action: {
-                        
-                    }) {
-                        Text("Invite")
-                            .font(Font.custom("Montserrat-SemiBold", size: 14))
-                            .frame(width: 125, height: 35)
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
+                    Text("Run")
+                        .font(Font.custom("Montserrat-SemiBold", size: 14))
+                        .frame(width: 125, height: 35)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
             }
         }
