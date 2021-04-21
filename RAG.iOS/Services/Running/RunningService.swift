@@ -60,6 +60,10 @@ class RunningService: NSObject, ObservableObject {
     }
     
     func initSystems() {
+        currentDistance = 0.0
+        currentTime = 0.0
+        currentPace = (0,0)
+        
         _ = performChecks()
         updateState(newState: .Initializing)
         print("Initializing the running systems")
@@ -80,9 +84,7 @@ class RunningService: NSObject, ObservableObject {
         print(currentDistance)
         
         // reset all values
-        currentDistance = 0.0
-        currentTime = 0.0
-        currentPace = (0,0)
+
         timingList.wipe()
         
         print(currentTime)

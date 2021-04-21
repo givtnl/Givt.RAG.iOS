@@ -8,11 +8,11 @@
 import SwiftUI
 
 class RunResult: ObservableObject {
-    var time: String
-    var distance: String
-    var amount: String
+    var time: Double
+    var distance: Double
+    var amount: Double
     
-    init(time: String, distance: String, amount: String) {
+    init(time: Double, distance: Double, amount: Double) {
         self.time = time
         self.distance = distance
         self.amount = amount
@@ -29,7 +29,7 @@ struct FinishView: View {
                     .font(Font.custom("Montserrat-Bold", size: 25))
                 HStack(){
                     VStack {
-                        Text(results.time)
+                        Text(String(results.time))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Time")
                             .font(Font.custom("Montserrat", size: 10))
@@ -39,7 +39,7 @@ struct FinishView: View {
                     .shadow(radius: 5)
                     Spacer()
                     VStack {
-                        Text(results.distance)
+                        Text(String(results.distance))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Distance")
                             .font(Font.custom("Montserrat", size: 10))
@@ -49,7 +49,7 @@ struct FinishView: View {
                         .shadow(radius: 5)
                     Spacer()
                     VStack {
-                        Text(results.amount)
+                        Text(String(results.amount))
                             .font(Font.custom("Montserrat-Bold", size: 16))
                         Text("Amount raised")
                             .font(Font.custom("Montserrat", size: 10))
@@ -89,7 +89,7 @@ struct FinishView: View {
 
 struct FinishView_Previews: PreviewProvider {
     static var previews: some View {
-        FinishView(results: RunResult(time: "0:15:45", distance: "0.10 km", amount: "shekkels"))
+        FinishView(results: RunResult(time: 5000, distance: 10000, amount: 01023123))
         
     }
 }
