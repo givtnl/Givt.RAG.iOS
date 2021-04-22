@@ -11,9 +11,9 @@ public struct ExceptionModel: Codable {
 
     public var errorCode: String?
     public var errorMessage: String?
-    public var additionalInformation: String?
+    public var additionalInformation: [ValidationExceptionError]?
 
-    public init(errorCode: String? = nil, errorMessage: String? = nil, additionalInformation: String? = nil) {
+    public init(errorCode: String? = nil, errorMessage: String? = nil, additionalInformation: [ValidationExceptionError]? = nil) {
         self.errorCode = errorCode
         self.errorMessage = errorMessage
         self.additionalInformation = additionalInformation

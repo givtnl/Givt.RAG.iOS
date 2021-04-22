@@ -43,7 +43,6 @@
 		A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */; };
 		A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */; };
 		A456BCEF2631735200072DB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEE2631735200072DB3 /* User.swift */; };
-		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +85,6 @@
 		A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommand.swift; sourceTree = "<group>"; };
 		A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommandHandler.swift; sourceTree = "<group>"; };
 		A456BCEE2631735200072DB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +114,6 @@
 		3245E18A262D8B970081766C = {
 			isa = PBXGroup;
 			children = (
-				A4BF46C1262DADDD00DCC327 /* open-api-client */,
 				3245E195262D8B970081766C /* RAG.iOS */,
 				3245E194262D8B970081766C /* Products */,
 				2E9BFC2FC9B296CC731A298A /* Pods */,
@@ -431,7 +428,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */,
 				3245E19E262D8B9A0081766C /* Preview Assets.xcassets in Resources */,
 				3245E19B262D8B9A0081766C /* Assets.xcassets in Resources */,
 				32DA4DE0262ED6BE00A7AB40 /* Fonts in Resources */,

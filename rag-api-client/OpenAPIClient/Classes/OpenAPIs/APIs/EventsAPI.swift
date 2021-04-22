@@ -9,14 +9,13 @@ import Foundation
 
 open class EventsAPI {
     /**
-     GetEventDetail
-     
+
      - parameter id: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func eventsGet(id: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: EventDetailModel?, _ error: Error?) -> Void)) {
-        eventsGetWithRequestBuilder(id: id).execute(apiResponseQueue) { result -> Void in
+    open class func getEventDetail(id: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: EventDetailModel?, _ error: Error?) -> Void)) {
+        getEventDetailWithRequestBuilder(id: id).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -27,13 +26,11 @@ open class EventsAPI {
     }
 
     /**
-     GetEventDetail
      - GET /Events/{id}
-     - Returns the details for a specific event
      - parameter id: (path)  
      - returns: RequestBuilder<EventDetailModel> 
      */
-    open class func eventsGetWithRequestBuilder(id: String) -> RequestBuilder<EventDetailModel> {
+    open class func getEventDetailWithRequestBuilder(id: String) -> RequestBuilder<EventDetailModel> {
         var path = "/Events/{id}"
         let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
         let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -55,13 +52,12 @@ open class EventsAPI {
     }
 
     /**
-     GetEventsList
-     
+
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func eventsGetAll(apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: [EventListModel]?, _ error: Error?) -> Void)) {
-        eventsGetAllWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
+    open class func getEventsList(apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: [EventListModel]?, _ error: Error?) -> Void)) {
+        getEventsListWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -72,12 +68,10 @@ open class EventsAPI {
     }
 
     /**
-     GetEventsList
      - GET /Events
-     - Returns a list of events
      - returns: RequestBuilder<[EventListModel]> 
      */
-    open class func eventsGetAllWithRequestBuilder() -> RequestBuilder<[EventListModel]> {
+    open class func getEventsListWithRequestBuilder() -> RequestBuilder<[EventListModel]> {
         let path = "/Events"
         let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String: Any]? = nil

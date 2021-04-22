@@ -1,22 +1,20 @@
-# ParticipantsAPI
+# BackersAPI
 
-All URIs are relative to *https://localhost:5001*
+All URIs are relative to *http://givt-debug-rag-api.westeurope.azurecontainer.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**participantsGet**](ParticipantsAPI.md#participantsget) | **GET** /events/{eventId}/participants/{id} | GetParticipantDetail
-[**participantsGetAll**](ParticipantsAPI.md#participantsgetall) | **GET** /events/{eventId}/participants | GetParticipantsList
-[**participantsPost**](ParticipantsAPI.md#participantspost) | **POST** /events/{eventId}/participants | RegisterParticipant
+[**getBackerDetail**](BackersAPI.md#getbackerdetail) | **GET** /events/{eventId}/participants/{participantId}/backers/{id} | 
+[**getBackersList**](BackersAPI.md#getbackerslist) | **GET** /events/{eventId}/participants/{participantId}/backers | 
+[**registerBacker**](BackersAPI.md#registerbacker) | **POST** /events/{eventId}/participants/{participantId}/backers | 
 
 
-# **participantsGet**
+# **getBackerDetail**
 ```swift
-    open class func participantsGet(eventId: String, id: String, completion: @escaping (_ data: ParticipantDetailModel?, _ error: Error?) -> Void)
+    open class func getBackerDetail(eventId: String, participantId: String, id: String, completion: @escaping (_ data: BackerDetailModel?, _ error: Error?) -> Void)
 ```
 
-GetParticipantDetail
 
-Returns the detail of a participant for a given event
 
 ### Example 
 ```swift
@@ -24,10 +22,10 @@ Returns the detail of a participant for a given event
 import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
+let participantId = "participantId_example" // String | 
 let id = "id_example" // String | 
 
-// GetParticipantDetail
-ParticipantsAPI.participantsGet(eventId: eventId, id: id) { (response, error) in
+BackersAPI.getBackerDetail(eventId: eventId, participantId: participantId, id: id) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,11 +42,12 @@ ParticipantsAPI.participantsGet(eventId: eventId, id: id) { (response, error) in
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **String** |  | 
+ **participantId** | **String** |  | 
  **id** | **String** |  | 
 
 ### Return type
 
-[**ParticipantDetailModel**](ParticipantDetailModel.md)
+[**BackerDetailModel**](BackerDetailModel.md)
 
 ### Authorization
 
@@ -61,14 +60,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **participantsGetAll**
+# **getBackersList**
 ```swift
-    open class func participantsGetAll(eventId: String, completion: @escaping (_ data: [ParticipantListModel]?, _ error: Error?) -> Void)
+    open class func getBackersList(eventId: String, participantId: String, completion: @escaping (_ data: [BackerListModel]?, _ error: Error?) -> Void)
 ```
 
-GetParticipantsList
 
-Returns a list of participants for a given event
 
 ### Example 
 ```swift
@@ -76,9 +73,9 @@ Returns a list of participants for a given event
 import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
+let participantId = "participantId_example" // String | 
 
-// GetParticipantsList
-ParticipantsAPI.participantsGetAll(eventId: eventId) { (response, error) in
+BackersAPI.getBackersList(eventId: eventId, participantId: participantId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -95,10 +92,11 @@ ParticipantsAPI.participantsGetAll(eventId: eventId) { (response, error) in
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **String** |  | 
+ **participantId** | **String** |  | 
 
 ### Return type
 
-[**[ParticipantListModel]**](ParticipantListModel.md)
+[**[BackerListModel]**](BackerListModel.md)
 
 ### Authorization
 
@@ -111,14 +109,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **participantsPost**
+# **registerBacker**
 ```swift
-    open class func participantsPost(eventId: String, registerParticipantCommand: RegisterParticipantCommand, completion: @escaping (_ data: ParticipantDetailModel?, _ error: Error?) -> Void)
+    open class func registerBacker(eventId: String, participantId: String, registerBackerCommand: RegisterBackerCommand, completion: @escaping (_ data: BackerDetailModel?, _ error: Error?) -> Void)
 ```
 
-RegisterParticipant
 
-Registers a participant for a given event
 
 ### Example 
 ```swift
@@ -126,10 +122,10 @@ Registers a participant for a given event
 import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
-let registerParticipantCommand = RegisterParticipantCommand(eventId: "eventId_example", name: "name_example") // RegisterParticipantCommand | 
+let participantId = "participantId_example" // String | 
+let registerBackerCommand = RegisterBackerCommand(name: "name_example", emailAddress: "emailAddress_example", amount: 123) // RegisterBackerCommand | 
 
-// RegisterParticipant
-ParticipantsAPI.participantsPost(eventId: eventId, registerParticipantCommand: registerParticipantCommand) { (response, error) in
+BackersAPI.registerBacker(eventId: eventId, participantId: participantId, registerBackerCommand: registerBackerCommand) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -146,11 +142,12 @@ ParticipantsAPI.participantsPost(eventId: eventId, registerParticipantCommand: r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **String** |  | 
- **registerParticipantCommand** | [**RegisterParticipantCommand**](RegisterParticipantCommand.md) |  | 
+ **participantId** | **String** |  | 
+ **registerBackerCommand** | [**RegisterBackerCommand**](RegisterBackerCommand.md) |  | 
 
 ### Return type
 
-[**ParticipantDetailModel**](ParticipantDetailModel.md)
+[**BackerDetailModel**](BackerDetailModel.md)
 
 ### Authorization
 

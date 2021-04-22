@@ -9,11 +9,9 @@ import Foundation
 
 public struct RegisterParticipantCommand: Codable {
 
-    public var eventId: String?
     public var name: String?
 
-    public init(eventId: String? = nil, name: String? = nil) {
-        self.eventId = eventId
+    public init(name: String? = nil) {
         self.name = name
     }
 

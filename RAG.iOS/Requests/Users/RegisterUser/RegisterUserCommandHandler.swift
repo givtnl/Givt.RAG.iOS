@@ -6,15 +6,23 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 class RegisterUserCommandHandler: RequestHandlerProtocol {
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
         
-        let user: User = (request as! RegisterUserCommand).user
         
-        print("registering user with email \(user.email) and name \(user.name)")
+        let command = request as! RegisterUserCommand
         
-        try? completion(true as! R.TResponse)
+        let user: User = command.user
+        
+        ParticipantsAPI.registerParticipant(eventId: String(command.eventId), registerParticipantCommand: RegisterParticipantCommand(name: user.name)) { (participant, error) in
+            print("YAY")
+            try?completion(true as! R.TResponse)
+        }
+
+        
+        print("registering user with email \(user.email) and name \(user.name) for event with id \(command.eventId)")
     }
     
     func canHandle<R>(request: R) -> Bool where R : RequestProtocol {

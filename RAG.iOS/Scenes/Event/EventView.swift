@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreData
-import OpenAPIClient
 
 struct EventView: View {
     @State private var canJoinEvent = false

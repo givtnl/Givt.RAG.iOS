@@ -1,21 +1,19 @@
 # EventsAPI
 
-All URIs are relative to *https://localhost:5001*
+All URIs are relative to *http://givt-debug-rag-api.westeurope.azurecontainer.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventsGet**](EventsAPI.md#eventsget) | **GET** /Events/{id} | GetEventDetail
-[**eventsGetAll**](EventsAPI.md#eventsgetall) | **GET** /Events | GetEventsList
+[**getEventDetail**](EventsAPI.md#geteventdetail) | **GET** /Events/{id} | 
+[**getEventsList**](EventsAPI.md#geteventslist) | **GET** /Events | 
 
 
-# **eventsGet**
+# **getEventDetail**
 ```swift
-    open class func eventsGet(id: String, completion: @escaping (_ data: EventDetailModel?, _ error: Error?) -> Void)
+    open class func getEventDetail(id: String, completion: @escaping (_ data: EventDetailModel?, _ error: Error?) -> Void)
 ```
 
-GetEventDetail
 
-Returns the details for a specific event
 
 ### Example 
 ```swift
@@ -24,8 +22,7 @@ import OpenAPIClient
 
 let id = "id_example" // String | 
 
-// GetEventDetail
-EventsAPI.eventsGet(id: id) { (response, error) in
+EventsAPI.getEventDetail(id: id) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -58,14 +55,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **eventsGetAll**
+# **getEventsList**
 ```swift
-    open class func eventsGetAll(completion: @escaping (_ data: [EventListModel]?, _ error: Error?) -> Void)
+    open class func getEventsList(completion: @escaping (_ data: [EventListModel]?, _ error: Error?) -> Void)
 ```
 
-GetEventsList
 
-Returns a list of events
 
 ### Example 
 ```swift
@@ -73,8 +68,7 @@ Returns a list of events
 import OpenAPIClient
 
 
-// GetEventsList
-EventsAPI.eventsGetAll() { (response, error) in
+EventsAPI.getEventsList() { (response, error) in
     guard error == nil else {
         print(error)
         return

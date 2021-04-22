@@ -1,6 +1,6 @@
 platform :ios,10.0
 
 target 'RAG.iOS' do
-    pod 'OpenAPIClient', :path => './open-api-client'
     pod 'AppCenter'
+    pod 'OpenAPIClient', :path => './rag-api-client/'
 end
