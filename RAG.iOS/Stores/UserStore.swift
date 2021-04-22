@@ -24,11 +24,6 @@ class UserStore {
 }
 
 class DataUser: Object {
-    @objc dynamic var email: String
-    @objc dynamic var name: String
-    
-    init(email: String, name: String) {
-        self.email = email
-        self.name = name
-    }
+    @objc dynamic var email: String = ""
+    @objc dynamic var name: String = ""
 }
