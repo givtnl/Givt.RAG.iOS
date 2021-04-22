@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject private var modelData = UserProfileData()
+    @State private var modelData = UserProfileData()
     @State private var didRegisterForEvent = false
     var EventId: Int
-    
+    let userStore = UserStore.shared
     
     var body: some View {
         VStack {
@@ -116,6 +116,13 @@ struct RegisterView: View {
         .ignoresSafeArea(edges: .all)
         .onAppear(perform: {
             print(EventId)
+            guard let user = userStore.getUser(objectType: DataUser.self) else {
+                return
+            }
+            let profile = UserProfileData()
+            profile.email = (user as! DataUser).email
+            profile.userName = (user as! DataUser).name
+            modelData = profile
         })
     }
 }
