@@ -11,7 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - AppCenter
-  - OpenAPIClient (from `rag-api-client/`)
+  - OpenAPIClient (from `./rag-api-client/`)
 
 SPEC REPOS:
   trunk:
@@ -19,12 +19,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   OpenAPIClient:
-    :path: rag-api-client/
+    :path: "./rag-api-client/"
 
 SPEC CHECKSUMS:
   AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
   OpenAPIClient: 9463e074f7c19fecf6c3f9c0e565dd58aab45aa5
 
-PODFILE CHECKSUM: 210b86404ace5f6b924dcfc000d6a75194d4c374
+PODFILE CHECKSUM: 467f1b24ec8a023509cdd26b71d48c5cd1b7fafa
 
 COCOAPODS: 1.10.1

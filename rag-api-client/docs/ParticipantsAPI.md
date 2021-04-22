@@ -174,7 +174,7 @@ No authorization required
 import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
-let registerParticipantCommand = RegisterParticipantCommand(name: "name_example") // RegisterParticipantCommand | 
+let registerParticipantCommand = RegisterParticipantCommand(name: "name_example", goals: [RegisterParticipantGoalCommand(type: ParticipantGoalType(), value: "value_example")]) // RegisterParticipantCommand | 
 
 ParticipantsAPI.registerParticipant(eventId: eventId, registerParticipantCommand: registerParticipantCommand) { (response, error) in
     guard error == nil else {

@@ -46,9 +46,12 @@ Class | Method | HTTP request | Description
  - [ExceptionModel](docs/ExceptionModel.md)
  - [FinishParticipantCommand](docs/FinishParticipantCommand.md)
  - [ParticipantDetailModel](docs/ParticipantDetailModel.md)
+ - [ParticipantGoalDetailModel](docs/ParticipantGoalDetailModel.md)
+ - [ParticipantGoalType](docs/ParticipantGoalType.md)
  - [ParticipantListModel](docs/ParticipantListModel.md)
  - [RegisterBackerCommand](docs/RegisterBackerCommand.md)
  - [RegisterParticipantCommand](docs/RegisterParticipantCommand.md)
+ - [RegisterParticipantGoalCommand](docs/RegisterParticipantGoalCommand.md)
  - [ValidationExceptionError](docs/ValidationExceptionError.md)
 
 

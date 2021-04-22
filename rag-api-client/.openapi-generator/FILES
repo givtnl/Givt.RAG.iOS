@@ -20,9 +20,12 @@ OpenAPIClient/Classes/OpenAPIs/Models/EventListModel.swift
 OpenAPIClient/Classes/OpenAPIs/Models/ExceptionModel.swift
 OpenAPIClient/Classes/OpenAPIs/Models/FinishParticipantCommand.swift
 OpenAPIClient/Classes/OpenAPIs/Models/ParticipantDetailModel.swift
+OpenAPIClient/Classes/OpenAPIs/Models/ParticipantGoalDetailModel.swift
+OpenAPIClient/Classes/OpenAPIs/Models/ParticipantGoalType.swift
 OpenAPIClient/Classes/OpenAPIs/Models/ParticipantListModel.swift
 OpenAPIClient/Classes/OpenAPIs/Models/RegisterBackerCommand.swift
 OpenAPIClient/Classes/OpenAPIs/Models/RegisterParticipantCommand.swift
+OpenAPIClient/Classes/OpenAPIs/Models/RegisterParticipantGoalCommand.swift
 OpenAPIClient/Classes/OpenAPIs/Models/ValidationExceptionError.swift
 OpenAPIClient/Classes/OpenAPIs/OpenISO8601DateFormatter.swift
 OpenAPIClient/Classes/OpenAPIs/SynchronizedDictionary.swift
@@ -38,10 +41,13 @@ docs/EventsAPI.md
 docs/ExceptionModel.md
 docs/FinishParticipantCommand.md
 docs/ParticipantDetailModel.md
+docs/ParticipantGoalDetailModel.md
+docs/ParticipantGoalType.md
 docs/ParticipantListModel.md
 docs/ParticipantsAPI.md
 docs/RegisterBackerCommand.md
 docs/RegisterParticipantCommand.md
+docs/RegisterParticipantGoalCommand.md
 docs/ValidationExceptionError.md
 git_push.sh
 project.yml
