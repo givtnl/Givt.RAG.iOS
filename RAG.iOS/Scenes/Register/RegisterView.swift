@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject private var modelData = UserProfileData()
+    var EventId: Int
 
     var body: some View {
         VStack {
@@ -55,6 +56,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(EventId: 1)
     }
 }

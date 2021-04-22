@@ -26,7 +26,11 @@ struct RAG_iOSApp: App {
     }
     
     func registerHandlers() {
+        // RunningHandlers
         Mediater.shared.registerHandler(handler: StartRunningCommandHandler())
+        
+        // EventHandlers
+        Mediater.shared.registerHandler(handler: JoinEventCommandHandler())
     }
     
     func registerForAppCenter() {

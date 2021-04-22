@@ -60,7 +60,7 @@ struct FinishView: View {
                 }.padding(.top, 30)
                 Spacer()
                 HStack {
-                    NavigationLink(destination: RegisterView()){
+                    NavigationLink(destination: RegisterView(EventId: 1)){
                         Text("Ah yeet")
                     }.frame(width: 250, height: 50)
                         .background(Color.black)

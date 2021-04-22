@@ -9,10 +9,19 @@ import SwiftUI
 import CoreData
 import OpenAPIClient
 
-struct EventView: View {    
+struct EventView: View {
+    @State private var canJoinEvent = false
+    private var eventId = 1
+
     var body: some View {
         NavigationView{
             VStack(alignment: .leading) {
+                NavigationLink(destination:
+                                RegisterView(EventId: eventId),
+                                isActive: $canJoinEvent
+                ) {
+                    EmptyView()
+                }
                 ZStack(alignment: .topLeading) {
                     Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
                     Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
@@ -31,7 +40,11 @@ struct EventView: View {
                         Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo")
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
-                        NavigationLink(destination: RegisterView()) {
+                        Button(action: {
+                            _ = try? Mediater.shared.sendAsync(request: JoinEventCommand(eventId: eventId), completion: { response in
+                                self.canJoinEvent = response
+                            })
+                        }) {
                             HStack {
                                 Image("TinyRunningWoman")
                                     .renderingMode(.original)

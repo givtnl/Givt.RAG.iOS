@@ -35,6 +35,8 @@
 		A44564FC262EB0110017152E /* Mediater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44564F4262EB0110017152E /* Mediater.swift */; };
 		A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4456501262EB16D0017152E /* StartRunningCommand.swift */; };
 		A4456506262EB1830017152E /* StartRunningCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4456505262EB1830017152E /* StartRunningCommandHandler.swift */; };
+		A456BCD526316C2900072DB3 /* JoinEventCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCD426316C2900072DB3 /* JoinEventCommand.swift */; };
+		A456BCDA26316C4000072DB3 /* JoinEventCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */; };
 		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		A44564F4262EB0110017152E /* Mediater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mediater.swift; sourceTree = "<group>"; };
 		A4456501262EB16D0017152E /* StartRunningCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunningCommand.swift; sourceTree = "<group>"; };
 		A4456505262EB1830017152E /* StartRunningCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunningCommandHandler.swift; sourceTree = "<group>"; };
+		A456BCD426316C2900072DB3 /* JoinEventCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventCommand.swift; sourceTree = "<group>"; };
+		A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventCommandHandler.swift; sourceTree = "<group>"; };
 		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +257,7 @@
 		A44564FE262EB1470017152E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A456BCD226316C0F00072DB3 /* Events */,
 				A44564FF262EB1540017152E /* Running */,
 			);
 			path = Requests;
@@ -273,6 +278,23 @@
 				A4456505262EB1830017152E /* StartRunningCommandHandler.swift */,
 			);
 			path = StartRunningCommand;
+			sourceTree = "<group>";
+		};
+		A456BCD226316C0F00072DB3 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCD326316C1600072DB3 /* JoinEventCommand */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		A456BCD326316C1600072DB3 /* JoinEventCommand */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCD426316C2900072DB3 /* JoinEventCommand.swift */,
+				A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */,
+			);
+			path = JoinEventCommand;
 			sourceTree = "<group>";
 		};
 		A48BB5AB262DD1720096E62F /* Scenes */ = {
@@ -406,6 +428,7 @@
 				3245E1A0262D8B9A0081766C /* Persistence.swift in Sources */,
 				3245E199262D8B970081766C /* EventView.swift in Sources */,
 				32DA4DD4262EC4CC00A7AB40 /* RegisterView.swift in Sources */,
+				A456BCDA26316C4000072DB3 /* JoinEventCommandHandler.swift in Sources */,
 				32F134EE26305A0F0004ED0C /* EventRowView.swift in Sources */,
 				A44564F5262EB0110017152E /* RequestHandlerProtocol.swift in Sources */,
 				A44564FA262EB0110017152E /* MediaterError.swift in Sources */,
@@ -415,6 +438,7 @@
 				32DA4DDA262ECA7900A7AB40 /* FinishView.swift in Sources */,
 				A44564D8262E1B730017152E /* RunningService.swift in Sources */,
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,
+				A456BCD526316C2900072DB3 /* JoinEventCommand.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
