@@ -25,7 +25,7 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
             }
             let user = DataUser()
             user.email = command.user.email
-            user.name = command.user.email
+            user.name = command.user.name
             user.id = participant.id!
             self.userStore.create(object: user)
             print("user registered with id : \(user.id)")
