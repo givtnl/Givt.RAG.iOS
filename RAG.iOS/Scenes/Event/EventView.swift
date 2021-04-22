@@ -10,14 +10,16 @@ import CoreData
 
 struct EventView: View {
     @State private var canJoinEvent = false
-    private var eventId = 1
+    @State private var event: DataEvent? = nil
 
+    @State private var eventId = 0
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading) {
                 NavigationLink(destination:
                                 RegisterView(EventId: eventId),
-                                isActive: $canJoinEvent
+                               isActive: $canJoinEvent
                 ) {
                     EmptyView()
                 }
@@ -26,17 +28,18 @@ struct EventView: View {
                     Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
                 }
                 VStack(alignment: .leading) {
-                    Text("SPONSOR RUN")
+                    Text(event?.name ?? "")
                         .font(Font.custom("Montserrat-Bold", size: 25))
-
+                    
                     Group {
-                        InfoViewRow(logoString: "CalenderLogo", titleString: "Saturday, August 7, 2021", subTitleString: "01:00 PM - 04:00 PM")
-                        InfoViewRow(logoString: "LocationArrow", titleString: "Kortrijk", subTitleString: "Kerkstraat 136")
+                        InfoViewRow(logoString: "CalenderLogo", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.endDate) ?? "")
+                        InfoViewRow(logoString: "LocationArrow", titleString: event?.city ?? "", subTitleString: event?.address ?? "")
                     }
+                    
                     VStack(alignment: .leading) {
-                        Text("Over het evenement")
+                        Text("About the event")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo")
+                        Text(event?.eventDescription ?? "")
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         Button(action: {
@@ -69,8 +72,13 @@ struct EventView: View {
                 maxHeight: .infinity,
                 alignment: .topLeading
             ).ignoresSafeArea(edges: .all)
-        }
-
+        }.onAppear(perform: {
+            event = RunningStore.shared.getBy(objectType: DataEvent.self, primaryKey: 1) as? DataEvent
+            if event != nil {
+                eventId = 1
+            }
+        })
+        
     }
 }
 
