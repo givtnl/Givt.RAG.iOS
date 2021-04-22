@@ -72,7 +72,9 @@ struct RegisterView: View {
             minHeight: 0,
             maxHeight: .infinity,
             alignment: .center
-        )
+        ).onAppear(perform: {
+            print(EventId)
+        })
     }
 }
 

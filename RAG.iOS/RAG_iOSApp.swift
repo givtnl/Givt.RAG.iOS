@@ -47,7 +47,7 @@ struct RAG_iOSApp: App {
         if let _ = store.getBy(objectType: DataEvent.self, primaryKey: 1) {
             print("Result found, not creating a new one")
         } else {
-            let event: DataEvent = DataEvent(value: ["id": 1, "name": "qyeet", "startDate": Date(), "endDate": Date(), "eventDescription": "Blabla"])
+            let event: DataEvent = DataEvent(value: ["id": 1, "name": "qyeet", "startDate": Date(), "endDate": Date().addingTimeInterval(1000*60), "eventDescription": "Blabla", "city" :"Kortrijk", "address":"Kerkstraat 381"])
             store.create(object: event)
         }
     }

@@ -19,6 +19,7 @@
 		3245F943263178F600C0D81A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3245F942263178F600C0D81A /* Realm */; };
 		3245F945263178F600C0D81A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3245F944263178F600C0D81A /* RealmSwift */; };
 		3245F94926317D2500C0D81A /* RunningStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245F94826317D2500C0D81A /* RunningStore.swift */; };
+		3245F94B26319A5200C0D81A /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245F94A26319A5200C0D81A /* DateExtensions.swift */; };
 		32DA4DD4262EC4CC00A7AB40 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */; };
 		32DA4DD7262EC56500A7AB40 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD6262EC56500A7AB40 /* ProfileView.swift */; };
 		32DA4DDA262ECA7900A7AB40 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD9262ECA7900A7AB40 /* FinishView.swift */; };
@@ -61,6 +62,7 @@
 		3245E1AE262DAD640081766C /* InfoViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewRow.swift; sourceTree = "<group>"; };
 		3245F93F2631778D00C0D81A /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		3245F94826317D2500C0D81A /* RunningStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningStore.swift; sourceTree = "<group>"; };
+		3245F94A26319A5200C0D81A /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		32DA4DD6262EC56500A7AB40 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32DA4DD9262ECA7900A7AB40 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				3245E1AA262DAB840081766C /* ViewExtensions.swift */,
+				3245F94A26319A5200C0D81A /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
 				32F134EC263022B20004ED0C /* RunningServiceLocationManagerExtension.swift in Sources */,
 				A456BCEF2631735200072DB3 /* User.swift in Sources */,
+				3245F94B26319A5200C0D81A /* DateExtensions.swift in Sources */,
 				32DA4DE6262EF6CF00A7AB40 /* UserProfileData.swift in Sources */,
 				A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */,
 				32DA4DDD262ECEC300A7AB40 /* TrackingView.swift in Sources */,

@@ -34,6 +34,8 @@ class DataEvent: Object {
     @objc dynamic var startDate: Date = Date()
     @objc dynamic var endDate: Date = Date()
     @objc dynamic var eventDescription: String = ""
+    @objc dynamic var city: String = ""
+    @objc dynamic var address: String = ""
     
     override static func primaryKey() -> String? {
         return "id"
