@@ -9,11 +9,18 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject private var modelData = UserProfileData()
+    @State private var didRegisterForEvent = false
     var EventId: Int
+
 
     var body: some View {
         VStack {
-
+            NavigationLink(destination:
+                            ProfileView(profile: modelData),
+                            isActive: $didRegisterForEvent
+            ) {
+                EmptyView()
+            }
             VStack(alignment: .leading, spacing: 15) {
                 Text("I want to run!")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
@@ -34,10 +41,25 @@ struct RegisterView: View {
 
                 HStack {
                     Spacer()
-                    NavigationLink(destination: ProfileView(profile: modelData)) {
+                    Button(action: {
+                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email)) { (didRegisterSuccessful) in
+                            if didRegisterSuccessful {
+                                try? Mediater.shared.sendAsync(request: JoinEventCommand(eventId: 1)) { (didJoinSuccessful) in
+                                    if didJoinSuccessful {
+                                        didRegisterForEvent = didJoinSuccessful
+                                        print("Yes!")
+                                    } else {
+                                        print("user couldn't join the run")
+                                    }
+                                }
+                            } else {
+                                print("user not successfully registered")
+                            }
+                        }
+                    }, label: {
                         Text("Register")
                             .font(Font.custom("Montserrat-SemiBold", size: 14))
-                    }
+                    })
                     .frame(width: 140, height: 35).background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(10)

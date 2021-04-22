@@ -37,6 +37,11 @@
 		A4456506262EB1830017152E /* StartRunningCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4456505262EB1830017152E /* StartRunningCommandHandler.swift */; };
 		A456BCD526316C2900072DB3 /* JoinEventCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCD426316C2900072DB3 /* JoinEventCommand.swift */; };
 		A456BCDA26316C4000072DB3 /* JoinEventCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */; };
+		A456BCDE263171BF00072DB3 /* RegisterForEventCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCDD263171BF00072DB3 /* RegisterForEventCommand.swift */; };
+		A456BCE2263171CD00072DB3 /* RegisterForEventCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCE1263171CD00072DB3 /* RegisterForEventCommandHandler.swift */; };
+		A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */; };
+		A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */; };
+		A456BCEF2631735200072DB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEE2631735200072DB3 /* User.swift */; };
 		A4BF46C2262DADDD00DCC327 /* open-api-client in Resources */ = {isa = PBXBuildFile; fileRef = A4BF46C1262DADDD00DCC327 /* open-api-client */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
@@ -76,6 +81,11 @@
 		A4456505262EB1830017152E /* StartRunningCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRunningCommandHandler.swift; sourceTree = "<group>"; };
 		A456BCD426316C2900072DB3 /* JoinEventCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventCommand.swift; sourceTree = "<group>"; };
 		A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventCommandHandler.swift; sourceTree = "<group>"; };
+		A456BCDD263171BF00072DB3 /* RegisterForEventCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForEventCommand.swift; sourceTree = "<group>"; };
+		A456BCE1263171CD00072DB3 /* RegisterForEventCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForEventCommandHandler.swift; sourceTree = "<group>"; };
+		A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommand.swift; sourceTree = "<group>"; };
+		A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommandHandler.swift; sourceTree = "<group>"; };
+		A456BCEE2631735200072DB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4BF46C1262DADDD00DCC327 /* open-api-client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "open-api-client"; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +267,7 @@
 		A44564FE262EB1470017152E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A456BCE42631728E00072DB3 /* Users */,
 				A456BCD226316C0F00072DB3 /* Events */,
 				A44564FF262EB1540017152E /* Running */,
 			);
@@ -283,6 +294,7 @@
 		A456BCD226316C0F00072DB3 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				A456BCDC263171A900072DB3 /* RegisterForEventCommand */,
 				A456BCD326316C1600072DB3 /* JoinEventCommand */,
 			);
 			path = Events;
@@ -295,6 +307,41 @@
 				A456BCD926316C4000072DB3 /* JoinEventCommandHandler.swift */,
 			);
 			path = JoinEventCommand;
+			sourceTree = "<group>";
+		};
+		A456BCDC263171A900072DB3 /* RegisterForEventCommand */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCDD263171BF00072DB3 /* RegisterForEventCommand.swift */,
+				A456BCE1263171CD00072DB3 /* RegisterForEventCommandHandler.swift */,
+			);
+			path = RegisterForEventCommand;
+			sourceTree = "<group>";
+		};
+		A456BCE42631728E00072DB3 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCED2631734100072DB3 /* Models */,
+				A456BCE52631729400072DB3 /* RegisterUser */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		A456BCE52631729400072DB3 /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */,
+				A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */,
+			);
+			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		A456BCED2631734100072DB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A456BCEE2631735200072DB3 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A48BB5AB262DD1720096E62F /* Scenes */ = {
@@ -416,8 +463,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44564F7262EB0110017152E /* MediaterProtocol.swift in Sources */,
+				A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */,
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
 				32F134EC263022B20004ED0C /* RunningServiceLocationManagerExtension.swift in Sources */,
+				A456BCEF2631735200072DB3 /* User.swift in Sources */,
 				32DA4DE6262EF6CF00A7AB40 /* UserProfileData.swift in Sources */,
 				A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */,
 				32DA4DDD262ECEC300A7AB40 /* TrackingView.swift in Sources */,
@@ -432,6 +481,7 @@
 				32F134EE26305A0F0004ED0C /* EventRowView.swift in Sources */,
 				A44564F5262EB0110017152E /* RequestHandlerProtocol.swift in Sources */,
 				A44564FA262EB0110017152E /* MediaterError.swift in Sources */,
+				A456BCDE263171BF00072DB3 /* RegisterForEventCommand.swift in Sources */,
 				A44564F8262EB0110017152E /* RequestPreProcessorProtocol.swift in Sources */,
 				32DA4DD7262EC56500A7AB40 /* ProfileView.swift in Sources */,
 				A44564FB262EB0110017152E /* RequestProtocol.swift in Sources */,
@@ -439,9 +489,11 @@
 				A44564D8262E1B730017152E /* RunningService.swift in Sources */,
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,
 				A456BCD526316C2900072DB3 /* JoinEventCommand.swift in Sources */,
+				A456BCE2263171CD00072DB3 /* RegisterForEventCommandHandler.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
+				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

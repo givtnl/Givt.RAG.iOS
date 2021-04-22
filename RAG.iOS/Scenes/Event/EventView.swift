@@ -41,9 +41,7 @@ struct EventView: View {
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         Button(action: {
-                            _ = try? Mediater.shared.sendAsync(request: JoinEventCommand(eventId: eventId), completion: { response in
-                                self.canJoinEvent = response
-                            })
+                            canJoinEvent = true
                         }) {
                             HStack {
                                 Image("TinyRunningWoman")
