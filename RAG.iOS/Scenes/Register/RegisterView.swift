@@ -21,6 +21,12 @@ struct RegisterView: View {
             ) {
                 EmptyView()
             }
+            
+            ZStack(alignment: .topLeading) {
+                Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
+                Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
+            }
+            
             VStack(alignment: .leading, spacing: 15) {
                 Text("I want to run!")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
@@ -38,7 +44,37 @@ struct RegisterView: View {
                     .background(Color("DarkerPink"))
                     .cornerRadius(5)
                     .font(Font.custom("Montserrat-Medium", size: 12))
+
+                Text("Goals")
+                    .font(Font.custom("Montserrat-SemiBold", size: 18))
                 
+                HStack(spacing: 20) {
+                    HStack {
+                        Text("20,50")
+                            .padding(.leading, 15)
+                            .font(Font.custom("Montserrat-Medium", size: 15))
+                        Spacer()
+                        Text("km")
+                            .padding(.trailing, 15)
+                            .font(Font.custom("Montserrat-SemiBold", size: 15))
+
+                    }
+                    .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
+                    .background(Color("DarkerPink"))
+                    .cornerRadius(5)
+                    
+                    HStack {
+                        Text("€")
+                            .padding(.leading, 15)
+                            .font(Font.custom("Montserrat-SemiBold", size: 15))
+                        Text("1000")
+                            .font(Font.custom("Montserrat-Medium", size: 15))
+
+                    }
+                    .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
+                    .background(Color("DarkerPink"))
+                    .cornerRadius(5)
+                }
                 HStack {
                     Spacer()
                     Button(action: {
@@ -58,15 +94,27 @@ struct RegisterView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                 }
-            }.padding(30)
-            
+            }.frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            )
+            .padding(30)
+            .background(Color.white)
+            .cornerRadius(36, corners: .topRight)
+            .ignoresSafeArea(edges: .all)
+            .offset(y: -40)
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
             minHeight: 0,
             maxHeight: .infinity,
             alignment: .center
-        ).onAppear(perform: {
+        )
+        .ignoresSafeArea(edges: .all)
+        .onAppear(perform: {
             print(EventId)
         })
     }
