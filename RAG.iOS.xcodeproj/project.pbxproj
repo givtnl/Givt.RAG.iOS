@@ -20,6 +20,7 @@
 		3245F945263178F600C0D81A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3245F944263178F600C0D81A /* RealmSwift */; };
 		3245F94926317D2500C0D81A /* RunningStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245F94826317D2500C0D81A /* RunningStore.swift */; };
 		3245F94B26319A5200C0D81A /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245F94A26319A5200C0D81A /* DateExtensions.swift */; };
+		32BD353B2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD353A2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift */; };
 		32DA4DD4262EC4CC00A7AB40 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */; };
 		32DA4DD7262EC56500A7AB40 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD6262EC56500A7AB40 /* ProfileView.swift */; };
 		32DA4DDA262ECA7900A7AB40 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA4DD9262ECA7900A7AB40 /* FinishView.swift */; };
@@ -63,6 +64,7 @@
 		3245F93F2631778D00C0D81A /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		3245F94826317D2500C0D81A /* RunningStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningStore.swift; sourceTree = "<group>"; };
 		3245F94A26319A5200C0D81A /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		32BD353A2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalNumbersOnlyValidator.swift; sourceTree = "<group>"; };
 		32DA4DD3262EC4CC00A7AB40 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		32DA4DD6262EC56500A7AB40 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32DA4DD9262ECA7900A7AB40 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		3245E195262D8B970081766C /* RAG.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				32BD35392631C6410077BDFF /* Validators */,
 				3245E19A262D8B9A0081766C /* Assets.xcassets */,
 				32DA4DDF262ED6BE00A7AB40 /* Fonts */,
 				A44564FE262EB1470017152E /* Requests */,
@@ -187,6 +190,14 @@
 				A456BD872631BBCF00072DB3 /* UserStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		32BD35392631C6410077BDFF /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				32BD353A2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		32DA4DD2262EC4BD00A7AB40 /* Register */ = {
@@ -515,6 +526,7 @@
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
 				A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
+				32BD353B2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
 				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
 			);

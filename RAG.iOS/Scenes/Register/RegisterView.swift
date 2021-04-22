@@ -12,7 +12,10 @@ struct RegisterView: View {
     @State private var didRegisterForEvent = false
     var EventId: Int
     let userStore = UserStore.shared
-    
+
+    @ObservedObject var inputKilometers = DecimalNumbersOnlyValidator()
+    @ObservedObject var inputAmount = DecimalNumbersOnlyValidator()
+        
     var body: some View {
         VStack {
             NavigationLink(destination:
@@ -44,20 +47,22 @@ struct RegisterView: View {
                     .background(Color("DarkerPink"))
                     .cornerRadius(5)
                     .font(Font.custom("Montserrat-Medium", size: 12))
-
+                
                 Text("Goals")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
                 
                 HStack(spacing: 20) {
                     HStack {
-                        Text("20,50")
+                        TextField("", text: $inputKilometers.text)
                             .padding(.leading, 15)
                             .font(Font.custom("Montserrat-Medium", size: 15))
+                            .keyboardType(.decimalPad)
+                        
                         Spacer()
                         Text("km")
                             .padding(.trailing, 15)
                             .font(Font.custom("Montserrat-SemiBold", size: 15))
-
+                        
                     }
                     .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
                     .background(Color("DarkerPink"))
@@ -67,9 +72,12 @@ struct RegisterView: View {
                         Text("€")
                             .padding(.leading, 15)
                             .font(Font.custom("Montserrat-SemiBold", size: 15))
-                        Text("1000")
+                        
+                        TextField("", text: $inputAmount.text)
+                            .padding(.leading, 15)
                             .font(Font.custom("Montserrat-Medium", size: 15))
-
+                            .keyboardType(.decimalPad)
+                        
                     }
                     .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
                     .background(Color("DarkerPink"))
