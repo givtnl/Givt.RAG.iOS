@@ -11,13 +11,13 @@ struct RegisterView: View {
     @StateObject private var modelData = UserProfileData()
     @State private var didRegisterForEvent = false
     var EventId: Int
-
-
+    
+    
     var body: some View {
         VStack {
             NavigationLink(destination:
                             ProfileView(profile: modelData),
-                            isActive: $didRegisterForEvent
+                           isActive: $didRegisterForEvent
             ) {
                 EmptyView()
             }
@@ -38,20 +38,14 @@ struct RegisterView: View {
                     .background(Color("DarkerPink"))
                     .cornerRadius(5)
                     .font(Font.custom("Montserrat-Medium", size: 12))
-
+                
                 HStack {
                     Spacer()
                     Button(action: {
                         try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: 65484)) { (didRegisterSuccessful) in
                             if didRegisterSuccessful {
-                                try? Mediater.shared.sendAsync(request: JoinEventCommand(eventId: 1)) { (didJoinSuccessful) in
-                                    if didJoinSuccessful {
-                                        didRegisterForEvent = didJoinSuccessful
-                                        print("Yes!")
-                                    } else {
-                                        print("user couldn't join the run")
-                                    }
-                                }
+                                didRegisterForEvent = didRegisterSuccessful
+                                print("Yes!")
                             } else {
                                 print("user not successfully registered")
                             }
@@ -65,7 +59,7 @@ struct RegisterView: View {
                     .cornerRadius(10)
                 }
             }.padding(30)
-           
+            
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,

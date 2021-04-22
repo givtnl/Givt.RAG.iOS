@@ -45,6 +45,7 @@
 		A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */; };
 		A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */; };
 		A456BCEF2631735200072DB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEE2631735200072DB3 /* User.swift */; };
+		A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BD872631BBCF00072DB3 /* UserStore.swift */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		A456BCE6263172D900072DB3 /* RegisterUserCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommand.swift; sourceTree = "<group>"; };
 		A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommandHandler.swift; sourceTree = "<group>"; };
 		A456BCEE2631735200072DB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A456BD872631BBCF00072DB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				3245F94826317D2500C0D81A /* RunningStore.swift */,
+				A456BD872631BBCF00072DB3 /* UserStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A456BCD526316C2900072DB3 /* JoinEventCommand.swift in Sources */,
 				3245F94926317D2500C0D81A /* RunningStore.swift in Sources */,
 				3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */,
+				A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
 				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
