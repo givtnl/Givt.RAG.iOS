@@ -12,9 +12,9 @@ struct ProfileView: View {
         
     var body: some View {
         VStack {
-            VStack {
+            ScrollView(.vertical) {
                 HStack {
-                    Image("BjornFace")
+                    Image("profile")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 125, height: 125)
@@ -27,57 +27,49 @@ struct ProfileView: View {
                             .font(Font.custom("Montserrat", size: 12))
                     }.padding(.leading, 10)
                 }
-            }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                alignment: .topLeading
-            )
-            .padding(.horizontal, 30)
-            
-            VStack {
-                ScrollView(.horizontal) {
-                    HStack(spacing: 15) {
-                        EventCarouselViewItem()
-                        EventCarouselViewItem()
-                        EventCarouselViewItem()
-                        EventCarouselViewItem()
-                    }.padding(.vertical, 10)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    alignment: .topLeading
+                )
+                .padding(.horizontal, 30)
+                
+                // VStack with scrollview for events
+                VStack {
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 15) {
+                            EventCarouselViewItem()
+                            EventCarouselViewItem()
+                            EventCarouselViewItem()
+                            EventCarouselViewItem()
+                        }.padding(.vertical, 15)
+                    }
+                }.frame(
+                    height: 170
+                )
+                .padding(.leading, 30)
+                .padding(.top, 10)
+                
+                // VStack with training info and motiviation
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("Training info")
+                        .font(Font.custom("Montserrat-SemiBold", size: 18))
+                    HStack {
+                        Image("LocationArrow")
+                        VStack(alignment: .leading) {
+                            Text("Distance")
+                                .font(Font.custom("Montserrat-Regular", size: 8))
+                            Text("10,00 km")
+                                .font(Font.custom("Montserrat-SemiBold", size: 11))
+                        }.padding(.leading, 5)
+                    }
+                    Text("Motivation")
+                        .font(Font.custom("Montserrat-SemiBold", size: 18))
+                    Text("Pellentesque non massa leo. Donec quis mi eu enim accumsan venenatis. Vivamus ante eros, sed purus tortor. Curabitur ellentesque. Mauris nec dolor vel metus non ornare.")
+                        .font(Font.custom("Montserrat-Regular", size: 12))
                 }
-            }.frame(
-                height: 160
-            )
-            .padding(.leading, 30)
-            .padding(.top, 10)
-            VStack(alignment: .leading, spacing: 15) {
-                Text("Training info")
-                    .font(Font.custom("Montserrat-SemiBold", size: 18))
-                HStack {
-                    Image("LocationArrow")
-                    VStack(alignment: .leading) {
-                        Text("Distance")
-                            .font(Font.custom("Montserrat-Regular", size: 8))
-                        Text("10,00 km")
-                            .font(Font.custom("Montserrat-SemiBold", size: 11))
-                    }.padding(.leading, 5)
-                }
-                Text("Motivation")
-                    .font(Font.custom("Montserrat-SemiBold", size: 18))
-                Text("Pellentesque non massa leo. Donec quis mi eu enim accumsan venenatis. Vivamus ante eros, sed purus tortor. Curabitur ellentesque. Mauris nec dolor vel metus non ornare.")
-                    .font(Font.custom("Montserrat-Regular", size: 12))
-
+                .padding(.horizontal, 30)
             }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
-            .padding(.horizontal, 30)
-            .padding(.top, 20)
-
-            Spacer()
             HStack(spacing: 20) {
                 NavigationLink(destination: TrackingView()) {
                     Text("Invite")
@@ -95,7 +87,8 @@ struct ProfileView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-            }.padding(.bottom, 20)
+            }
+            .padding(.bottom, 20)
             Spacer()
         }
     }

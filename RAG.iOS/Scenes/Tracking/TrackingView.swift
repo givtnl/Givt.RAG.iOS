@@ -31,7 +31,7 @@ struct TrackingView: View {
                     coordinate: annotation.coordinates.center,
                                 anchorPoint: CGPoint(x: 0.5, y: 0.5)
                             ) {
-                            Image("BjornFace")
+                            Image("profile")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 100, height: 50)
