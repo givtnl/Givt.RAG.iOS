@@ -6,16 +6,10 @@
 //
 
 import SwiftUI
-struct CarouselTest: Identifiable {
-    let id = UUID()
-    var text = "Ah yeet"
-}
 
 struct ProfileView: View {
     @State var profile: UserProfileData? = nil
-    
-    @State var events = [CarouselTest]()
-    
+        
     var body: some View {
         VStack {
             VStack {
@@ -25,7 +19,6 @@ struct ProfileView: View {
                         .scaledToFill()
                         .frame(width: 125, height: 125)
                         .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
                         .shadow(radius: 2)
                     VStack(alignment: .leading) {
                         Text(profile!.userName)
@@ -53,13 +46,39 @@ struct ProfileView: View {
                 }
             }.frame(
                 height: 160
-            ).padding(.leading, 30)
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Events").padding(.leading, 30)
-                EventRowView().padding([.top, .bottom], 10)
-            }.padding(.top, 40)
+            )
+            .padding(.leading, 30)
+            .padding(.top, 10)
+            VStack(alignment: .leading, spacing: 15) {
+                Text("Training info")
+                    .font(Font.custom("Montserrat-SemiBold", size: 18))
+                HStack {
+                    Image("LocationArrow")
+                    VStack(alignment: .leading) {
+                        Text("Distance")
+                            .font(Font.custom("Montserrat-Regular", size: 8))
+                        Text("10,00 km")
+                            .font(Font.custom("Montserrat-SemiBold", size: 11))
+                    }.padding(.leading, 5)
+                }
+                Text("Motivation")
+                    .font(Font.custom("Montserrat-SemiBold", size: 18))
+                Text("Pellentesque non massa leo. Donec quis mi eu enim accumsan venenatis. Vivamus ante eros, sed purus tortor. Curabitur ellentesque. Mauris nec dolor vel metus non ornare.")
+                    .font(Font.custom("Montserrat-Regular", size: 12))
+
+            }
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            )
+            .padding(.horizontal, 30)
+            .padding(.top, 20)
+
             Spacer()
-            HStack {
+            HStack(spacing: 20) {
                 NavigationLink(destination: TrackingView()) {
                     Text("Invite")
                         .font(Font.custom("Montserrat-SemiBold", size: 14))
@@ -76,11 +95,9 @@ struct ProfileView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-            }
-        }.onAppear(perform: {
-            let test = CarouselTest(text: "Ah yeet")
-            self.events.append(test)
-        })
+            }.padding(.bottom, 20)
+            Spacer()
+        }
     }
 }
 
