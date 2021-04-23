@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ACarousel
 struct CarouselTest: Identifiable {
     let id = UUID()
     var text = "Ah yeet"
