@@ -662,7 +662,7 @@
 				DEVELOPMENT_TEAM = YDSA4AY496;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RAG.iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +685,7 @@
 				DEVELOPMENT_TEAM = YDSA4AY496;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RAG.iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

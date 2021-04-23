@@ -29,7 +29,7 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
             user.id = participant.id!
             self.userStore.create(object: user)
             print("user registered with id : \(user.id)")
-            try?completion(false as! R.TResponse)
+            try?completion(true as! R.TResponse)
         }
         print("registering user with email \(user.email) and name \(user.name) for event with id \(command.eventId)")
     }
