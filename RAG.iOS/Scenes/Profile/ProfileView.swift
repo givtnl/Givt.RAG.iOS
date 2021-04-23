@@ -6,27 +6,55 @@
 //
 
 import SwiftUI
+import ACarousel
+struct CarouselTest: Identifiable {
+    let id = UUID()
+    var text = "Ah yeet"
+}
 
 struct ProfileView: View {
-    var profile: UserProfileData
+    @State var profile: UserProfileData? = nil
+    
+    @State var events = [CarouselTest]()
     
     var body: some View {
         VStack {
             VStack {
-                Image("BjornFace")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 125, height: 125)
-                    .clipShape(Circle())
-                    .overlay(
-                        Circle().stroke(Color.white, lineWidth: 3))
-                    .shadow(radius: 2)
-                Text(profile.userName)
-                    .font(Font.custom("Montserrat-Medium", size: 16))
-                Text(profile.email)
-                    .font(Font.custom("Montserrat", size: 12))
-                
+                HStack {
+                    Image("BjornFace")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 125, height: 125)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                        .shadow(radius: 2)
+                    VStack(alignment: .leading) {
+                        Text(profile!.userName)
+                            .font(Font.custom("Montserrat-SemiBold", size: 16))
+                        Text(profile!.email)
+                            .font(Font.custom("Montserrat", size: 12))
+                    }.padding(.leading, 10)
+                }
             }
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                alignment: .topLeading
+            )
+            .padding(.horizontal, 30)
+            
+            VStack {
+                ScrollView(.horizontal) {
+                    HStack(spacing: 15) {
+                        EventCarouselViewItem()
+                        EventCarouselViewItem()
+                        EventCarouselViewItem()
+                        EventCarouselViewItem()
+                    }.padding(.vertical, 10)
+                }
+            }.frame(
+                height: 160
+            ).padding(.leading, 30)
             VStack(alignment: .leading, spacing: 0) {
                 Text("Events").padding(.leading, 30)
                 EventRowView().padding([.top, .bottom], 10)
@@ -50,7 +78,10 @@ struct ProfileView: View {
                         .cornerRadius(10)
                 }
             }
-        }
+        }.onAppear(perform: {
+            let test = CarouselTest(text: "Ah yeet")
+            self.events.append(test)
+        })
     }
 }
 

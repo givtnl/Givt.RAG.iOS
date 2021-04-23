@@ -8,6 +8,6 @@
 import Foundation
 
 class UserProfileData: ObservableObject {
-    var userName: String = ""
-    var email: String = ""
+    var userName: String = "Mike Pattyn"
+    var email: String = "mike@givtapp.net"
 }
