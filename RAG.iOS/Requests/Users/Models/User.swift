@@ -7,12 +7,19 @@
 
 import Foundation
 class User {
-    var id: Int?
+    var id: String?
     var name: String
     var email: String
     
     init(name: String, email: String) {
         self.name = name
         self.email = email
+    }
+    
+    func getAsProfileData() -> UserProfileData {
+        let profile = UserProfileData()
+        profile.email = self.email
+        profile.userName = self.name
+        return profile
     }
 }

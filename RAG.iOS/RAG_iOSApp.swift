@@ -12,11 +12,18 @@ import AppCenterCrashes
 @main
 struct RAG_iOSApp: App {
     let persistenceController = PersistenceController.shared
+    var profile: UserProfileData?
 
+    @ViewBuilder
     var body: some Scene {
         WindowGroup {
-            EventView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if (profile == nil) {
+                EventView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            } else {
+                ProfileView(profile: profile)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
     
@@ -24,6 +31,13 @@ struct RAG_iOSApp: App {
         registerHandlers()
         registerForAppCenter()
         registerEvents()
+        
+        guard let user = try? Mediater.shared.send(request: InAppUserQuery()) else {
+            profile = nil
+            return
+        }
+        profile = user.getAsProfileData()
+        
     }
     
     func registerHandlers() {
@@ -35,6 +49,7 @@ struct RAG_iOSApp: App {
         
         // UserHandlers
         Mediater.shared.registerHandler(handler: RegisterUserCommandHandler())
+        Mediater.shared.registerHandler(handler: InAppUserQueryHandler())
     }
     
     func registerForAppCenter() {
