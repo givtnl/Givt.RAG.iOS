@@ -50,6 +50,9 @@
 		A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BD872631BBCF00072DB3 /* UserStore.swift */; };
 		A4FAE3FF26358B1500153C86 /* InAppUserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */; };
 		A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */; };
+		A4FAE40B26359A8500153C86 /* GetAllEventsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */; };
+		A4FAE40F26359AB900153C86 /* GetAllEventsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40E26359AB900153C86 /* GetAllEventsQueryHandler.swift */; };
+		A4FAE4132635A16100153C86 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE4122635A16100153C86 /* Event.swift */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		A456BD872631BBCF00072DB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQuery.swift; sourceTree = "<group>"; };
 		A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQueryHandler.swift; sourceTree = "<group>"; };
+		A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsQuery.swift; sourceTree = "<group>"; };
+		A4FAE40E26359AB900153C86 /* GetAllEventsQueryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsQueryHandler.swift; sourceTree = "<group>"; };
+		A4FAE4122635A16100153C86 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -345,6 +351,8 @@
 		A456BCD226316C0F00072DB3 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				A4FAE4112635A15400153C86 /* Models */,
+				A4FAE40926359A5E00153C86 /* GetAllEvents */,
 				A456BCD326316C1600072DB3 /* JoinEventCommand */,
 			);
 			path = Events;
@@ -422,6 +430,23 @@
 				A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */,
 			);
 			path = InAppUserQuery;
+			sourceTree = "<group>";
+		};
+		A4FAE40926359A5E00153C86 /* GetAllEvents */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */,
+				A4FAE40E26359AB900153C86 /* GetAllEventsQueryHandler.swift */,
+			);
+			path = GetAllEvents;
+			sourceTree = "<group>";
+		};
+		A4FAE4112635A15400153C86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAE4122635A16100153C86 /* Event.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +555,7 @@
 				3292E9062632BCD30068CF8C /* EventCarouselViewItem.swift in Sources */,
 				A44564F7262EB0110017152E /* MediaterProtocol.swift in Sources */,
 				A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */,
+				A4FAE40F26359AB900153C86 /* GetAllEventsQueryHandler.swift in Sources */,
 				A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */,
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
 				32F134EC263022B20004ED0C /* RunningServiceLocationManagerExtension.swift in Sources */,
@@ -547,6 +573,7 @@
 				3245E199262D8B970081766C /* EventView.swift in Sources */,
 				32DA4DD4262EC4CC00A7AB40 /* RegisterView.swift in Sources */,
 				A456BCDA26316C4000072DB3 /* JoinEventCommandHandler.swift in Sources */,
+				A4FAE40B26359A8500153C86 /* GetAllEventsQuery.swift in Sources */,
 				32F134EE26305A0F0004ED0C /* EventRowView.swift in Sources */,
 				A44564F5262EB0110017152E /* RequestHandlerProtocol.swift in Sources */,
 				A44564FA262EB0110017152E /* MediaterError.swift in Sources */,
@@ -554,6 +581,7 @@
 				32DA4DD7262EC56500A7AB40 /* ProfileView.swift in Sources */,
 				A44564FB262EB0110017152E /* RequestProtocol.swift in Sources */,
 				32DA4DDA262ECA7900A7AB40 /* FinishView.swift in Sources */,
+				A4FAE4132635A16100153C86 /* Event.swift in Sources */,
 				A4FAE3FF26358B1500153C86 /* InAppUserQuery.swift in Sources */,
 				A44564D8262E1B730017152E /* RunningService.swift in Sources */,
 				3245E1AB262DAB840081766C /* ViewExtensions.swift in Sources */,

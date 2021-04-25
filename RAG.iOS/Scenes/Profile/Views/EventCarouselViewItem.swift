@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct EventCarouselViewItem: View {
+    var event: Event
+    var monthDateFormatter: DateFormatter = DateFormatter()
+    
     var body: some View {
         VStack {
             ZStack(alignment: .bottomLeading) {
                 Image("Runner").resizable().scaledToFill()
                 VStack(alignment: .leading) {
-                    Text("Sponsor run")
+                    Text(event.name)
                         .font(Font.custom("Montserrat-SemiBold", size: 11))
 
-                    Text("Kortrijk")
+                    Text(event.city)
                         .font(Font.custom("Montserrat-Regular", size: 9))
                         .foregroundColor(.gray)
 
@@ -31,10 +34,10 @@ struct EventCarouselViewItem: View {
                 .frame(height: 50)
                 .background(Color.white)
                 VStack {
-                    Text("08")
+                    Text(String(Calendar.current.dateComponents([.day], from: event.startDate).day!))
                         .font(Font.custom("Montserrat-SemiBold", size: 11))
                         .foregroundColor(Color("PrimaryColor"))
-                    Text("Aug")
+                    Text(monthDateFormatter.string(from: event.startDate))
                         .font(Font.custom("Montserrat-Regular", size: 9))
 
                 }
@@ -59,12 +62,17 @@ struct EventCarouselViewItem: View {
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
     }
+    
+    init(event: Event) {
+        self.event = event
+        monthDateFormatter.dateFormat = "MMM"
+    }
 }
 
 struct EventCarouselViewItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            EventCarouselViewItem()
+            EventCarouselViewItem(event: Event(id: "1234", name: "TestEvent", startDate: Date(), city: "Shortrealm"))
                 .previewLayout(.fixed(width: 140, height: 110))
         }
     }

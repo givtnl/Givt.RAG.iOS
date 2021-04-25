@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct ProfileView: View {
     @State var profile: UserProfileData? = nil
+    @State var events: [Event]? = nil
         
     var body: some View {
         VStack {
@@ -38,10 +40,10 @@ struct ProfileView: View {
                 VStack {
                     ScrollView(.horizontal) {
                         HStack(spacing: 15) {
-                            EventCarouselViewItem()
-                            EventCarouselViewItem()
-                            EventCarouselViewItem()
-                            EventCarouselViewItem()
+                            ForEach(events ?? [], id: \.self)
+                            { event in
+                                EventCarouselViewItem(event: event)
+                            }
                         }.padding(.vertical, 15)
                     }
                 }.frame(
@@ -90,7 +92,11 @@ struct ProfileView: View {
             }
             .padding(.bottom, 20)
             Spacer()
-        }
+        }.onAppear(perform: {
+            try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (events) in
+                self.events = events
+            }
+        })
     }
 }
 

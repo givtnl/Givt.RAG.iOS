@@ -89,7 +89,6 @@ struct RegisterView: View {
                         try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: 65484)) { (didRegisterSuccessful) in
                             if didRegisterSuccessful {
                                 didRegisterForEvent = didRegisterSuccessful
-                                print("Yes!")
                             } else {
                                 print("user not successfully registered")
                             }
