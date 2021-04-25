@@ -9,7 +9,8 @@ import Foundation
 
 open class BackersAPI {
     /**
-
+     Returns a detail of a single backer
+     
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - parameter id: (path)  
@@ -28,7 +29,9 @@ open class BackersAPI {
     }
 
     /**
+     Returns a detail of a single backer
      - GET /events/{eventId}/participants/{participantId}/backers/{id}
+     - Returns the backer identified by the id path parameter
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - parameter id: (path)  
@@ -62,7 +65,8 @@ open class BackersAPI {
     }
 
     /**
-
+     Returns a list of backers
+     
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
@@ -80,7 +84,9 @@ open class BackersAPI {
     }
 
     /**
+     Returns a list of backers
      - GET /events/{eventId}/participants/{participantId}/backers
+     - Returns the backers for a given parcipant for a given event
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - returns: RequestBuilder<[BackerListModel]> 
@@ -110,7 +116,8 @@ open class BackersAPI {
     }
 
     /**
-
+     Registers a new backer for a given participant
+     
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - parameter registerBackerCommand: (body)  
@@ -129,7 +136,9 @@ open class BackersAPI {
     }
 
     /**
+     Registers a new backer for a given participant
      - POST /events/{eventId}/participants/{participantId}/backers
+     - Registers a new backer who is backing the giving participant who participates in an given event
      - parameter eventId: (path)  
      - parameter participantId: (path)  
      - parameter registerBackerCommand: (body)  

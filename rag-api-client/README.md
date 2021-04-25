@@ -25,33 +25,36 @@ All URIs are relative to *http://givt-debug-rag-api.westeurope.azurecontainer.io
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BackersAPI* | [**getBackerDetail**](docs/BackersAPI.md#getbackerdetail) | **GET** /events/{eventId}/participants/{participantId}/backers/{id} | 
-*BackersAPI* | [**getBackersList**](docs/BackersAPI.md#getbackerslist) | **GET** /events/{eventId}/participants/{participantId}/backers | 
-*BackersAPI* | [**registerBacker**](docs/BackersAPI.md#registerbacker) | **POST** /events/{eventId}/participants/{participantId}/backers | 
-*EventsAPI* | [**getEventDetail**](docs/EventsAPI.md#geteventdetail) | **GET** /Events/{id} | 
-*EventsAPI* | [**getEventsList**](docs/EventsAPI.md#geteventslist) | **GET** /Events | 
-*ParticipantsAPI* | [**getParticipantDetail**](docs/ParticipantsAPI.md#getparticipantdetail) | **GET** /events/{eventId}/participants/{id} | 
-*ParticipantsAPI* | [**getParticipantsList**](docs/ParticipantsAPI.md#getparticipantslist) | **GET** /events/{eventId}/participants | 
-*ParticipantsAPI* | [**participantsFinish**](docs/ParticipantsAPI.md#participantsfinish) | **PATCH** /events/{eventId}/participants/{id}/finish | FinishEventForParticipant
-*ParticipantsAPI* | [**registerParticipant**](docs/ParticipantsAPI.md#registerparticipant) | **POST** /events/{eventId}/participants | 
-*ParticipantsAPI* | [**startEventForParticipant**](docs/ParticipantsAPI.md#starteventforparticipant) | **PATCH** /events/{eventId}/participants/{id}/start | 
+*BackersAPI* | [**getBackerDetail**](docs/BackersAPI.md#getbackerdetail) | **GET** /events/{eventId}/participants/{participantId}/backers/{id} | Returns a detail of a single backer
+*BackersAPI* | [**getBackersList**](docs/BackersAPI.md#getbackerslist) | **GET** /events/{eventId}/participants/{participantId}/backers | Returns a list of backers
+*BackersAPI* | [**registerBacker**](docs/BackersAPI.md#registerbacker) | **POST** /events/{eventId}/participants/{participantId}/backers | Registers a new backer for a given participant
+*EventsAPI* | [**getEventDetail**](docs/EventsAPI.md#geteventdetail) | **GET** /Events/{id} | Returns a detail of a single event
+*EventsAPI* | [**getEventsList**](docs/EventsAPI.md#geteventslist) | **GET** /Events | Returns a list of all events
+*ParticipantsAPI* | [**finishEventForParticipant**](docs/ParticipantsAPI.md#finisheventforparticipant) | **PATCH** /events/{eventId}/participants/{id}/finish | Marks a given participation in an event as Finished
+*ParticipantsAPI* | [**getParticipantDetail**](docs/ParticipantsAPI.md#getparticipantdetail) | **GET** /events/{eventId}/participants/{id} | Returns a detail of a single participant
+*ParticipantsAPI* | [**getParticipantsList**](docs/ParticipantsAPI.md#getparticipantslist) | **GET** /events/{eventId}/participants | Returns a list of participants
+*ParticipantsAPI* | [**registerParticipant**](docs/ParticipantsAPI.md#registerparticipant) | **POST** /events/{eventId}/participants | Registers a new participant for a given event
+*ParticipantsAPI* | [**startEventForParticipant**](docs/ParticipantsAPI.md#starteventforparticipant) | **PATCH** /events/{eventId}/participants/{id}/start | Marks a given participation in an event as Started
+*PaymentsAPI* | [**pay**](docs/PaymentsAPI.md#pay) | **POST** /events/{eventId}/participants/{participantId}/backers/{backerId} | Creates an paymentrequest with the paymentprovider
 
 
 ## Documentation For Models
 
  - [BackerDetailModel](docs/BackerDetailModel.md)
  - [BackerListModel](docs/BackerListModel.md)
+ - [BackerPaymentRequestModel](docs/BackerPaymentRequestModel.md)
+ - [CheckoutBackerCommand](docs/CheckoutBackerCommand.md)
  - [EventDetailModel](docs/EventDetailModel.md)
  - [EventListModel](docs/EventListModel.md)
+ - [EventTargetDetailModel](docs/EventTargetDetailModel.md)
+ - [EventTargetType](docs/EventTargetType.md)
  - [ExceptionModel](docs/ExceptionModel.md)
  - [FinishParticipantCommand](docs/FinishParticipantCommand.md)
  - [ParticipantDetailModel](docs/ParticipantDetailModel.md)
- - [ParticipantGoalDetailModel](docs/ParticipantGoalDetailModel.md)
- - [ParticipantGoalType](docs/ParticipantGoalType.md)
  - [ParticipantListModel](docs/ParticipantListModel.md)
  - [RegisterBackerCommand](docs/RegisterBackerCommand.md)
+ - [RegisterEventTargetCommand](docs/RegisterEventTargetCommand.md)
  - [RegisterParticipantCommand](docs/RegisterParticipantCommand.md)
- - [RegisterParticipantGoalCommand](docs/RegisterParticipantGoalCommand.md)
  - [ValidationExceptionError](docs/ValidationExceptionError.md)
 
 

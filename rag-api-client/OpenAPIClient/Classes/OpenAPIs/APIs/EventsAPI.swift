@@ -9,7 +9,8 @@ import Foundation
 
 open class EventsAPI {
     /**
-
+     Returns a detail of a single event
+     
      - parameter id: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
@@ -26,7 +27,9 @@ open class EventsAPI {
     }
 
     /**
+     Returns a detail of a single event
      - GET /Events/{id}
+     - Returns the event identified by the id path parameter
      - parameter id: (path)  
      - returns: RequestBuilder<EventDetailModel> 
      */
@@ -52,7 +55,8 @@ open class EventsAPI {
     }
 
     /**
-
+     Returns a list of all events
+     
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -68,7 +72,9 @@ open class EventsAPI {
     }
 
     /**
+     Returns a list of all events
      - GET /Events
+     - Returns all available events to participate in
      - returns: RequestBuilder<[EventListModel]> 
      */
     open class func getEventsListWithRequestBuilder() -> RequestBuilder<[EventListModel]> {

@@ -10,11 +10,11 @@ import Foundation
 public struct RegisterParticipantCommand: Codable {
 
     public var name: String?
-    public var goals: [RegisterParticipantGoalCommand]?
+    public var targets: [RegisterEventTargetCommand]?
 
-    public init(name: String? = nil, goals: [RegisterParticipantGoalCommand]? = nil) {
+    public init(name: String? = nil, targets: [RegisterEventTargetCommand]? = nil) {
         self.name = name
-        self.goals = goals
+        self.targets = targets
     }
 
 }

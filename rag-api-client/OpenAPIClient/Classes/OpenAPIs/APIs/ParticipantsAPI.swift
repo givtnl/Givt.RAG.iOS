@@ -9,7 +9,61 @@ import Foundation
 
 open class ParticipantsAPI {
     /**
+     Marks a given participation in an event as Finished
+     
+     - parameter eventId: (path)  
+     - parameter id: (path)  
+     - parameter finishParticipantCommand: (body)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func finishEventForParticipant(eventId: String, id: String, finishParticipantCommand: FinishParticipantCommand, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) {
+        finishEventForParticipantWithRequestBuilder(eventId: eventId, id: id, finishParticipantCommand: finishParticipantCommand).execute(apiResponseQueue) { result -> Void in
+            switch result {
+            case .success:
+                completion((), nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
 
+    /**
+     Marks a given participation in an event as Finished
+     - PATCH /events/{eventId}/participants/{id}/finish
+     - Marks the given participant for the given event as Finished so backers can be notified of the new status
+     - parameter eventId: (path)  
+     - parameter id: (path)  
+     - parameter finishParticipantCommand: (body)  
+     - returns: RequestBuilder<Void> 
+     */
+    open class func finishEventForParticipantWithRequestBuilder(eventId: String, id: String, finishParticipantCommand: FinishParticipantCommand) -> RequestBuilder<Void> {
+        var path = "/events/{eventId}/participants/{id}/finish"
+        let eventIdPreEscape = "\(APIHelper.mapValueToPathItem(eventId))"
+        let eventIdPostEscape = eventIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{eventId}", with: eventIdPostEscape, options: .literal, range: nil)
+        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
+        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
+        let URLString = OpenAPIClientAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: finishParticipantCommand)
+
+        let url = URLComponents(string: URLString)
+
+        let nillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
+
+        let requestBuilder: RequestBuilder<Void>.Type = OpenAPIClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, headers: headerParameters)
+    }
+
+    /**
+     Returns a detail of a single participant
+     
      - parameter eventId: (path)  
      - parameter id: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
@@ -27,7 +81,9 @@ open class ParticipantsAPI {
     }
 
     /**
+     Returns a detail of a single participant
      - GET /events/{eventId}/participants/{id}
+     - Returns the participant identified by the id path parameter
      - parameter eventId: (path)  
      - parameter id: (path)  
      - returns: RequestBuilder<ParticipantDetailModel> 
@@ -57,7 +113,8 @@ open class ParticipantsAPI {
     }
 
     /**
-
+     Returns a list of participants
+     
      - parameter eventId: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
@@ -74,7 +131,9 @@ open class ParticipantsAPI {
     }
 
     /**
+     Returns a list of participants
      - GET /events/{eventId}/participants
+     - Returns the participants for a given event
      - parameter eventId: (path)  
      - returns: RequestBuilder<[ParticipantListModel]> 
      */
@@ -100,60 +159,8 @@ open class ParticipantsAPI {
     }
 
     /**
-     FinishEventForParticipant
+     Registers a new participant for a given event
      
-     - parameter eventId: (path)  
-     - parameter id: (path)  
-     - parameter finishParticipantCommand: (body)  
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    open class func participantsFinish(eventId: String, id: String, finishParticipantCommand: FinishParticipantCommand, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) {
-        participantsFinishWithRequestBuilder(eventId: eventId, id: id, finishParticipantCommand: finishParticipantCommand).execute(apiResponseQueue) { result -> Void in
-            switch result {
-            case .success:
-                completion((), nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     FinishEventForParticipant
-     - PATCH /events/{eventId}/participants/{id}/finish
-     - Updates the status for a given participant for a given event to Finished
-     - parameter eventId: (path)  
-     - parameter id: (path)  
-     - parameter finishParticipantCommand: (body)  
-     - returns: RequestBuilder<Void> 
-     */
-    open class func participantsFinishWithRequestBuilder(eventId: String, id: String, finishParticipantCommand: FinishParticipantCommand) -> RequestBuilder<Void> {
-        var path = "/events/{eventId}/participants/{id}/finish"
-        let eventIdPreEscape = "\(APIHelper.mapValueToPathItem(eventId))"
-        let eventIdPostEscape = eventIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{eventId}", with: eventIdPostEscape, options: .literal, range: nil)
-        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
-        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
-        let URLString = OpenAPIClientAPI.basePath + path
-        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: finishParticipantCommand)
-
-        let url = URLComponents(string: URLString)
-
-        let nillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
-
-        let requestBuilder: RequestBuilder<Void>.Type = OpenAPIClientAPI.requestBuilderFactory.getNonDecodableBuilder()
-
-        return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, headers: headerParameters)
-    }
-
-    /**
-
      - parameter eventId: (path)  
      - parameter registerParticipantCommand: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
@@ -171,7 +178,9 @@ open class ParticipantsAPI {
     }
 
     /**
+     Registers a new participant for a given event
      - POST /events/{eventId}/participants
+     - Registers a new participant who participates in the given event
      - parameter eventId: (path)  
      - parameter registerParticipantCommand: (body)  
      - returns: RequestBuilder<ParticipantDetailModel> 
@@ -198,7 +207,8 @@ open class ParticipantsAPI {
     }
 
     /**
-
+     Marks a given participation in an event as Started
+     
      - parameter eventId: (path)  
      - parameter id: (path)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
@@ -216,7 +226,9 @@ open class ParticipantsAPI {
     }
 
     /**
+     Marks a given participation in an event as Started
      - PATCH /events/{eventId}/participants/{id}/start
+     - Marks the given participant for the given event as Started so backers can be notified of the new status
      - parameter eventId: (path)  
      - parameter id: (path)  
      - returns: RequestBuilder<Void> 
