@@ -11,17 +11,11 @@ import OpenAPIClient
 struct ProfileView: View {
     @State var profile: UserProfileData? = nil
     @State var events: [Event]? = nil
-    @State private var isDoneWithRunning = false
+    @State private var showInviteSheet = false
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
-                NavigationLink(destination:
-                                TrackingView(),
-                               isActive: $isDoneWithRunning
-                ) {
-                    EmptyView()
-                }
                 ScrollView(.vertical) {
                     HStack {
                         Image("profile")
@@ -81,24 +75,24 @@ struct ProfileView: View {
                     .padding(.horizontal, 30)
                 }
                 HStack(spacing: 20) {
-                    NavigationLink(destination: TrackingView()) {
+                    Button(action: {
+                        showInviteSheet = true
+                    }, label: {
                         Text("Invite")
                             .font(Font.custom("Montserrat-SemiBold", size: 14))
                             .frame(width: 125, height: 35)
                             .background(Color("PrimaryColor"))
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                    }
-                    Button(action: {
-                        self.isDoneWithRunning = true
-                    }, label: {
+                    })
+                    NavigationLink(destination: TrackingView()) {
                         Text("Run")
                             .font(Font.custom("Montserrat-SemiBold", size: 14))
                             .frame(width: 125, height: 35)
                             .background(Color.black)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                    })
+                    }
                 }
                 .padding(.bottom, 20)
                 Spacer()
@@ -106,7 +100,9 @@ struct ProfileView: View {
                 try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (events) in
                     self.events = events
                 }
-            })
+            }).sheet(isPresented: $showInviteSheet) {
+                InviteBackerRepresentable(activityItems: ["Ah yeet"])
+            }
         }
     }
 }
