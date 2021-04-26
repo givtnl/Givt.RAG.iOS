@@ -12,18 +12,20 @@ struct RegisterView: View {
     @State private var didRegisterForEvent = false
     var EventId: Int
     let userStore = UserStore.shared
-
+    
     @ObservedObject var inputKilometers = DecimalNumbersOnlyValidator()
     @ObservedObject var inputAmount = DecimalNumbersOnlyValidator()
-        
+    
     var body: some View {
         VStack {
             NavigationLink(destination:
-                            ProfileView(profile: modelData),
+                            ProfileView(profile: modelData)
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true),
                            isActive: $didRegisterForEvent
             ) {
                 EmptyView()
-            }
+            }.isDetailLink(false)
             
             ZStack(alignment: .topLeading) {
                 Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
