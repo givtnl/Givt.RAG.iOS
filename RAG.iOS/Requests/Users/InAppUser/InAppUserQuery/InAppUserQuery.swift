@@ -8,5 +8,5 @@
 import Foundation
 
 class InAppUserQuery: RequestProtocol {
-    typealias TResponse = User
+    typealias TResponse = User?
 }

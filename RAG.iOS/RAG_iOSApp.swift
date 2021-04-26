@@ -32,14 +32,11 @@ struct RAG_iOSApp: App {
         registerForAppCenter()
         registerEvents()
         
-        guard let user = try? Mediater.shared.send(request: InAppUserQuery()) else {
-            profile = nil
-            return
-        }
-        profile = user.getAsProfileData()
-        
+        profile = (try? Mediater.shared.send(request: InAppUserQuery()))?.getAsProfileData()
     }
-    
+}
+
+extension RAG_iOSApp {
     func registerHandlers() {
         // RunningHandlers
         Mediater.shared.registerHandler(handler: StartRunningCommandHandler())

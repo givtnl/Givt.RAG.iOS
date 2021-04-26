@@ -11,21 +11,15 @@ class InAppUserQueryHandler: RequestHandlerProtocol {
     let userStore = UserStore.shared
     
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
-        guard let dataUser = userStore.getUser(objectType: DataUser.self) else {
-            throw NotFoundError()
+        var user: User? = nil
+        if let dataUser = userStore.getUser(objectType: DataUser.self) {
+            user = User(name: (dataUser as! DataUser).name, email: (dataUser as! DataUser).email)
+            user?.id = (dataUser as! DataUser).id
         }
-        
-        let user = User(name: (dataUser as! DataUser).name, email: (dataUser as! DataUser).email)
-        user.id = (dataUser as! DataUser).id
-        
         try? completion(user as! R.TResponse)
     }
     
     func canHandle<R>(request: R) -> Bool where R : RequestProtocol {
         return request is InAppUserQuery
-    }
-    
-    class NotFoundError: Error {
-        
     }
 }
