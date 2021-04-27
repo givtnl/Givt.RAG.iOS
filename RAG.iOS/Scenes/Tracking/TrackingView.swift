@@ -119,6 +119,7 @@ struct TrackingView: View {
                 alignment: .topLeading
             ).ignoresSafeArea(edges: .top)
         }.ignoresSafeArea(edges: .top)
+        .hiddenNavigationBarStyle()
     }
 }
 
