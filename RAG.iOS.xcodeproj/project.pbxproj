@@ -148,10 +148,10 @@
 		3245E18A262D8B970081766C = {
 			isa = PBXGroup;
 			children = (
-				3245E195262D8B970081766C /* RAG.iOS */,
-				3245E194262D8B970081766C /* Products */,
-				2E9BFC2FC9B296CC731A298A /* Pods */,
 				9A1C9F4528EF2F53CA86EE74 /* Frameworks */,
+				2E9BFC2FC9B296CC731A298A /* Pods */,
+				3245E194262D8B970081766C /* Products */,
+				3245E195262D8B970081766C /* RAG.iOS */,
 			);
 			sourceTree = "<group>";
 		};

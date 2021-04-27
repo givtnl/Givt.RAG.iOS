@@ -47,7 +47,11 @@ struct TrackingView: View {
                 VStack {
                     Spacer()
                     VStack {
-                        Text(String(format: "%.1f", runningService.currentTime))
+                        Text(String(format: "%02d:%02d:%02d",
+                                    Int(floor(runningService.currentTime/3600)),
+                                    Int(floor(runningService.currentTime.truncatingRemainder(dividingBy: 3600) / 60)),
+                                    Int(floor(runningService.currentTime.truncatingRemainder(dividingBy: 60)))
+                        ))
                             .font(Font.custom("Montserrat-Bold", size: 50))
                         HStack {
                             VStack {
