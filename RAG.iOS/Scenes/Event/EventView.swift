@@ -25,7 +25,7 @@ struct EventView: View {
                 }
                 ZStack(alignment: .topLeading) {
                     Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
-                    Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
+                    Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
                 }
                 VStack(alignment: .leading) {
                     Text(event?.name ?? "")
