@@ -72,13 +72,14 @@ struct EventView: View {
                 maxHeight: .infinity,
                 alignment: .topLeading
             ).ignoresSafeArea(edges: .all)
+            .hiddenNavigationBarStyle()
+
         }.onAppear(perform: {
             event = RunningStore.shared.getBy(objectType: DataEvent.self, primaryKey: 1) as? DataEvent
             if event != nil {
                 eventId = 1
             }
         })
-        
     }
 }
 

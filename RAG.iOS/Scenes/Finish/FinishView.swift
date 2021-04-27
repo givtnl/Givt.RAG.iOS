@@ -25,65 +25,69 @@ struct FinishView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text("RESULTS")
-                    .font(Font.custom("Montserrat-Bold", size: 25))
-                HStack(){
-                    VStack {
-                        Text(String(format: "%.1fs", results.time))
-                            .font(Font.custom("Montserrat-Bold", size: 16))
-                        Text("Time")
-                            .font(Font.custom("Montserrat", size: 10))
-                    }.frame(width: 95, height: 95)
-                    .background(Color.white)
-                    .cornerRadius(35)
-                    .shadow(radius: 5)
-                    Spacer()
-                    VStack {
-                        Text(String(format: "%.2f km", results.distance/1000))
-                            .font(Font.custom("Montserrat-Bold", size: 16))
-                        Text("Distance")
-                            .font(Font.custom("Montserrat", size: 10))
-                    }.frame(width: 95, height: 95)
-                        .background(Color.white)
-                        .cornerRadius(35)
-                        .shadow(radius: 5)
-                    Spacer()
-                    VStack {
-                        Text(String(format: "€ %.2f", results.amount))
-                            .font(Font.custom("Montserrat-Bold", size: 16))
-                        Text("Amount raised")
-                            .font(Font.custom("Montserrat", size: 10))
-                    }.frame(width: 95, height: 95)
-                        .background(Color.white)
-                        .cornerRadius(35)
-                        .shadow(radius: 5)
-                }.padding(.top, 30)
-                Spacer()
                 HStack {
-                    NavigationLink(destination: ProfileView()){
-                        Text("Show overview")
-                    }.frame(width: 250, height: 50)
-                        .background(Color.black)
-                        .cornerRadius(25)
-                        .foregroundColor(Color.white)
-                }.frame(
+                    Image("SelfieImage")
+                    Text("Take your sweatest selfie")
+                        .font(Font.custom("Montserrat-SemiBold", size: 18))
+                        .padding(.leading, 20)
+                }
+                .padding(.leading, 20)
+                
+                HStack(spacing: 15){
+                    InfoView(titleText: "01:04:40", subtitleText: "time")
+                    InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
+                    InfoView(titleText: "06:28", subtitleText: "min/km")
+                    
+                }
+                .frame(
                     minWidth: 0,
                     maxWidth: .infinity,
                     alignment: .center)
+                .padding(.top, 10)
+                
             }.padding(30)
-             .frame(
+            
+            VStack(alignment: .leading, spacing: 20) {
+                Text("THANK.YOU.SO.MUCH, [NAME RUNNER]!")
+                    .font(Font.custom("Montserrat-SemiBold", size: 22))
+                    .foregroundColor(Color("PrimaryColor"))
+                Text("For overcoming the glue that was sticking you to your couch, for choosing to invest in running shoes instead of thee best mascara in the world, for running for your life (for real, not in game) and for casting out so much sweat that you could fill the local swimming pool. Thank you for running with us!")
+                    .font(Font.custom("Montserrat-Regular", size: 12))
+                Text("The TeenStreet global team")
+                    .font(Font.custom("Montserrat-Bold", size: 12))
+                Spacer()
+                HStack(alignment: .center) {
+                    Image("Share")
+                        .frame(width: 50, height: 50)
+                    NavigationLink(destination: ProfileView()){
+                        Text("Finish")
+                            .font(Font.custom("Montserrat-SemiBold", size: 20))
+                    }
+                    .frame(width: 250, height: 50)
+                    .background(Color.black)
+                    .cornerRadius(25)
+                    .foregroundColor(Color.white)
+                }
+                
+            }
+            .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
                 minHeight: 0,
                 maxHeight: .infinity,
                 alignment: .topLeading)
-            
+            .padding(30)
+            .background(Color.white)
+            .cornerRadius(35, corners: .topRight)
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
             minHeight: 0,
             maxHeight: .infinity,
             alignment: .topLeading)
+        .padding(.top, 20)
+        .background(Color("BackgroundFinishView"))
+        .ignoresSafeArea(edges: .top)
     }
 }
 

@@ -16,6 +16,9 @@ extension View {
     func hideRowSeparator(insets: EdgeInsets = .defaultListRowInsets, background: Color = .white) -> some View {
         modifier(HideRowSeparatorModifier(insets: insets, background: background))
     }
+    func hiddenNavigationBarStyle() -> some View {
+        modifier(HiddenNavigationBar())
+    }
 }
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
@@ -54,6 +57,10 @@ struct HideRowSeparatorModifier: ViewModifier {
     }
 }
 
-extension EdgeInsets {
-    static let defaultListRowInsets = Self(top: 0, leading: 16, bottom: 0, trailing: 16)
+struct HiddenNavigationBar: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
+    }
 }
