@@ -49,21 +49,23 @@ struct FinishView: View {
                             }
                             .padding(.leading, 20)
                         })
-                        Spacer()
-                        
-                        HStack(spacing: 15){
-                            InfoView(titleText: "01:04:40", subtitleText: "time")
-                            InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
-                            InfoView(titleText: "06:28", subtitleText: "min/km")
-                            
-                        }
-                        .frame(
-                            minWidth: 0,
-                            maxWidth: .infinity,
-                            alignment: .center)
                     }
+                    Spacer()
+                    
+                    HStack(spacing: 15){
+                        InfoView(titleText: "01:04:40", subtitleText: "time")
+                        InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
+                        InfoView(titleText: "06:28", subtitleText: "min/km")
+                        
+                    }
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .center)
+                    
                     
                 }.frame(height: 260).padding(30)
+                
                 if (showCaptureImageView) {
                     CaptureImageView(isShown: $showCaptureImageView, image: $image)
                 }
