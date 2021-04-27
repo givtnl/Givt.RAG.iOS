@@ -133,6 +133,7 @@ struct RegisterView: View {
             profile.userName = (user as! DataUser).name
             modelData = profile
         })
+        .hiddenNavigationBarStyle()
     }
 }
 

@@ -101,7 +101,10 @@ struct ProfileView: View {
                     self.events = events
                 }
             }).sheet(isPresented: $showInviteSheet) {
-                InviteBackerRepresentable(activityItems: ["Ah yeet"])
+                let user = try? Mediater.shared.send(request: InAppUserQuery())
+                
+                InviteBackerRepresentable(activityItems: [try! Mediater.shared.send(request: CreateInviteLinkCommand(eventId: user!.eventId!, participantId: user!.id!))])
+                
             }.hiddenNavigationBarStyle()
         }
     }
