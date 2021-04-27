@@ -25,10 +25,16 @@ struct FinishView: View {
     @State var image: Image? = nil
     @State var showCaptureImageView: Bool = false
     
+    @State var navigateToProfile: Bool = false
+    @State var profile: UserProfileData? = nil
+    
+
     var body: some View {
         VStack(alignment: .leading) {
+            NavigationLink(destination: ProfileView(profile: profile, events: nil), isActive: $navigateToProfile) {
+                EmptyView()
+            }
             ZStack {
-                
                 VStack(alignment: .leading) {
                     if image == nil {
                         Button(action: {
@@ -76,7 +82,12 @@ struct FinishView: View {
                 HStack(alignment: .center) {
                     Image("Share")
                         .frame(width: 50, height: 50)
-                    NavigationLink(destination: ProfileView()){
+                    Button {
+                        try? Mediater.shared.sendAsync(request: InAppUserQuery()) { (response) in
+                            self.profile = (response!).getAsProfileData()
+                            self.navigateToProfile = true
+                        }
+                    } label: {
                         Text("Finish")
                             .font(Font.custom("Montserrat-SemiBold", size: 20))
                     }
