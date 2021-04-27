@@ -22,30 +22,47 @@ class RunResult: ObservableObject {
 struct FinishView: View {
     var results: RunResult
     
+    @State var image: Image? = nil
+    @State var showCaptureImageView: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                HStack {
-                    Image("SelfieImage")
-                    Text("Take your sweatest selfie")
-                        .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        .padding(.leading, 20)
-                }
-                .padding(.leading, 20)
+            ZStack {
                 
-                HStack(spacing: 15){
-                    InfoView(titleText: "01:04:40", subtitleText: "time")
-                    InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
-                    InfoView(titleText: "06:28", subtitleText: "min/km")
+                VStack(alignment: .leading) {
+                    if image == nil {
+                        Button(action: {
+                            self.showCaptureImageView.toggle()
+                        }, label: {
+                            HStack {
+                                Image("SelfieImage")
+                                Text("Take your sweatest selfie")
+                                    .font(Font.custom("Montserrat-SemiBold", size: 18))
+                                    .foregroundColor(.black)
+                                    .padding(.leading, 20)
+                            }
+                            .padding(.leading, 20)
+                        })
+                        Spacer()
+                        
+                        HStack(spacing: 15){
+                            InfoView(titleText: "01:04:40", subtitleText: "time")
+                            InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
+                            InfoView(titleText: "06:28", subtitleText: "min/km")
+                            
+                        }
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            alignment: .center)
+                    }
                     
+                }.frame(height: 260).padding(30)
+                if (showCaptureImageView) {
+                    CaptureImageView(isShown: $showCaptureImageView, image: $image)
                 }
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    alignment: .center)
-                .padding(.top, 10)
-                
-            }.padding(30)
+            }
+            
             
             VStack(alignment: .leading, spacing: 20) {
                 Text("THANK.YOU.SO.MUCH, [NAME RUNNER]!")
@@ -86,8 +103,20 @@ struct FinishView: View {
             maxHeight: .infinity,
             alignment: .topLeading)
         .padding(.top, 20)
-        .background(Color("BackgroundFinishView"))
+        .background(image == nil ? Color("BackgroundFinishView") : nil)
+        .background(image != nil ?
+                        image?
+                        .resizable()
+                        .scaledToFit()
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: .infinity,
+                            alignment: .topLeading) : nil)
         .ignoresSafeArea(edges: .top)
+        .hiddenNavigationBarStyle()
+        
     }
 }
 
