@@ -102,7 +102,7 @@ struct ProfileView: View {
                 }
             }).sheet(isPresented: $showInviteSheet) {
                 InviteBackerRepresentable(activityItems: ["Ah yeet"])
-            }
+            }.hiddenNavigationBarStyle()
         }
     }
 }
@@ -112,3 +112,5 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView(profile: UserProfileData())
     }
 }
+
+
