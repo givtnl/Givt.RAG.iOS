@@ -53,9 +53,13 @@ struct FinishView: View {
                     Spacer()
                     
                     HStack(spacing: 15){
-                        InfoView(titleText: "01:04:40", subtitleText: "time")
+                        InfoView(titleText: String(format: "%02d:%02d:%02d",
+                                                   Int(floor(self.results.time/3600)),
+                                                   Int(floor(self.results.time.truncatingRemainder(dividingBy: 3600) / 60)),
+                                                   Int(floor(self.results.time.truncatingRemainder(dividingBy: 60)))
+                                       ), subtitleText: "time")
                         InfoView(titleText: String(format: "%.2f", results.distance/1000), subtitleText: "km")
-                        InfoView(titleText: "06:28", subtitleText: "min/km")
+                        InfoView(titleText: String(format: "%02d:%02d", calculateAveragePace(time: self.results.time, distance: self.results.distance).0, calculateAveragePace(time: self.results.time, distance: self.results.distance).1), subtitleText: "min/km")
                         
                     }
                     .frame(
@@ -131,6 +135,11 @@ struct FinishView: View {
         .hiddenNavigationBarStyle()
         
     }
+}
+
+func calculateAveragePace(time: Double, distance: Double) -> (Int, Int) {
+    let secondsPerKilometer = round(time / distance * 1000)
+    return (Int(floor(secondsPerKilometer.truncatingRemainder(dividingBy: 3600) / 60)), Int(floor(secondsPerKilometer.truncatingRemainder(dividingBy: 60))))
 }
 
 struct FinishView_Previews: PreviewProvider {
