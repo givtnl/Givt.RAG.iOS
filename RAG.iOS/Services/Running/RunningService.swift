@@ -28,6 +28,8 @@ class RunningService: NSObject, ObservableObject {
     @Published var currentLocation: CurrentUserLocation = CurrentUserLocation(coordinates: MKCoordinateRegion())
     @Published var currentLocationArray: [CurrentUserLocation] = [CurrentUserLocation(coordinates: MKCoordinateRegion())]
     
+    static let shared: RunningService = RunningService()
+    
     let locationManager = CLLocationManager()
     var lastSavedLocation: CLLocation? = nil
     

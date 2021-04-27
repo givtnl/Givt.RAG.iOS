@@ -48,6 +48,8 @@
 		A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */; };
 		A456BCEF2631735200072DB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BCEE2631735200072DB3 /* User.swift */; };
 		A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BD872631BBCF00072DB3 /* UserStore.swift */; };
+		A46A68BC2638239B00A8A097 /* StopRunningCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A68BB2638239B00A8A097 /* StopRunningCommand.swift */; };
+		A46A68C02638240900A8A097 /* StopRunningCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A68BF2638240900A8A097 /* StopRunningCommandHandler.swift */; };
 		A4FAE3FF26358B1500153C86 /* InAppUserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */; };
 		A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */; };
 		A4FAE40B26359A8500153C86 /* GetAllEventsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */; };
@@ -101,6 +103,8 @@
 		A456BCEA263172E300072DB3 /* RegisterUserCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserCommandHandler.swift; sourceTree = "<group>"; };
 		A456BCEE2631735200072DB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A456BD872631BBCF00072DB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		A46A68BB2638239B00A8A097 /* StopRunningCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRunningCommand.swift; sourceTree = "<group>"; };
+		A46A68BF2638240900A8A097 /* StopRunningCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRunningCommandHandler.swift; sourceTree = "<group>"; };
 		A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQuery.swift; sourceTree = "<group>"; };
 		A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQueryHandler.swift; sourceTree = "<group>"; };
 		A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsQuery.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 		A44564FF262EB1540017152E /* Running */ = {
 			isa = PBXGroup;
 			children = (
+				A46A68BA2638233600A8A097 /* StopRunningCommand */,
 				A4456500262EB1590017152E /* StartRunningCommand */,
 			);
 			path = Running;
@@ -395,6 +400,15 @@
 				A456BCEE2631735200072DB3 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A46A68BA2638233600A8A097 /* StopRunningCommand */ = {
+			isa = PBXGroup;
+			children = (
+				A46A68BB2638239B00A8A097 /* StopRunningCommand.swift */,
+				A46A68BF2638240900A8A097 /* StopRunningCommandHandler.swift */,
+			);
+			path = StopRunningCommand;
 			sourceTree = "<group>";
 		};
 		A48BB5AB262DD1720096E62F /* Scenes */ = {
@@ -570,6 +584,7 @@
 				3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */,
 				A4456506262EB1830017152E /* StartRunningCommandHandler.swift in Sources */,
 				A44564FC262EB0110017152E /* Mediater.swift in Sources */,
+				A46A68BC2638239B00A8A097 /* StopRunningCommand.swift in Sources */,
 				FB0ABD6F2637025100F8DCC8 /* InviteBackerRepresentable.swift in Sources */,
 				3245F9402631778D00C0D81A /* RealmService.swift in Sources */,
 				32DA4DE3262EF66D00A7AB40 /* TrackViewData.swift in Sources */,
@@ -596,6 +611,7 @@
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
 				32BD353B2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
+				A46A68C02638240900A8A097 /* StopRunningCommandHandler.swift in Sources */,
 				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,4 +9,9 @@ import Foundation
 
 class StartRunningCommand: RequestProtocol {
     typealias TResponse = Bool
+    var user: User
+    
+    init(user: User) {
+        self.user = user
+    }
 }

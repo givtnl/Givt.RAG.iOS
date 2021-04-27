@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct TrackingView: View {
-    @ObservedObject var runningService = RunningService();
+    @ObservedObject var runningService = RunningService.shared;
     @State private var isDoneWithRunning = false
     
     var body: some View {
@@ -75,9 +75,18 @@ struct TrackingView: View {
                     Button(action: {
                         if (runningService.state == RunningSystemState.Running) {
                             runningService.stopRunning()
-                            isDoneWithRunning = true
+                            if let user = try? Mediater.shared.send(request: InAppUserQuery()) {
+                                try? Mediater.shared.sendAsync(request: StopRunningCommand(user: user), completion: { (response) in
+                                    isDoneWithRunning = true
+                                })
+                            }
                         } else {
-                            runningService.startRunning()
+                            if let user = try? Mediater.shared.send(request: InAppUserQuery()) {
+                                try? Mediater.shared.sendAsync(request: StartRunningCommand(user: user), completion: { (response) in
+                                    print(response)
+                                    runningService.startRunning()
+                                })
+                            }
                         }
                     }) {
                         Text(runningService.state == RunningSystemState.Running ? "Stop" : "Start")

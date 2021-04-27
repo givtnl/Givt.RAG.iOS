@@ -40,7 +40,8 @@ extension RAG_iOSApp {
     func registerHandlers() {
         // RunningHandlers
         Mediater.shared.registerHandler(handler: StartRunningCommandHandler())
-        
+        Mediater.shared.registerHandler(handler: StopRunningCommandHandler())
+
         // EventHandlers
         Mediater.shared.registerHandler(handler: JoinEventCommandHandler())
         Mediater.shared.registerHandler(handler: GetAllEventsQueryHandler())
