@@ -27,4 +27,5 @@ class DataUser: Object {
     @objc dynamic var email: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var id: String = ""
+    @objc dynamic var eventId: String = ""
 }

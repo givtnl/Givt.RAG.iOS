@@ -9,11 +9,11 @@ import Foundation
 
 class RegisterUserCommand: RequestProtocol {
     var user: User
-    var eventId: Int
+    var eventId: String
     
-    init(name: String, email: String, eventId: Int) {
+    init(name: String, email: String, eventId: String) {
         self.eventId = eventId
-        self.user = User(name: name, email: email)
+        self.user = User(name: name, email: email, eventId: eventId)
     }
     
     typealias TResponse = Bool

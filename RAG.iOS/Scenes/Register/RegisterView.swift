@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @State private var modelData = UserProfileData()
     @State private var didRegisterForEvent = false
-    var EventId: Int
+    var EventId: String
     let userStore = UserStore.shared
     
     @ObservedObject var inputKilometers = DecimalNumbersOnlyValidator()
@@ -88,7 +88,7 @@ struct RegisterView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: 65484)) { (didRegisterSuccessful) in
+                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: self.EventId)) { (didRegisterSuccessful) in
                             if didRegisterSuccessful {
                                 didRegisterForEvent = didRegisterSuccessful
                             } else {
@@ -138,6 +138,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(EventId: 1)
+        RegisterView(EventId: "")
     }
 }

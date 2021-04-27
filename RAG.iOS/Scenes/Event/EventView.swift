@@ -10,9 +10,9 @@ import CoreData
 
 struct EventView: View {
     @State private var canJoinEvent = false
-    @State private var event: DataEvent? = nil
+    @State private var event: Event? = nil
 
-    @State private var eventId = 0
+    @State private var eventId = ""
     
     var body: some View {
         NavigationView{
@@ -32,14 +32,14 @@ struct EventView: View {
                         .font(Font.custom("Montserrat-Bold", size: 25))
                     
                     Group {
-                        InfoViewRow(logoString: "CalenderLogo", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.endDate) ?? "")
-                        InfoViewRow(logoString: "LocationArrow", titleString: event?.city ?? "", subTitleString: event?.address ?? "")
+                        InfoViewRow(logoString: "CalenderLogo", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.startDate) ?? "")
+                        InfoViewRow(logoString: "LocationArrow", titleString: event?.city ?? "", subTitleString: event?.city ?? "")
                     }
                     
                     VStack(alignment: .leading) {
                         Text("About the event")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        Text(event?.eventDescription ?? "")
+                        Text(event?.name ?? "")
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         Button(action: {
@@ -75,9 +75,9 @@ struct EventView: View {
             .hiddenNavigationBarStyle()
 
         }.onAppear(perform: {
-            event = RunningStore.shared.getBy(objectType: DataEvent.self, primaryKey: 1) as? DataEvent
-            if event != nil {
-                eventId = 1
+            try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (response) in
+                event = response[0]
+                eventId = event!.id
             }
         })
     }

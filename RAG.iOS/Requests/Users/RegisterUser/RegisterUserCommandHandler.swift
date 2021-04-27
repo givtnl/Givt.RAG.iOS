@@ -26,6 +26,7 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
             user.email = command.user.email
             user.name = command.user.name
             user.id = participant.id!
+            user.eventId = command.eventId
             self.userStore.create(object: user)
             try?completion(true as! R.TResponse)
         }

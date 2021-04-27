@@ -10,10 +10,12 @@ class User {
     var id: String?
     var name: String
     var email: String
+    var eventId: String?
     
-    init(name: String, email: String) {
+    init(name: String, email: String, eventId: String) {
         self.name = name
         self.email = email
+        self.eventId = eventId
     }
     
     func getAsProfileData() -> UserProfileData {
