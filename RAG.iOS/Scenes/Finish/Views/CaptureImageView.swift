@@ -11,9 +11,10 @@ import SwiftUI
 struct CaptureImageView {
     @Binding var isShown: Bool
     @Binding var image: Image?
+    @Binding var uiImage: UIImage?
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image)
+        return Coordinator(isShown: $isShown, image: $image, uiImage: $uiImage)
     }
     
 }
@@ -23,7 +24,7 @@ extension CaptureImageView: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
-        picker.modalPresentationStyle = .popover
+        uiImage = context.coordinator.uiImage
         return picker
     }
     
