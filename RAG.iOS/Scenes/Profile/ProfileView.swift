@@ -13,7 +13,7 @@ struct ProfileView: View {
     @State var events: [Event]? = nil
     @State private var showInviteSheet = false
     var activeEventId: String
-    
+    @State var eventFinished: Bool = true
     var body: some View {
         NavigationView {
             VStack {
@@ -72,19 +72,18 @@ struct ProfileView: View {
                     
                     // VStack with training info and motiviation
                     VStack(alignment: .leading, spacing: 15) {
-//                        Text("Training info")
-//                            .font(Font.custom("Montserrat-SemiBold", size: 18))
-//                        HStack {
-//                            Image("LocationArrow")
-//                            VStack(alignment: .leading) {
-//                                Text("Distance")
-//                                    .font(Font.custom("Montserrat-Regular", size: 8))
-//                                Text("10,00 km")
-//                                    .font(Font.custom("Montserrat-SemiBold", size: 11))
-//                            }.padding(.leading, 5)
-//                        }
+                        if eventFinished {
+                            Text("Results")
+                                .font(Font.custom("Montserrat-SemiBold", size: 18))
+                            HStack {
+                                StatsView(imageName: "LocationArrow", title: "Distance", subTitle: "10, 00km")
+                                StatsView(imageName: "LocationArrow", title: "Time", subTitle: "01:04:40")
+                                StatsView(imageName: "LocationArrow", title: "Average pace", subTitle: "06:28 km/u")
+                            }
+                        }
                         Text("Motivation")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
+                            .padding(.top, 20)
                         Text("I want the Ukranian TeenStreet to grow so they can reach more people. Because of the growth of my local TeenStreet, I had the chance to meet all of my new friends. Imma run this!")
                             .font(Font.custom("Montserrat-Regular", size: 12))
                         HStack {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321556EB2639867E00F2408D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321556EA2639867E00F2408D /* StatsView.swift */; };
 		3241FAFD26395142004E04D9 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241FAFC26395142004E04D9 /* DoubleExtensions.swift */; };
 		3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E196262D8B970081766C /* RAG_iOSApp.swift */; };
 		3245E199262D8B970081766C /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E198262D8B970081766C /* EventView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321556EA2639867E00F2408D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		3241FAFC26395142004E04D9 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		3245E193262D8B970081766C /* RAG.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAG.iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3245E196262D8B970081766C /* RAG_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAG_iOSApp.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				3292E9052632BCD30068CF8C /* EventCarouselViewItem.swift */,
 				FB0ABD6E2637025100F8DCC8 /* InviteBackerRepresentable.swift */,
+				321556EA2639867E00F2408D /* StatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				32BD353B2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift in Sources */,
 				3241FAFD26395142004E04D9 /* DoubleExtensions.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
+				321556EB2639867E00F2408D /* StatsView.swift in Sources */,
 				A46A68C02638240900A8A097 /* StopRunningCommandHandler.swift in Sources */,
 				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
 				32A20738263823A50024F27C /* CaptureImageView.swift in Sources */,
