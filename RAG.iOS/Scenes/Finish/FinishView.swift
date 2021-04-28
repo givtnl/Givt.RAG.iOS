@@ -23,6 +23,7 @@ struct FinishView: View {
     var results: RunResult
     
     @State var image: Image? = nil
+    @State var uiImage: UIImage? = nil
     @State var showCaptureImageView: Bool = false
     
     @State var navigateToProfile: Bool = false
@@ -31,7 +32,7 @@ struct FinishView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            NavigationLink(destination: ProfileView(profile: profile, events: nil, activeEventId: ""), isActive: $navigateToProfile) {
+            NavigationLink(destination: ProfileView(profile: profile, events: nil, activeEventId: "").hiddenNavigationBarStyle(), isActive: $navigateToProfile) {
                 EmptyView()
             }
             ZStack {
@@ -73,7 +74,7 @@ struct FinishView: View {
                 }.frame(height: 260).padding(30)
                 
                 if (showCaptureImageView) {
-                    CaptureImageView(isShown: $showCaptureImageView, image: $image)
+                    CaptureImageView(isShown: $showCaptureImageView, image: $image, uiImage: $uiImage )
                 }
             }
             
@@ -91,6 +92,10 @@ struct FinishView: View {
                     Image("Share")
                         .frame(width: 50, height: 50)
                     Button {
+                        if uiImage != nil {
+                            guard let data = uiImage?.pngData() else { return }
+                            print(data.count)
+                        }
                         try? Mediater.shared.sendAsync(request: InAppUserQuery()) { (response) in
                             self.profile = (response!).getAsProfileData()
                             self.navigateToProfile = true

@@ -13,4 +13,5 @@ struct Event: Hashable {
     public var startDate: Date
     public var city: String
     public var comment: String? = nil
+    public var endDate: Date
 }
