@@ -28,7 +28,13 @@ struct RegisterView: View {
             }.isDetailLink(false)
             
             ZStack(alignment: .topLeading) {
-                Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
+                Image("Runner")
+                    .resizable()
+                    .scaledToFit()
+                    .ignoresSafeArea(edges: .top)
+                    .overlay(
+                        LinearGradient(gradient: Gradient(colors: [.clear, .black.opacity(0.75)]), startPoint: .top, endPoint: .bottom)
+                    )
                 Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
             }
             
