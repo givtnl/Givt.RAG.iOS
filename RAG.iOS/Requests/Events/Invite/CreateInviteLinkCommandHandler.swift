@@ -11,7 +11,7 @@ class CreateInviteLinkCommandHandler: RequestHandlerProtocol {
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
         let request = request as! CreateInviteLinkCommand
         
-        let invitationLink = "Hi! I'm going to have a good run for: RAG - Raise And Give. Check it out! BTW, here's the link: http://givt-debug-rag-web.westeurope.azurecontainer.io/backer/register?eventId=\(request.eventId)&participantId=\(request.participantId)"
+        let invitationLink = "I'm running for Raise And Give! Do you have my back? Take a look at http://givt-debug-rag-web.westeurope.azurecontainer.io/backer/register?eventId=\(request.eventId)&participantId=\(request.participantId)"
         
         try? completion(invitationLink as! R.TResponse)
     }
