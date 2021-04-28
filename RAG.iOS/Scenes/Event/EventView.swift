@@ -19,7 +19,7 @@ struct EventView: View {
         NavigationView{
             VStack(alignment: .leading) {
                 NavigationLink(destination:
-                                RegisterView(EventId: eventId),
+                                RegisterView(event: event),
                                isActive: $canJoinEvent
                 ) {
                     EmptyView()

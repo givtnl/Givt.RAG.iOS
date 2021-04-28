@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @State private var modelData = UserProfileData()
     @State private var didRegisterForEvent = false
-    var EventId: String
+    @State var event: Event?
     let userStore = UserStore.shared
     
     @ObservedObject var inputKilometers = DecimalNumbersOnlyValidator()
@@ -19,7 +19,7 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             NavigationLink(destination:
-                            ProfileView(profile: UserProfileData(userName: modelData.userName, email: modelData.email, entryNumber: modelData.entryNumber, averageRunDistance: Double(inputKilometers.text) ?? 0), activeEventId: EventId)
+                            ProfileView(profile: UserProfileData(userName: modelData.userName, email: modelData.email, entryNumber: modelData.entryNumber, averageRunDistance: Double(inputKilometers.text) ?? 0), activeEventId: event!.id)
                             .navigationBarTitle("")
                             .navigationBarHidden(true),
                            isActive: $didRegisterForEvent
@@ -30,12 +30,15 @@ struct RegisterView: View {
             ZStack(alignment: .topLeading) {
                 Image("Runner")
                     .resizable()
-                    .scaledToFit()
                     .ignoresSafeArea(edges: .top)
                     .overlay(
                         LinearGradient(gradient: Gradient(colors: [.clear, Color.black.opacity(0.75)]), startPoint: .top, endPoint: .bottom)
-                    )
+                    ).frame(width: .infinity, height: 250, alignment: .center)
                 Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
+                Text(event!.name)
+                    .offset(x:20, y: 180)
+                    .font(Font.custom("Montserrat-SemiBold", size: 18))
+                    .foregroundColor(.white)
             }
             
             VStack(alignment: .leading, spacing: 15) {
@@ -93,7 +96,7 @@ struct RegisterView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: self.EventId, entryNumber: modelData.entryNumber)) { (didRegisterSuccessful) in
+                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: self.event!.id, entryNumber: modelData.entryNumber)) { (didRegisterSuccessful) in
                             if didRegisterSuccessful {
                                 didRegisterForEvent = didRegisterSuccessful
                             } else {
@@ -129,7 +132,6 @@ struct RegisterView: View {
         )
         .ignoresSafeArea(edges: .all)
         .onAppear(perform: {
-            print(EventId)
             guard let user = userStore.getUser(objectType: DataUser.self) else {
                 return
             }
@@ -144,6 +146,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(EventId: "")
+        RegisterView(event: Event(id: "", name: "yolo", startDate: Date(), city: "ah yeet"))
     }
 }
