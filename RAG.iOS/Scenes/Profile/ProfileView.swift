@@ -14,24 +14,27 @@ struct ProfileView: View {
     @State private var showInviteSheet = false
     var activeEventId: String
     @State var eventFinished: Bool = true
+    
+    
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView(.vertical) {
-                    HStack {
+                    HStack(alignment: .center) {
                         Image("profile")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 106, height: 106)
                             .clipShape(Circle())
                             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
+                        
                         VStack(alignment: .leading) {
                             Text(profile!.userName)
                                 .font(Font.custom("Montserrat-SemiBold", size: 16))
                             Text(profile!.email)
                                 .font(Font.custom("Montserrat-Regular", size: 12))
                             HStack {
-                                Image("LocationArrow")
+                                Image("LocationIcon")
                                     .resizable()
                                     .frame(width: 25, height: 25)
                                 
@@ -43,7 +46,7 @@ struct ProfileView: View {
                             .background(Color("DarkerPink"))
                             .cornerRadius(25)
                         }
-                        .padding(.leading, 5)
+                        .padding(.leading, 10)
                     }
                     .frame(
                         minWidth: 0,
@@ -51,7 +54,6 @@ struct ProfileView: View {
                         alignment: .topLeading
                     )
                     .padding(.horizontal, 30)
-                    .padding(.top, 10)
                     
                     // VStack with scrollview for events
                     VStack {
@@ -75,10 +77,10 @@ struct ProfileView: View {
                         if eventFinished {
                             Text("Results")
                                 .font(Font.custom("Montserrat-SemiBold", size: 18))
-                            HStack {
-                                StatsView(imageName: "LocationArrow", title: "Distance", subTitle: "10, 00km")
-                                StatsView(imageName: "LocationArrow", title: "Time", subTitle: "01:04:40")
-                                StatsView(imageName: "LocationArrow", title: "Average pace", subTitle: "06:28 km/u")
+                            HStack(spacing: 20) {
+                                StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
+                                StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
+                                StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
                             }
                         }
                         Text("Motivation")
@@ -149,7 +151,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ProfileView(profile: UserProfileData(userName: "Mikey", email: "Ah yeet@lol.zor", entryNumber: "Ah yeet", averageRunDistance: 111.11), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
             ProfileView(profile: UserProfileData(userName: "Mikey", email: "Ah yeet@lol.zor", entryNumber: "Ah yeet", averageRunDistance: 111.11), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
         }
     }

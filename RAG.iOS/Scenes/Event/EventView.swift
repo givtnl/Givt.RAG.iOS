@@ -33,8 +33,8 @@ struct EventView: View {
                         .font(Font.custom("Montserrat-Bold", size: 25))
                     
                     Group {
-                        InfoViewRow(logoString: "CalenderLogo", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.startDate) ?? "")
-                        InfoViewRow(logoString: "LocationArrow", titleString: event?.city ?? "", subTitleString: event?.city ?? "")
+                        InfoViewRow(logoString: "CalenderIcon", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.startDate) ?? "")
+                        InfoViewRow(logoString: "LocationIcon", titleString: event?.city ?? "", subTitleString: event?.city ?? "")
                     }
                     
                     VStack(alignment: .leading) {
