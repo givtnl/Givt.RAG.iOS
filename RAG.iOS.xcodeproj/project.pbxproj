@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3241FAFD26395142004E04D9 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241FAFC26395142004E04D9 /* DoubleExtensions.swift */; };
 		3245E197262D8B970081766C /* RAG_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E196262D8B970081766C /* RAG_iOSApp.swift */; };
 		3245E199262D8B970081766C /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245E198262D8B970081766C /* EventView.swift */; };
 		3245E19B262D8B9A0081766C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3245E19A262D8B9A0081766C /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3241FAFC26395142004E04D9 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		3245E193262D8B970081766C /* RAG.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAG.iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3245E196262D8B970081766C /* RAG_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAG_iOSApp.swift; sourceTree = "<group>"; };
 		3245E198262D8B970081766C /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				3245E1AA262DAB840081766C /* ViewExtensions.swift */,
 				3245F94A26319A5200C0D81A /* DateExtensions.swift */,
 				32A2073226380E780024F27C /* EdgeInsetsExtension.swift */,
+				3241FAFC26395142004E04D9 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				32A2073A263824C00024F27C /* Coordinator.swift in Sources */,
 				3245E1AF262DAD640081766C /* InfoViewRow.swift in Sources */,
 				32BD353B2631D3430077BDFF /* DecimalNumbersOnlyValidator.swift in Sources */,
+				3241FAFD26395142004E04D9 /* DoubleExtensions.swift in Sources */,
 				A4456502262EB16D0017152E /* StartRunningCommand.swift in Sources */,
 				A46A68C02638240900A8A097 /* StopRunningCommandHandler.swift in Sources */,
 				A456BCEB263172E300072DB3 /* RegisterUserCommandHandler.swift in Sources */,
