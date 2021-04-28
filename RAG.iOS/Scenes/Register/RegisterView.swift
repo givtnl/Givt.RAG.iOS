@@ -29,7 +29,7 @@ struct RegisterView: View {
             
             ZStack(alignment: .topLeading) {
                 Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
-                Image("OM_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
+                Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
             }
             
             VStack(alignment: .leading, spacing: 15) {
@@ -72,7 +72,7 @@ struct RegisterView: View {
                         .font(Font.custom("Montserrat-SemiBold", size: 15))
                     
                 }
-                .frame(width: UIScreen.main.bounds.width-40, height: 40, alignment: .leading)
+                .frame(width: .infinity, height: 40, alignment: .leading)
                 .background(Color("DarkerPink"))
                 .cornerRadius(5)
                 
