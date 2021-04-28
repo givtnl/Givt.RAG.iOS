@@ -141,6 +141,11 @@ struct FinishView: View {
 
 func calculateAveragePace(time: Double, distance: Double) -> (Int, Int) {
     let secondsPerKilometer = round(time / distance * 1000)
+    
+    guard secondsPerKilometer.isFinite else {
+        return (0, 0)
+    }
+    
     return (Int(floor(secondsPerKilometer.truncatingRemainder(dividingBy: 3600) / 60)), Int(floor(secondsPerKilometer.truncatingRemainder(dividingBy: 60))))
 }
 
