@@ -79,7 +79,7 @@ struct RegisterView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: self.EventId)) { (didRegisterSuccessful) in
+                        try? Mediater.shared.sendAsync(request: RegisterUserCommand(name: modelData.userName, email: modelData.email, eventId: self.EventId, entryNumber: modelData.entryNumber)) { (didRegisterSuccessful) in
                             if didRegisterSuccessful {
                                 didRegisterForEvent = didRegisterSuccessful
                             } else {

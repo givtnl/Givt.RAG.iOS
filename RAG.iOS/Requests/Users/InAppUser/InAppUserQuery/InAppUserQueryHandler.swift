@@ -13,7 +13,7 @@ class InAppUserQueryHandler: RequestHandlerProtocol {
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
         var user: User? = nil
         if let dataUser = userStore.getUser(objectType: DataUser.self) {
-            user = User(name: (dataUser as! DataUser).name, email: (dataUser as! DataUser).email, eventId: (dataUser as! DataUser).eventId)
+            user = User(name: (dataUser as! DataUser).name, email: (dataUser as! DataUser).email, eventId: (dataUser as! DataUser).eventId, entryNumber: nil)
             user?.id = (dataUser as! DataUser).id
         }
         try? completion(user as! R.TResponse)

@@ -11,11 +11,13 @@ class User {
     var name: String
     var email: String
     var eventId: String?
+    var entryNumber: String?
     
-    init(name: String, email: String, eventId: String) {
+    init(name: String, email: String, eventId: String, entryNumber: String?) {
         self.name = name
         self.email = email
         self.eventId = eventId
+        self.entryNumber = entryNumber
     }
     
     func getAsProfileData() -> UserProfileData {

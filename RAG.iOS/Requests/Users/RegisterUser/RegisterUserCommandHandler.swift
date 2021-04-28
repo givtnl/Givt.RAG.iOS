@@ -17,7 +17,7 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
         
         let user: User = command.user
         
-        ParticipantsAPI.registerParticipant(eventId: String(command.eventId), registerParticipantCommand: RegisterParticipantCommand(name: user.name)) { (participant, error) in
+        ParticipantsAPI.registerParticipant(eventId: String(command.eventId), registerParticipantCommand: RegisterParticipantCommand(name: user.name, entryNumber: command.user.entryNumber)) { (participant, error) in
             guard let participant = participant else {
                 try?completion(false as! R.TResponse)
                 return
