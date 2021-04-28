@@ -19,7 +19,7 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             NavigationLink(destination:
-                            ProfileView(profile: modelData)
+                            ProfileView(profile: UserProfileData(userName: modelData.userName, email: modelData.email, entryNumber: modelData.entryNumber, averageRunDistance: Double(inputKilometers.text) ?? 0))
                             .navigationBarTitle("")
                             .navigationBarHidden(true),
                            isActive: $didRegisterForEvent

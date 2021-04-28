@@ -29,7 +29,20 @@ struct ProfileView: View {
                                 .font(Font.custom("Montserrat-SemiBold", size: 16))
                             Text(profile!.email)
                                 .font(Font.custom("Montserrat", size: 12))
-                        }.padding(.leading, 10)
+                            HStack {
+                                Image("LocationArrow")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                
+                                Text(profile!.averageRunDistance.string)
+                                    .font(Font.custom("Montserrat-Medium", size: 12))
+
+                            }
+                            .frame(width: 100, height: 25, alignment: .leading)
+                            .background(Color("DarkerPink"))
+                            .cornerRadius(25)
+                        }
+                        .padding(.leading, 10)
                     }
                     .frame(
                         minWidth: 0,
@@ -46,9 +59,11 @@ struct ProfileView: View {
                                 { event in
                                     EventCarouselViewItem(event: event)
                                 }
-                            }.padding(.vertical, 15)
+                            }
+                            .padding(.vertical, 15)
                         }
-                    }.frame(
+                    }
+                    .frame(
                         height: 170
                     )
                     .padding(.leading, 30)
@@ -112,7 +127,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(profile: UserProfileData())
+        ProfileView(profile: UserProfileData(), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")])
     }
 }
 
