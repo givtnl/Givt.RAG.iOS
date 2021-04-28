@@ -29,7 +29,7 @@ struct EventView: View {
                     Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
                 }
                 VStack(alignment: .leading) {
-                    Text(event?.name ?? "")
+                    Text(event?.name.uppercased() ?? "")
                         .font(Font.custom("Montserrat-Bold", size: 25))
                     
                     Group {
