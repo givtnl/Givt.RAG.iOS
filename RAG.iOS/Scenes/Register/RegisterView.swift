@@ -57,41 +57,25 @@ struct RegisterView: View {
                     .cornerRadius(5)
                     .font(Font.custom("Montserrat-Medium", size: 12))
                 
-                Text("Goals")
+                Text("On average I run")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
                 
-                HStack(spacing: 20) {
-                    HStack {
-                        TextField("", text: $inputKilometers.text)
-                            .padding(.leading, 15)
-                            .font(Font.custom("Montserrat-Medium", size: 15))
-                            .keyboardType(.decimalPad)
-                        
-                        Spacer()
-                        Text("km")
-                            .padding(.trailing, 15)
-                            .font(Font.custom("Montserrat-SemiBold", size: 15))
-                        
-                    }
-                    .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
-                    .background(Color("DarkerPink"))
-                    .cornerRadius(5)
+                HStack {
+                    TextField("", text: $inputKilometers.text)
+                        .padding(.leading, 15)
+                        .font(Font.custom("Montserrat-Medium", size: 15))
+                        .keyboardType(.decimalPad)
                     
-                    HStack {
-                        Text("€")
-                            .padding(.leading, 15)
-                            .font(Font.custom("Montserrat-SemiBold", size: 15))
-                        
-                        TextField("", text: $inputAmount.text)
-                            .padding(.leading, 15)
-                            .font(Font.custom("Montserrat-Medium", size: 15))
-                            .keyboardType(.decimalPad)
-                        
-                    }
-                    .frame(width: UIScreen.main.bounds.width/2-40, height: 40, alignment: .leading)
-                    .background(Color("DarkerPink"))
-                    .cornerRadius(5)
+                    Spacer()
+                    Text("km")
+                        .padding(.trailing, 15)
+                        .font(Font.custom("Montserrat-SemiBold", size: 15))
+                    
                 }
+                .frame(width: UIScreen.main.bounds.width-40, height: 40, alignment: .leading)
+                .background(Color("DarkerPink"))
+                .cornerRadius(5)
+                
                 HStack {
                     Spacer()
                     Button(action: {
