@@ -38,7 +38,9 @@ struct FinishView: View {
                 VStack(alignment: .leading) {
                     if image == nil {
                         Button(action: {
-                            self.showCaptureImageView.toggle()
+                            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                                self.showCaptureImageView.toggle()
+                            }
                         }, label: {
                             HStack {
                                 Image("SelfieImage")
