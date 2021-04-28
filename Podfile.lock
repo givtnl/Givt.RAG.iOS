@@ -7,7 +7,7 @@ PODS:
   - AppCenter/Core (4.1.0)
   - AppCenter/Crashes (4.1.0):
     - AppCenter/Core
-  - OpenAPIClient (1.0.0)
+  - OpenAPIClient (1)
 
 DEPENDENCIES:
   - AppCenter
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
-  OpenAPIClient: 9463e074f7c19fecf6c3f9c0e565dd58aab45aa5
+  OpenAPIClient: 1a6a9b44f3bcc553da7b450e7eff7f852d6b175b
 
 PODFILE CHECKSUM: 467f1b24ec8a023509cdd26b71d48c5cd1b7fafa
 

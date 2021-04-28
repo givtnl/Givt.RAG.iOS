@@ -27,7 +27,7 @@ import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
 let id = "id_example" // String | 
-let finishParticipantCommand = FinishParticipantCommand(distanceInMeters: 123) // FinishParticipantCommand | 
+let finishParticipantCommand = FinishParticipantCommand(distanceInMeters: 123, finishDate: Date()) // FinishParticipantCommand | 
 
 // Marks a given participation in an event as Finished
 ParticipantsAPI.finishEventForParticipant(eventId: eventId, id: id, finishParticipantCommand: finishParticipantCommand) { (response, error) in
@@ -182,7 +182,7 @@ Registers a new participant who participates in the given event
 import OpenAPIClient
 
 let eventId = "eventId_example" // String | 
-let registerParticipantCommand = RegisterParticipantCommand(name: "name_example", targets: [RegisterEventTargetCommand(type: EventTargetType(), value: "value_example")]) // RegisterParticipantCommand | 
+let registerParticipantCommand = RegisterParticipantCommand(name: "name_example", entryNumber: "entryNumber_example", targets: [RegisterEventTargetCommand(type: EventTargetType(), value: "value_example")]) // RegisterParticipantCommand | 
 
 // Registers a new participant for a given event
 ParticipantsAPI.registerParticipant(eventId: eventId, registerParticipantCommand: registerParticipantCommand) { (response, error) in

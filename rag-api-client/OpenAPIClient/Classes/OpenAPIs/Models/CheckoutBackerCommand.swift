@@ -13,12 +13,14 @@ public struct CheckoutBackerCommand: Codable {
     public var currency: String?
     public var description: String?
     public var redirectUrl: String?
+    public var locale: String?
 
-    public init(totalAmount: Double? = nil, currency: String? = nil, description: String? = nil, redirectUrl: String? = nil) {
+    public init(totalAmount: Double? = nil, currency: String? = nil, description: String? = nil, redirectUrl: String? = nil, locale: String? = nil) {
         self.totalAmount = totalAmount
         self.currency = currency
         self.description = description
         self.redirectUrl = redirectUrl
+        self.locale = locale
     }
 
 }

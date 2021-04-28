@@ -36,7 +36,7 @@ struct RegisterView: View {
                 Text("I want to run!")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
                 
-                TextField("Username", text: $modelData.userName)
+                TextField("Name", text: $modelData.userName)
                     .padding(.leading, 10)
                     .frame(height: 40)
                     .background(Color("DarkerPink"))
@@ -44,6 +44,13 @@ struct RegisterView: View {
                     .font(Font.custom("Montserrat-Medium", size: 12))
                 
                 TextField("Email", text: $modelData.email)
+                    .padding(.leading, 10)
+                    .frame(height: 40)
+                    .background(Color("DarkerPink"))
+                    .cornerRadius(5)
+                    .font(Font.custom("Montserrat-Medium", size: 12))
+                
+                TextField("Entry Number", text: $modelData.entryNumber)
                     .padding(.leading, 10)
                     .frame(height: 40)
                     .background(Color("DarkerPink"))

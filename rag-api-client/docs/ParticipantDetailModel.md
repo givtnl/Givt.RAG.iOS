@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
+**entryNumber** | **String** |  | [optional] 
 **startDate** | **Date** |  | [optional] 
 **finishDate** | **Date** |  | [optional] 
 **distanceInMeters** | **Double** |  | [optional] 

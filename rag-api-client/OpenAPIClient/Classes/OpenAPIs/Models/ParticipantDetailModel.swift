@@ -11,15 +11,17 @@ public struct ParticipantDetailModel: Codable {
 
     public var id: String?
     public var name: String?
+    public var entryNumber: String?
     public var startDate: Date?
     public var finishDate: Date?
     public var distanceInMeters: Double?
     public var status: String?
     public var targets: [EventTargetDetailModel]?
 
-    public init(id: String? = nil, name: String? = nil, startDate: Date? = nil, finishDate: Date? = nil, distanceInMeters: Double? = nil, status: String? = nil, targets: [EventTargetDetailModel]? = nil) {
+    public init(id: String? = nil, name: String? = nil, entryNumber: String? = nil, startDate: Date? = nil, finishDate: Date? = nil, distanceInMeters: Double? = nil, status: String? = nil, targets: [EventTargetDetailModel]? = nil) {
         self.id = id
         self.name = name
+        self.entryNumber = entryNumber
         self.startDate = startDate
         self.finishDate = finishDate
         self.distanceInMeters = distanceInMeters

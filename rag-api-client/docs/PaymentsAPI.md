@@ -24,7 +24,7 @@ import OpenAPIClient
 let eventId = "eventId_example" // String | 
 let participantId = "participantId_example" // String | 
 let backerId = "backerId_example" // String | 
-let checkoutBackerCommand = CheckoutBackerCommand(totalAmount: 123, currency: "currency_example", description: "description_example", redirectUrl: "redirectUrl_example") // CheckoutBackerCommand | 
+let checkoutBackerCommand = CheckoutBackerCommand(totalAmount: 123, currency: "currency_example", description: "description_example", redirectUrl: "redirectUrl_example", locale: "locale_example") // CheckoutBackerCommand | 
 
 // Creates an paymentrequest with the paymentprovider
 PaymentsAPI.pay(eventId: eventId, participantId: participantId, backerId: backerId, checkoutBackerCommand: checkoutBackerCommand) { (response, error) in

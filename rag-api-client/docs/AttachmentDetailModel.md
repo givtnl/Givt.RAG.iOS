@@ -1,13 +1,13 @@
-# CheckoutBackerCommand
+# AttachmentDetailModel
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalAmount** | **Double** |  | [optional] 
-**currency** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**redirectUrl** | **String** |  | [optional] 
-**locale** | **String** |  | [optional] 
+**exists** | **Bool** |  | [optional] 
+**downloadUrl** | **String** |  | [optional] 
+**downloadUrlValidTill** | **Date** |  | [optional] 
+**uploadUrl** | **String** |  | [optional] 
+**uploadUrlValidTill** | **Date** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
