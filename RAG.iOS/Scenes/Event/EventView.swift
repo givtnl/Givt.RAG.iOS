@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import OpenAPIClient
 
 struct EventView: View {
     @State private var canJoinEvent = false
@@ -39,7 +40,7 @@ struct EventView: View {
                     VStack(alignment: .leading) {
                         Text("About the event")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        Text(event?.name ?? "")
+                        Text(event?.comment ?? "")
                             .font(Font.custom("Montserrat-Regular", size: 13))
                             .padding(.top, 1)
                         Button(action: {
@@ -77,6 +78,11 @@ struct EventView: View {
         }.onAppear(perform: {
             try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (response) in
                 event = response[0]
+
+                EventsAPI.getEventDetail(id: response[0].id) { model, _ in
+                    self.event?.comment = model?.comment
+                }
+                
                 eventId = event!.id
             }
         })
