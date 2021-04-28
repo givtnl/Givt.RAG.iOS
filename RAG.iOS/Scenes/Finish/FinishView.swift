@@ -31,7 +31,7 @@ struct FinishView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            NavigationLink(destination: ProfileView(profile: profile, events: nil), isActive: $navigateToProfile) {
+            NavigationLink(destination: ProfileView(profile: profile, events: nil, activeEventId: ""), isActive: $navigateToProfile) {
                 EmptyView()
             }
             ZStack {

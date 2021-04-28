@@ -12,6 +12,7 @@ struct ProfileView: View {
     @State var profile: UserProfileData? = nil
     @State var events: [Event]? = nil
     @State private var showInviteSheet = false
+    var activeEventId: String
     
     var body: some View {
         NavigationView {
@@ -34,7 +35,7 @@ struct ProfileView: View {
                                     .resizable()
                                     .frame(width: 25, height: 25)
                                 
-                                Text(profile!.averageRunDistance.string)
+                                Text("\(profile!.averageRunDistance.string) km")
                                     .font(Font.custom("Montserrat-Medium", size: 12))
 
                             }
@@ -57,7 +58,7 @@ struct ProfileView: View {
                             HStack(spacing: 15) {
                                 ForEach(events ?? [], id: \.self)
                                 { event in
-                                    EventCarouselViewItem(event: event)
+                                    EventCarouselViewItem(event: event, isActive: activeEventId == event.id)
                                 }
                             }
                             .padding(.vertical, 15)
@@ -71,21 +72,40 @@ struct ProfileView: View {
                     
                     // VStack with training info and motiviation
                     VStack(alignment: .leading, spacing: 15) {
-                        Text("Training info")
-                            .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        HStack {
-                            Image("LocationArrow")
-                            VStack(alignment: .leading) {
-                                Text("Distance")
-                                    .font(Font.custom("Montserrat-Regular", size: 8))
-                                Text("10,00 km")
-                                    .font(Font.custom("Montserrat-SemiBold", size: 11))
-                            }.padding(.leading, 5)
-                        }
+//                        Text("Training info")
+//                            .font(Font.custom("Montserrat-SemiBold", size: 18))
+//                        HStack {
+//                            Image("LocationArrow")
+//                            VStack(alignment: .leading) {
+//                                Text("Distance")
+//                                    .font(Font.custom("Montserrat-Regular", size: 8))
+//                                Text("10,00 km")
+//                                    .font(Font.custom("Montserrat-SemiBold", size: 11))
+//                            }.padding(.leading, 5)
+//                        }
                         Text("Motivation")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
-                        Text("Pellentesque non massa leo. Donec quis mi eu enim accumsan venenatis. Vivamus ante eros, sed purus tortor. Curabitur ellentesque. Mauris nec dolor vel metus non ornare.")
+                        Text("I want the Ukranian TeenStreet to grow so they can reach more people. Because of the growth of my local TeenStreet, I had the chance to meet all of my new friends. Imma run this!")
                             .font(Font.custom("Montserrat-Regular", size: 12))
+                        HStack {
+                            ZStack {
+                                Image("EmptyProfile")
+                                Image("EmptyProfile")
+                                    .offset(x: 30)
+                                Image("EmptyProfile")
+                                    .offset(x: 60)
+                                Image("EmptyProfile")
+                                    .offset(x: 90)
+                            }
+                            
+                            Text("+ 12 backers")
+                                .font(Font.custom("Montserrat-Medium", size: 12))
+                                .offset(x: 90)
+                            Spacer()
+                            Text("learn about them")
+                                .font(Font.custom("Montserrat-Medium", size: 8))
+                                .foregroundColor(Color("OMRed"))
+                        }
                     }
                     .padding(.horizontal, 30)
                 }
@@ -96,7 +116,7 @@ struct ProfileView: View {
                         Text("Invite")
                             .font(Font.custom("Montserrat-SemiBold", size: 14))
                             .frame(width: 125, height: 35)
-                            .background(Color("PrimaryColor"))
+                            .background(Color("OMRed"))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     })
@@ -127,7 +147,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(profile: UserProfileData(), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")])
+        ProfileView(profile: UserProfileData(), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
     }
 }
 

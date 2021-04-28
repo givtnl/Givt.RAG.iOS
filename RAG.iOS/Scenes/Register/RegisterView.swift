@@ -19,7 +19,7 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             NavigationLink(destination:
-                            ProfileView(profile: UserProfileData(userName: modelData.userName, email: modelData.email, entryNumber: modelData.entryNumber, averageRunDistance: Double(inputKilometers.text) ?? 0))
+                            ProfileView(profile: UserProfileData(userName: modelData.userName, email: modelData.email, entryNumber: modelData.entryNumber, averageRunDistance: Double(inputKilometers.text) ?? 0), activeEventId: EventId)
                             .navigationBarTitle("")
                             .navigationBarHidden(true),
                            isActive: $didRegisterForEvent
@@ -59,10 +59,12 @@ struct RegisterView: View {
                 
                 Text("On average I run")
                     .font(Font.custom("Montserrat-SemiBold", size: 18))
+                    .padding(.top, 10)
                 
                 HStack {
                     TextField("", text: $inputKilometers.text)
                         .padding(.leading, 15)
+                        .frame(height: 40)
                         .font(Font.custom("Montserrat-Medium", size: 15))
                         .keyboardType(.decimalPad)
                     
@@ -72,7 +74,13 @@ struct RegisterView: View {
                         .font(Font.custom("Montserrat-SemiBold", size: 15))
                     
                 }
-                .frame(width: .infinity, height: 40, alignment: .leading)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 40,
+                    maxHeight: 40,
+                    alignment: .leading
+                )
                 .background(Color("DarkerPink"))
                 .cornerRadius(5)
                 

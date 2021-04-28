@@ -10,6 +10,7 @@ import SwiftUI
 struct EventCarouselViewItem: View {
     var event: Event
     var monthDateFormatter: DateFormatter = DateFormatter()
+    var isActive: Bool
     
     var body: some View {
         VStack {
@@ -18,10 +19,11 @@ struct EventCarouselViewItem: View {
                 VStack(alignment: .leading) {
                     Text(event.name)
                         .font(Font.custom("Montserrat-SemiBold", size: 11))
+                        .foregroundColor(isActive ? Color.white : Color.black)
 
                     Text(event.city)
                         .font(Font.custom("Montserrat-Regular", size: 9))
-                        .foregroundColor(.gray)
+                        .foregroundColor(isActive ? Color.white : Color.gray)
 
                 }
                 .padding(.leading, 10)
@@ -32,11 +34,11 @@ struct EventCarouselViewItem: View {
                     alignment: .topLeading
                 )
                 .frame(height: 50)
-                .background(Color.white)
+                .background(isActive ? Color("OMRed") : Color.white)
                 VStack {
                     Text(String(Calendar.current.dateComponents([.day], from: event.startDate).day!))
                         .font(Font.custom("Montserrat-SemiBold", size: 11))
-                        .foregroundColor(Color("PrimaryColor"))
+                        .foregroundColor(Color("OMRed"))
                     Text(monthDateFormatter.string(from: event.startDate))
                         .font(Font.custom("Montserrat-Regular", size: 9))
 
@@ -59,12 +61,13 @@ struct EventCarouselViewItem: View {
             maxHeight: .infinity,
             alignment: .topLeading
         ).frame(width: 160).ignoresSafeArea(edges: .all)
-        .cornerRadius(10)
+        .cornerRadius(15)
         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
     }
     
-    init(event: Event) {
+    init(event: Event, isActive: Bool = false) {
         self.event = event
+        self.isActive = isActive
         monthDateFormatter.dateFormat = "MMM"
     }
 }

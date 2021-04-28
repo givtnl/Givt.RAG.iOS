@@ -12,16 +12,16 @@ import AppCenterCrashes
 @main
 struct RAG_iOSApp: App {
     let persistenceController = PersistenceController.shared
-    var profile: UserProfileData?
+    var user: User?
 
     @ViewBuilder
     var body: some Scene {
         WindowGroup {
-            if (profile == nil) {
+            if (user == nil) {
                 EventView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             } else {
-                ProfileView(profile: profile)
+                ProfileView(profile: user?.getAsProfileData(), activeEventId: (user?.eventId)!)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
@@ -32,7 +32,7 @@ struct RAG_iOSApp: App {
         registerForAppCenter()
         registerEvents()
         
-        profile = (try? Mediater.shared.send(request: InAppUserQuery()))?.getAsProfileData()
+        user = try? Mediater.shared.send(request: InAppUserQuery())
     }
 }
 
