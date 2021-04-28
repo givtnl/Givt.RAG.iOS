@@ -146,6 +146,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(event: Event(id: "", name: "yolo", startDate: Date(), city: "ah yeet"))
+        RegisterView(event: Event(id: "", name: "yolo", startDate: Date(), city: "ah yeet", endDate: Date()))
     }
 }
