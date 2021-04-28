@@ -60,7 +60,7 @@ struct EventCarouselViewItem: View {
             minHeight: 0,
             maxHeight: .infinity,
             alignment: .topLeading
-        ).frame(width: 160).ignoresSafeArea(edges: .all)
+        ).frame(width: 140).ignoresSafeArea(edges: .all)
         .cornerRadius(15)
         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
     }

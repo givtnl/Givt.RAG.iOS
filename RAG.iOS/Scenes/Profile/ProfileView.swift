@@ -22,28 +22,28 @@ struct ProfileView: View {
                         Image("profile")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 125, height: 125)
+                            .frame(width: 106, height: 106)
                             .clipShape(Circle())
-                            .shadow(radius: 2)
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
                         VStack(alignment: .leading) {
                             Text(profile!.userName)
                                 .font(Font.custom("Montserrat-SemiBold", size: 16))
                             Text(profile!.email)
-                                .font(Font.custom("Montserrat", size: 12))
+                                .font(Font.custom("Montserrat-Regular", size: 12))
                             HStack {
                                 Image("LocationArrow")
                                     .resizable()
                                     .frame(width: 25, height: 25)
                                 
                                 Text("\(profile!.averageRunDistance.string) km")
-                                    .font(Font.custom("Montserrat-Medium", size: 12))
+                                    .font(Font.custom("Montserrat-Regular", size: 12))
 
                             }
                             .frame(width: 100, height: 25, alignment: .leading)
                             .background(Color("DarkerPink"))
                             .cornerRadius(25)
                         }
-                        .padding(.leading, 10)
+                        .padding(.leading, 5)
                     }
                     .frame(
                         minWidth: 0,
@@ -51,6 +51,7 @@ struct ProfileView: View {
                         alignment: .topLeading
                     )
                     .padding(.horizontal, 30)
+                    .padding(.top, 10)
                     
                     // VStack with scrollview for events
                     VStack {
@@ -65,10 +66,9 @@ struct ProfileView: View {
                         }
                     }
                     .frame(
-                        height: 170
+                        height: 150
                     )
                     .padding(.leading, 30)
-                    .padding(.top, 10)
                     
                     // VStack with training info and motiviation
                     VStack(alignment: .leading, spacing: 15) {
@@ -106,8 +106,10 @@ struct ProfileView: View {
                                 .font(Font.custom("Montserrat-Medium", size: 8))
                                 .foregroundColor(Color("OMRed"))
                         }
+                        .padding(.top, 10)
                     }
                     .padding(.horizontal, 30)
+                    .padding(.top, 20)
                 }
                 HStack(spacing: 20) {
                     Button(action: {
@@ -147,7 +149,10 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(profile: UserProfileData(), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
+        Group {
+            ProfileView(profile: UserProfileData(userName: "Mikey", email: "Ah yeet@lol.zor", entryNumber: "Ah yeet", averageRunDistance: 111.11), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
+            ProfileView(profile: UserProfileData(userName: "Mikey", email: "Ah yeet@lol.zor", entryNumber: "Ah yeet", averageRunDistance: 111.11), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
+        }
     }
 }
 
