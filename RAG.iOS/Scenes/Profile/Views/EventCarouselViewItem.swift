@@ -75,7 +75,7 @@ struct EventCarouselViewItem: View {
 struct EventCarouselViewItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            EventCarouselViewItem(event: Event(id: "1234", name: "TestEvent", startDate: Date(), city: "Shortrealm"))
+            EventCarouselViewItem(event: Event(id: "1234", name: "TestEvent", startDate: Date(), city: "Shortrealm", endDate: Date()))
                 .previewLayout(.fixed(width: 140, height: 110))
         }
     }

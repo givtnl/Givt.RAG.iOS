@@ -12,7 +12,8 @@ struct ProfileView: View {
     @State var profile: UserProfileData? = nil
     @State var events: [Event]? = nil
     @State private var showInviteSheet = false
-    var activeEventId: String
+    var activeEventId: String? = nil
+    @State var activeEvent: Event? = nil
     @State var eventFinished: Bool = true
     
     
@@ -74,13 +75,15 @@ struct ProfileView: View {
                     
                     // VStack with training info and motiviation
                     VStack(alignment: .leading, spacing: 15) {
-                        if eventFinished {
-                            Text("Results")
-                                .font(Font.custom("Montserrat-SemiBold", size: 18))
-                            HStack(spacing: 20) {
-                                StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
-                                StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
-                                StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
+                        if let currentEvent = activeEvent {
+                            if Date() >= currentEvent.endDate {
+                                Text("Results")
+                                    .font(Font.custom("Montserrat-SemiBold", size: 18))
+                                HStack(spacing: 20) {
+                                    StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
+                                    StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
+                                    StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
+                                }
                             }
                         }
                         Text("Motivation")
@@ -137,6 +140,11 @@ struct ProfileView: View {
             }.onAppear(perform: {
                 try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (events) in
                     self.events = events
+                    if activeEventId != nil {
+                        activeEvent = events.first(where: { event in
+                            event.id == activeEventId
+                        })
+                    }
                 }
             }).sheet(isPresented: $showInviteSheet) {
                 let user = try? Mediater.shared.send(request: InAppUserQuery())
@@ -151,7 +159,17 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ProfileView(profile: UserProfileData(userName: "Mikey", email: "Ah yeet@lol.zor", entryNumber: "Ah yeet", averageRunDistance: 111.11), events: [Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"), Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk"),Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk")], activeEventId: "EventId")
+            ProfileView(
+                profile: UserProfileData(
+                    userName: "Mikey",
+                    email: "Ah yeet@lol.zor",
+                    entryNumber: "Ah yeet",
+                    averageRunDistance: 111.11),
+                events: [
+                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
+                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
+                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date())],
+                activeEventId: "1")
         }
     }
 }
