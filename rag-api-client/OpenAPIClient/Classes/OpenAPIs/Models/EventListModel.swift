@@ -12,12 +12,14 @@ public struct EventListModel: Codable {
     public var id: String?
     public var name: String?
     public var startDate: Date?
+    public var endDate: Date?
     public var city: String?
 
-    public init(id: String? = nil, name: String? = nil, startDate: Date? = nil, city: String? = nil) {
+    public init(id: String? = nil, name: String? = nil, startDate: Date? = nil, endDate: Date? = nil, city: String? = nil) {
         self.id = id
         self.name = name
         self.startDate = startDate
+        self.endDate = endDate
         self.city = city
     }
 
