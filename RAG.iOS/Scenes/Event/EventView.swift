@@ -52,12 +52,13 @@ struct EventView: View {
                                 Text("Join our run")
                                     .font(Font.custom("Montserrat-SemiBold", size: 14))
                                     .foregroundColor(Color.white)
-                                    .frame(width: 160, height: 25)
+                                    .frame(width: 140, height: 25)
                                     .padding(10)
                                     .background(Color("OMRed"))
                                     .cornerRadius(25)
                             }
                         }.buttonStyle(PlainButtonStyle())
+                        .offset(y: 20)
                     }.offset(y: 15)
                 }.frame(
                     minWidth: 0,
