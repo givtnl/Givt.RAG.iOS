@@ -10,9 +10,11 @@ import Foundation
 class RegisterUserCommand: RequestProtocol {
     var user: User
     var eventId: String
+    var averageRunKm: Double
     
-    init(name: String, email: String, eventId: String, entryNumber: String?) {
+    init(name: String, email: String, eventId: String, entryNumber: String?, averageRunKm: Double) {
         self.eventId = eventId
+        self.averageRunKm = averageRunKm
         self.user = User(name: name, email: email, eventId: eventId, entryNumber: entryNumber)
     }
     

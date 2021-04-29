@@ -28,4 +28,5 @@ class DataUser: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var id: String = ""
     @objc dynamic var eventId: String = ""
+    @objc dynamic var averageRunKm: Double = 0.0
 }

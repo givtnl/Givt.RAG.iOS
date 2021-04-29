@@ -17,7 +17,9 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
         
         let user: User = command.user
         
-        ParticipantsAPI.registerParticipant(eventId: String(command.eventId), registerParticipantCommand: RegisterParticipantCommand(name: user.name, entryNumber: command.user.entryNumber)) { (participant, error) in
+        let target = RegisterEventTargetCommand(type: EventTargetType._0, value: String(command.averageRunKm))
+        
+        ParticipantsAPI.registerParticipant(eventId: String(command.eventId), registerParticipantCommand: RegisterParticipantCommand(name: user.name, entryNumber: command.user.entryNumber, targets: [target])) { (participant, error) in
             guard let participant = participant else {
                 try?completion(false as! R.TResponse)
                 return
@@ -27,6 +29,7 @@ class RegisterUserCommandHandler: RequestHandlerProtocol {
             user.name = command.user.name
             user.id = participant.id!
             user.eventId = command.eventId
+            user.averageRunKm = command.averageRunKm
             self.userStore.create(object: user)
             try?completion(true as! R.TResponse)
         }
