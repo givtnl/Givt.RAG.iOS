@@ -85,11 +85,11 @@ struct ProfileView: View {
                                     StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
                                     StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
                                 }
+                                .padding(.bottom, 20)
                             }
                         }
                         Text("Motivation")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
-                            .padding(.top, 20)
                         Text("I want the Ukranian TeenStreet to grow so they can reach more people. Because of the growth of my local TeenStreet, I had the chance to meet all of my new friends. Imma run this!")
                             .font(Font.custom("Montserrat-Regular", size: 12))
                         HStack {
