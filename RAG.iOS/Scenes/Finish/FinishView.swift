@@ -45,12 +45,13 @@ struct FinishView: View {
                         }, label: {
                             HStack {
                                 Image("SelfieImage")
-                                Text("Take your sweatest selfie")
+                                Text("Take your sweatiest selfie")
                                     .font(Font.custom("Montserrat-SemiBold", size: 18))
                                     .foregroundColor(.black)
                                     .padding(.leading, 20)
                             }
                             .padding(.leading, 20)
+                            .padding(.top, 60)
                         })
                     }
                     Spacer()
@@ -80,7 +81,7 @@ struct FinishView: View {
             
             
             VStack(alignment: .leading, spacing: 20) {
-                Text("THANK.YOU.SO.MUCH, [NAME RUNNER]!")
+                Text("THANK.YOU.SO.MUCH, \(profile!.userName)!")
                     .font(Font.custom("Montserrat-SemiBold", size: 22))
                     .foregroundColor(Color("PrimaryColor"))
                 Text("For overcoming the glue that was sticking you to your couch, for choosing to invest in running shoes instead of thee best mascara in the world, for running for your life (for real, not in game) and for casting out so much sweat that you could fill the local swimming pool. Thank you for running with us!")
