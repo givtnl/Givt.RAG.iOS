@@ -81,7 +81,7 @@ struct FinishView: View {
             
             
             VStack(alignment: .leading, spacing: 20) {
-                Text("THANK.YOU.SO.MUCH, \(profile!.userName)!")
+                Text("THANK.YOU.SO.MUCH, \(profile?.userName ?? "")!")
                     .font(Font.custom("Montserrat-SemiBold", size: 22))
                     .foregroundColor(Color("PrimaryColor"))
                 Text("For overcoming the glue that was sticking you to your couch, for choosing to invest in running shoes instead of thee best mascara in the world, for running for your life (for real, not in game) and for casting out so much sweat that you could fill the local swimming pool. Thank you for running with us!")
@@ -141,7 +141,11 @@ struct FinishView: View {
                             alignment: .topLeading) : nil)
         .ignoresSafeArea(edges: .top)
         .hiddenNavigationBarStyle()
-        
+        .onAppear(perform: {
+            try? Mediater.shared.sendAsync(request: InAppUserQuery()) { response in
+                self.profile = (response!).getAsProfileData()
+            }
+        })
     }
 }
 
