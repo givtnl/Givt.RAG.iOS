@@ -55,7 +55,8 @@ struct ProfileView: View {
                         alignment: .topLeading
                     )
                     .padding(.horizontal, 30)
-                    
+                    .padding(.top, 30)
+
                     // VStack with scrollview for events
                     VStack {
                         ScrollView(.horizontal) {
