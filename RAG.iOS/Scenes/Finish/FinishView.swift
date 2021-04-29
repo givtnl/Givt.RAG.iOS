@@ -86,20 +86,29 @@ struct FinishView: View {
                     .foregroundColor(Color("PrimaryColor"))
                 Text("For overcoming the glue that was sticking you to your couch, for choosing to invest in running shoes instead of thee best mascara in the world, for running for your life (for real, not in game) and for casting out so much sweat that you could fill the local swimming pool. Thank you for running with us!")
                     .font(Font.custom("Montserrat-Regular", size: 12))
-                Text("The TeenStreet global team")
+                Text("The Teen Street global team")
                     .font(Font.custom("Montserrat-Bold", size: 12))
                 Spacer()
                 HStack(alignment: .center) {
                     Image("Share")
                         .frame(width: 50, height: 50)
                     Button {
-                        if uiImage != nil {
-                            guard let data = uiImage?.pngData() else { return }
-                            print(data.count)
-                        }
-                        try? Mediater.shared.sendAsync(request: InAppUserQuery()) { (response) in
-                            self.profile = (response!).getAsProfileData()
-                            self.navigateToProfile = true
+                        try? Mediater.shared.sendAsync(request: InAppUserQuery()) { response in
+                            if uiImage != nil {
+                                guard let data = uiImage?.jpegData(compressionQuality: 0.5) else { return }
+                                let exportSelfieCommand = ExportSelfieCommand(participantId: response!.id!, eventId: response!.eventId!, jpegData: data)
+                                try? Mediater.shared.sendAsync(request: exportSelfieCommand) { r in
+                                    DispatchQueue.main.async {
+                                        self.profile = response!.getAsProfileData()
+                                        self.navigateToProfile = true
+                                    }
+                                }
+                            } else {
+                                DispatchQueue.main.async {
+                                    self.profile = (response!).getAsProfileData()
+                                    self.navigateToProfile = true
+                                }
+                            }
                         }
                     } label: {
                         Text("Finish")

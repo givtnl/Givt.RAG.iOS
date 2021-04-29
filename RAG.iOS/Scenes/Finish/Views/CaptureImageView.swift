@@ -16,7 +16,6 @@ struct CaptureImageView {
     func makeCoordinator() -> Coordinator {
         return Coordinator(isShown: $isShown, image: $image, uiImage: $uiImage)
     }
-    
 }
 
 extension CaptureImageView: UIViewControllerRepresentable {
@@ -24,12 +23,11 @@ extension CaptureImageView: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
-        uiImage = context.coordinator.uiImage
+        picker.cameraDevice = .front
         return picker
     }
     
     func updateUIViewController(_ uiViewController: UIImagePickerController,
                                 context: UIViewControllerRepresentableContext<CaptureImageView>) {
-        
     }
 }
