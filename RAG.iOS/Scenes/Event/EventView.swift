@@ -26,14 +26,14 @@ struct EventView: View {
                 }
                 ZStack(alignment: .topLeading) {
                     Image("Runner").resizable().scaledToFit().ignoresSafeArea(edges: .top)
-                    Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
+                    Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 120, height: 60, alignment: .topLeading).offset(x: 20, y: 50)
                 }
                 VStack(alignment: .leading) {
                     Text(event?.name.uppercased() ?? "")
                         .font(Font.custom("Montserrat-Bold", size: 25))
                     
                     Group {
-                        InfoViewRow(logoString: "CalenderIcon", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.startDate) ?? "")
+                        InfoViewRow(logoString: "CalenderIcon", titleString: event?.startDate.formattedLong ?? "", subTitleString: event?.startDate.formattedTimeSpan(until: event!.endDate) ?? "")
                         InfoViewRow(logoString: "LocationIcon", titleString: event?.city ?? "", subTitleString: event?.city ?? "")
                     }
                     

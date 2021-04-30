@@ -33,12 +33,23 @@ struct RegisterView: View {
                     .ignoresSafeArea(edges: .top)
                     .overlay(
                         LinearGradient(gradient: Gradient(colors: [.clear, Color.black.opacity(0.75)]), startPoint: .top, endPoint: .bottom)
-                    ).frame(width: .infinity, height: 250, alignment: .center)
-                Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 80, height: 80, alignment: .topLeading).offset(x: 20, y: 50)
-                Text(event!.name)
-                    .offset(x:20, y: 180)
-                    .font(Font.custom("Montserrat-SemiBold", size: 18))
-                    .foregroundColor(.white)
+                    )
+                    .frame(height: 250, alignment: .center)
+                
+                VStack(alignment: .leading) {
+                    Image("TeenStreet_Logo").resizable().scaledToFit().frame(width: 120, height: 60, alignment: .topLeading)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Join\n\(event!.name)")
+                            .font(Font.custom("Montserrat-Bold", size: 28))
+                            .foregroundColor(.white)
+                        
+                        Text(event!.startDate.formattedFullMonthDayYear)
+                            .font(Font.custom("Montserrat-SemiBold", size: 12))
+                            .foregroundColor(.white)
+                    }.offset(x: 10)
+                }
+                .offset(x: 20, y: 50)
             }
             
             VStack(alignment: .leading, spacing: 15) {
