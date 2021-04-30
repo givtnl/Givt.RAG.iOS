@@ -51,6 +51,7 @@ extension RAG_iOSApp {
         Mediater.shared.registerHandler(handler: RegisterUserCommandHandler())
         Mediater.shared.registerHandler(handler: InAppUserQueryHandler())
         Mediater.shared.registerHandler(handler: GetCurrentParticipantQueryHandler())
+        Mediater.shared.registerHandler(handler: ExportSelfieCommandHandler())
     }
     
     func registerForAppCenter() {

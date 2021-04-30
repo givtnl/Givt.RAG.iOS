@@ -14,7 +14,12 @@ class StopRunningCommandHandler: RequestHandlerProtocol {
     func handle<R>(request: R, completion: @escaping (R.TResponse) throws -> Void) throws where R : RequestProtocol {
         print("Stopped running")
         
-        ParticipantsAPI.finishEventForParticipant(eventId: (request as! StopRunningCommand).user.eventId!, id: (request as! StopRunningCommand).user.id!, finishParticipantCommand: FinishParticipantCommand(distanceInMeters: runningService.currentDistance, finishDate: Date())) { (response, error) in
+        let request = request as! StopRunningCommand
+        let command = FinishParticipantCommand(distanceInMeters: runningService.currentDistance.rounded(), finishDate: Date())
+        ParticipantsAPI.finishEventForParticipant(eventId: request.user.eventId!, id: request.user.id!, finishParticipantCommand: command) { (response, error) in
+            if let error = error {
+                print(error)
+            }
             try? completion(true as! R.TResponse)
         }
     }

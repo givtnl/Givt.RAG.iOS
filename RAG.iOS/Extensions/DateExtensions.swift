@@ -22,6 +22,13 @@ extension Date {
             return formatter.string(from: self)
         }
     }
+    var formattedFullMonthDayYear: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM d, yyyy"
+            return formatter.string(from: self)
+        }
+    }
     func formattedTimeSpan(until: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm a"

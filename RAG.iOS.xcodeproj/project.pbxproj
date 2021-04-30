@@ -68,6 +68,8 @@
 		A4FAE4132635A16100153C86 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE4122635A16100153C86 /* Event.swift */; };
 		E40FAD6059585AEA65EAB85E /* libPods-RAG.iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DA861283AF3F31B6C3F9A /* libPods-RAG.iOS.a */; };
 		FB0ABD6F2637025100F8DCC8 /* InviteBackerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0ABD6E2637025100F8DCC8 /* InviteBackerRepresentable.swift */; };
+		FBCF7177263AB0A300F4D5FA /* ExportSelfieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCF7176263AB0A300F4D5FA /* ExportSelfieCommand.swift */; };
+		FBCF717A263AB1DD00F4D5FA /* ExportSelfieCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCF7179263AB1DD00F4D5FA /* ExportSelfieCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		A4FAE4122635A16100153C86 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C421E71F1D2C110469F0E243 /* Pods-RAG.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAG.iOS.release.xcconfig"; path = "Target Support Files/Pods-RAG.iOS/Pods-RAG.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		FB0ABD6E2637025100F8DCC8 /* InviteBackerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteBackerRepresentable.swift; sourceTree = "<group>"; };
+		FBCF7176263AB0A300F4D5FA /* ExportSelfieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSelfieCommand.swift; sourceTree = "<group>"; };
+		FBCF7179263AB1DD00F4D5FA /* ExportSelfieCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSelfieCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +429,7 @@
 		A456BCE42631728E00072DB3 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				FBCF7175263AB08000F4D5FA /* ExportSelfie */,
 				A4FAE3FC26358AEB00153C86 /* InAppUser */,
 				A456BCED2631734100072DB3 /* Models */,
 				A456BCE52631729400072DB3 /* RegisterUser */,
@@ -521,6 +526,15 @@
 				A4D535A7263BED95000B3CCF /* Participant.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FBCF7175263AB08000F4D5FA /* ExportSelfie */ = {
+			isa = PBXGroup;
+			children = (
+				FBCF7176263AB0A300F4D5FA /* ExportSelfieCommand.swift */,
+				FBCF7179263AB1DD00F4D5FA /* ExportSelfieCommandHandler.swift */,
+			);
+			path = ExportSelfie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,11 +645,13 @@
 				A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */,
 				A4D535A4263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift in Sources */,
 				A4FAE40F26359AB900153C86 /* GetAllEventsQueryHandler.swift in Sources */,
+				FBCF717A263AB1DD00F4D5FA /* ExportSelfieCommandHandler.swift in Sources */,
 				A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */,
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
 				A4D535A8263BED95000B3CCF /* Participant.swift in Sources */,
 				32F134EC263022B20004ED0C /* RunningServiceLocationManagerExtension.swift in Sources */,
 				A456BCEF2631735200072DB3 /* User.swift in Sources */,
+				FBCF7177263AB0A300F4D5FA /* ExportSelfieCommand.swift in Sources */,
 				3245F94B26319A5200C0D81A /* DateExtensions.swift in Sources */,
 				32DA4DE6262EF6CF00A7AB40 /* UserProfileData.swift in Sources */,
 				A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */,
