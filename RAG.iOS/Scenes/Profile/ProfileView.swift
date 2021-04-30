@@ -81,8 +81,8 @@ struct ProfileView: View {
                             Text("Results")
                                 .font(Font.custom("Montserrat-SemiBold", size: 18))
                             HStack(spacing: 20) {
-                                StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
-                                StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
+                                StatsView(imageName: "LocationIcon", title: "Distance", subTitle: String(format: "%.2f km", participant!.distanceInMeters! / 1000))
+                                StatsView(imageName: "TimeIcon", title: "Time", subTitle: String(format: "%02d:%02d", calculateNiceDisplayableDifferenceBetweenDates(start: participant!.startDate!, end: participant!.finishDate!).0, calculateNiceDisplayableDifferenceBetweenDates(start: participant!.startDate!, end: participant!.finishDate!).1))
                                 StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
                             }
                             .padding(.bottom, 20)
@@ -115,27 +115,29 @@ struct ProfileView: View {
                     .padding(.horizontal, 30)
                     .padding(.top, 20)
                 }
-                HStack(spacing: 20) {
-                    Button(action: {
-                        showInviteSheet = true
-                    }, label: {
-                        Text("Invite")
-                            .font(Font.custom("Montserrat-SemiBold", size: 14))
-                            .frame(width: 125, height: 35)
-                            .background(Color("OMRed"))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    })
-                    NavigationLink(destination: TrackingView()) {
-                        Text("Run")
-                            .font(Font.custom("Montserrat-SemiBold", size: 14))
-                            .frame(width: 125, height: 35)
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                if participant?.finishDate == nil {
+                    HStack(spacing: 20) {
+                        Button(action: {
+                            showInviteSheet = true
+                        }, label: {
+                            Text("Invite")
+                                .font(Font.custom("Montserrat-SemiBold", size: 14))
+                                .frame(width: 125, height: 35)
+                                .background(Color("OMRed"))
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        })
+                        NavigationLink(destination: TrackingView()) {
+                            Text("Run")
+                                .font(Font.custom("Montserrat-SemiBold", size: 14))
+                                .frame(width: 125, height: 35)
+                                .background(Color.black)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
                     }
+                    .padding(.bottom, 20)
                 }
-                .padding(.bottom, 20)
                 Spacer()
             }.onAppear(perform: {
                 // This performs a get on all events which shouldn't be used but is used to fill the list
@@ -162,6 +164,11 @@ struct ProfileView: View {
                 
             }.hiddenNavigationBarStyle()
         }
+    }
+    
+    func calculateNiceDisplayableDifferenceBetweenDates (start: Date, end: Date) -> (Int, Int) {
+        let difference = Int(end.timeIntervalSince(start))
+        return ((difference % 3600) / 60, (difference % 3600) % 60)
     }
 }
 
