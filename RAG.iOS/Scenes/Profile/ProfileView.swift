@@ -12,6 +12,7 @@ struct ProfileView: View {
     @State var profile: UserProfileData? = nil
     @State var events: [Event]? = nil
     @State private var showInviteSheet = false
+    @State var participant: Participant? = nil
     var activeEventId: String? = nil
     @State var activeEvent: Event? = nil
     @State var eventFinished: Bool = true
@@ -76,17 +77,15 @@ struct ProfileView: View {
                     
                     // VStack with training info and motiviation
                     VStack(alignment: .leading, spacing: 15) {
-                        if let currentEvent = activeEvent {
-                            if Date() >= currentEvent.endDate {
-                                Text("Results")
-                                    .font(Font.custom("Montserrat-SemiBold", size: 18))
-                                HStack(spacing: 20) {
-                                    StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
-                                    StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
-                                    StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
-                                }
-                                .padding(.bottom, 20)
+                        if participant?.finishDate != nil {
+                            Text("Results")
+                                .font(Font.custom("Montserrat-SemiBold", size: 18))
+                            HStack(spacing: 20) {
+                                StatsView(imageName: "LocationIcon", title: "Distance", subTitle: "10, 00km")
+                                StatsView(imageName: "TimeIcon", title: "Time", subTitle: "01:04:40")
+                                StatsView(imageName: "PaceIcon", title: "Average pace", subTitle: "06:28 km/u")
                             }
+                            .padding(.bottom, 20)
                         }
                         Text("Motivation")
                             .font(Font.custom("Montserrat-SemiBold", size: 18))
@@ -139,6 +138,7 @@ struct ProfileView: View {
                 .padding(.bottom, 20)
                 Spacer()
             }.onAppear(perform: {
+                // This performs a get on all events which shouldn't be used but is used to fill the list
                 try? Mediater.shared.sendAsync(request: GetAllEventsQuery()) { (events) in
                     self.events = events
                     if activeEventId != nil {
@@ -147,6 +147,14 @@ struct ProfileView: View {
                         })
                     }
                 }
+                
+                // This gets the actual current data from the server with the results
+                _ = try? Mediater.shared.sendAsync(request: InAppUserQuery(), completion: { user in
+                    try? Mediater.shared.sendAsync(request: GetCurrentParticipantQuery(eventId: (user?.eventId)!, participantId: (user?.id)!)) { (participant) in
+                        self.participant = participant
+                    }
+                })
+                
             }).sheet(isPresented: $showInviteSheet) {
                 let user = try? Mediater.shared.send(request: InAppUserQuery())
                 

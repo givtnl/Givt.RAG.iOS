@@ -12,6 +12,9 @@ class User {
     var email: String
     var eventId: String?
     var entryNumber: String?
+    var startDate: Date?
+    var endDate: Date?
+    var distanceRanInMeters: Double?
     
     init(name: String, email: String, eventId: String, entryNumber: String?) {
         self.name = name

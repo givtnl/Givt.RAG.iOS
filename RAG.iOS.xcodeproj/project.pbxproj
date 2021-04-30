@@ -58,6 +58,9 @@
 		A456BD882631BBCF00072DB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456BD872631BBCF00072DB3 /* UserStore.swift */; };
 		A46A68BC2638239B00A8A097 /* StopRunningCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A68BB2638239B00A8A097 /* StopRunningCommand.swift */; };
 		A46A68C02638240900A8A097 /* StopRunningCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A68BF2638240900A8A097 /* StopRunningCommandHandler.swift */; };
+		A4D535A4263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D535A3263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift */; };
+		A4D535A6263ADC28000B3CCF /* GetCurrentParticipantQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D535A5263ADC28000B3CCF /* GetCurrentParticipantQueryHandler.swift */; };
+		A4D535A8263BED95000B3CCF /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D535A7263BED95000B3CCF /* Participant.swift */; };
 		A4FAE3FF26358B1500153C86 /* InAppUserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */; };
 		A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */; };
 		A4FAE40B26359A8500153C86 /* GetAllEventsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */; };
@@ -121,6 +124,9 @@
 		A456BD872631BBCF00072DB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		A46A68BB2638239B00A8A097 /* StopRunningCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRunningCommand.swift; sourceTree = "<group>"; };
 		A46A68BF2638240900A8A097 /* StopRunningCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRunningCommandHandler.swift; sourceTree = "<group>"; };
+		A4D535A3263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentParticipantQuery.swift; sourceTree = "<group>"; };
+		A4D535A5263ADC28000B3CCF /* GetCurrentParticipantQueryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentParticipantQueryHandler.swift; sourceTree = "<group>"; };
+		A4D535A7263BED95000B3CCF /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		A4FAE3FE26358B1500153C86 /* InAppUserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQuery.swift; sourceTree = "<group>"; };
 		A4FAE40226358B1D00153C86 /* InAppUserQueryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppUserQueryHandler.swift; sourceTree = "<group>"; };
 		A4FAE40A26359A8500153C86 /* GetAllEventsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsQuery.swift; sourceTree = "<group>"; };
@@ -398,6 +404,7 @@
 		A456BCD226316C0F00072DB3 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				A4D535A2263ADBB6000B3CCF /* GetCurrentParticipant */,
 				32A2073B263843990024F27C /* Invite */,
 				A4FAE4112635A15400153C86 /* Models */,
 				A4FAE40926359A5E00153C86 /* GetAllEvents */,
@@ -472,6 +479,15 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		A4D535A2263ADBB6000B3CCF /* GetCurrentParticipant */ = {
+			isa = PBXGroup;
+			children = (
+				A4D535A3263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift */,
+				A4D535A5263ADC28000B3CCF /* GetCurrentParticipantQueryHandler.swift */,
+			);
+			path = GetCurrentParticipant;
+			sourceTree = "<group>";
+		};
 		A4FAE3FC26358AEB00153C86 /* InAppUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FAE4122635A16100153C86 /* Event.swift */,
+				A4D535A7263BED95000B3CCF /* Participant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -612,14 +629,17 @@
 				3292E9062632BCD30068CF8C /* EventCarouselViewItem.swift in Sources */,
 				A44564F7262EB0110017152E /* MediaterProtocol.swift in Sources */,
 				A456BCE7263172D900072DB3 /* RegisterUserCommand.swift in Sources */,
+				A4D535A4263ADBD4000B3CCF /* GetCurrentParticipantQuery.swift in Sources */,
 				A4FAE40F26359AB900153C86 /* GetAllEventsQueryHandler.swift in Sources */,
 				A4FAE40326358B1D00153C86 /* InAppUserQueryHandler.swift in Sources */,
 				A44564F9262EB0110017152E /* RequestPostProcessorProtocol.swift in Sources */,
+				A4D535A8263BED95000B3CCF /* Participant.swift in Sources */,
 				32F134EC263022B20004ED0C /* RunningServiceLocationManagerExtension.swift in Sources */,
 				A456BCEF2631735200072DB3 /* User.swift in Sources */,
 				3245F94B26319A5200C0D81A /* DateExtensions.swift in Sources */,
 				32DA4DE6262EF6CF00A7AB40 /* UserProfileData.swift in Sources */,
 				A44564F6262EB0110017152E /* RequestProcessorProtocol.swift in Sources */,
+				A4D535A6263ADC28000B3CCF /* GetCurrentParticipantQueryHandler.swift in Sources */,
 				32DA4DDD262ECEC300A7AB40 /* TrackingView.swift in Sources */,
 				32A20736263815470024F27C /* InfoView.swift in Sources */,
 				3245E1A3262D8B9A0081766C /* RAG_iOS.xcdatamodeld in Sources */,

@@ -46,9 +46,11 @@ extension RAG_iOSApp {
         Mediater.shared.registerHandler(handler: JoinEventCommandHandler())
         Mediater.shared.registerHandler(handler: GetAllEventsQueryHandler())
         Mediater.shared.registerHandler(handler: CreateInviteLinkCommandHandler())
+        
         // UserHandlers
         Mediater.shared.registerHandler(handler: RegisterUserCommandHandler())
         Mediater.shared.registerHandler(handler: InAppUserQueryHandler())
+        Mediater.shared.registerHandler(handler: GetCurrentParticipantQueryHandler())
     }
     
     func registerForAppCenter() {
