@@ -182,10 +182,10 @@ struct ProfileView_Previews: PreviewProvider {
                     entryNumber: "Ah yeet",
                     averageRunDistance: 111.11),
                 events: [
-                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
-                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
-                    Event(id: "1", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date())],
-                activeEventId: "1")
+                    Event(id: "65484", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
+                    Event(id: "71544", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date()),
+                    Event(id: "95540", name: "Test", startDate: Date(), city: "Kortrijk", endDate: Date())],
+                activeEventId: "65484")
         }
     }
 }

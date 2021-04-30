@@ -15,7 +15,7 @@ struct EventCarouselViewItem: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottomLeading) {
-                Image("Runner").resizable().scaledToFill()
+                Image("event-\(event.id)").resizable().scaledToFill()
                 VStack(alignment: .leading) {
                     Text(event.name)
                         .font(Font.custom("Montserrat-SemiBold", size: 11))
@@ -75,7 +75,7 @@ struct EventCarouselViewItem: View {
 struct EventCarouselViewItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            EventCarouselViewItem(event: Event(id: "1234", name: "TestEvent", startDate: Date(), city: "Shortrealm", endDate: Date()))
+            EventCarouselViewItem(event: Event(id: "65484", name: "TestEvent", startDate: Date(), city: "Shortrealm", endDate: Date()))
                 .previewLayout(.fixed(width: 140, height: 110))
         }
     }
